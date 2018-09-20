@@ -1,5 +1,4 @@
-# skin.titan
-
+# Skin Titan M O D - for K R Y P T O N
 This skin is modded.And not avilable in official Repo
 
 Installation instructions:
@@ -7,12 +6,7 @@ Installation instructions:
  2. Select skin.titan.leiabeta.zip	and hit install
 
 
-## Modded from Marcelveldts Beta version repository
-
-USE OFFICIAL VERSION FROM KODI REPO OR THE BETA VERSION FROM EMBY REPO ONLY! IF YOU ARE UNLUCKY WITH THAT MOD
-
-Bug reports and feature requests
-I CAN AND WILL LOOK INTO IT, BUT CANT PROMISE TO SOLVE EVERYTHING , CAUSE IM JUST A HUMAN
+## Modded version from Marcelveldts Beta repository
 
 FORUM:	http://forum.kodi.tv/forumdisplay.php?fid=212 (MAIN)
 		https://forum.kodi.tv/showthread.php?tid=330749 (MOD THREAD)

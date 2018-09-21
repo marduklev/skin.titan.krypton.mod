@@ -819,6 +819,13 @@
                 <onclick>Skin.ToggleSetting(HardEdgeNetflixFrames)</onclick>
                 <selected>Skin.HasSetting(HardEdgeNetflixFrames)</selected>
             </control>
+			<!-- style for Codec Frames and Label in same color -->
+            <control type="radiobutton" id="13034">
+                <include>SkinSettings_Button</include>
+                <label>Use Codec Frames and Codec Label in same color</label>
+                <onclick>Skin.ToggleSetting(CodecSameLabelColorAsFrames)</onclick>
+                <selected>Skin.HasSetting(CodecSameLabelColorAsFrames)</selected>
+            </control>
             <!-- animated posters -->
             <control type="radiobutton" id="31706">
                 <include>SkinSettings_Button</include>
@@ -923,7 +930,7 @@
                 <selected>Skin.HasSetting(StudioInFooter)</selected>
                 <visible>!Skin.HasTheme(classic)</visible>
             </control>
-            <control type="radiobutton" id="17121">
+            <control type="radiobutton" id="399767">
                 <include>SkinSettings_Button</include>
                 <label>31607</label>
                 <onclick>Skin.ToggleSetting(IMDBRatingInFooter)</onclick>
@@ -950,7 +957,7 @@
                 <onclick>Skin.ToggleSetting(DisableSideBladeIndicator)</onclick>
                 <selected>Skin.HasSetting(DisableSideBladeIndicator)</selected>
             </control>
-            <control type="radiobutton" id="31738">
+            <control type="radiobutton" id="31739">
                 <include>SkinSettings_Button</include>
                 <label>31738</label>
                 <onclick>Skin.ToggleSetting(DisableScrollingLetters)</onclick>
@@ -1539,7 +1546,7 @@
 			<!-- toggle "fake"  slim osd OFF -->
 			<control type="radiobutton" id="13061">
                 <include>SkinSettings_Button</include>
-                <label>Use Deault OSD</label>               
+                <label>Use Default OSD</label>               
 				<onclick>Skin.ToggleSetting(UseModernOSDPanel)</onclick>
                 <selected>Skin.HasSetting(UseModernOSDPanel)</selected>								
 				<onclick>Skin.ToggleSetting(UseSlimOSDPanel)</onclick>
@@ -3024,7 +3031,7 @@
             <param name="skinsetting" value="HomeViewDetailsFocusColor" />
         </include>
 		<!--home button border focus-->
-        <include name="SkinSettings_ColorButton" content="SkinSettings_ColorButton">
+        <include name="SkinSettings_ColorButton" content="SkinSettings_ColorButton"><!-- check the use of var -->
             <param name="id" value="31829" />
             <param name="label" value="$LOCALIZE[31829]" />
             <param name="skinsetting" value="HomeViewDetailsBorderFocusColor" />

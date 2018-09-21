@@ -2469,7 +2469,8 @@
                                 <radioheight>26</radioheight>
                                 <radioposx>15</radioposx>
                                 <radioposy>0</radioposy>
-                                <onclick>RunScript(script.user.rating)</onclick>
+                                <onclick condition="!String.IsEqual(Window(Home).Property(contenttype),musicvideos)">RunScript(script.user.rating)</onclick>
+								<onclick condition="String.IsEqual(Window(Home).Property(contenttype),musicvideos)">SendClick(7)</onclick>																												  
                                 <animation effect="fade" start="100" end="10" time="250" condition="Window.IsActive(script-user-rating-rateDialog.xml)">Conditional</animation>
                             </control>
 
@@ -2495,7 +2496,8 @@
                                 <radiowidth>24</radiowidth>
                                 <radioheight>26</radioheight>
                                 <radioposx>15</radioposx>
-                                <onclick>RunScript(script.user.rating)</onclick>
+                                <onclick condition="!String.IsEqual(Window(Home).Property(contenttype),musicvideos)">RunScript(script.user.rating)</onclick>
+								<onclick condition="String.IsEqual(Window(Home).Property(contenttype),musicvideos)">SendClick(7)</onclick>                               																				  
                                 <animation effect="fade" start="100" end="10" time="250" condition="Window.IsActive(script-user-rating-rateDialog.xml)">Conditional</animation>
                             </control>
 
@@ -2983,8 +2985,7 @@
 			</control>
 		</control>
 	</include>
-	
-   
+	   
    <!-- just for mivieinfo dialog -->
 	<include name="AltRatingMovieInfo">
 		

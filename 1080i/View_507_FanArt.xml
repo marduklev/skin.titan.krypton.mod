@@ -58,7 +58,7 @@
 					<posx>50</posx>
 					<width>1820</width>
 					<texture border="15">diffuse/bgpanel.png</texture>
-					<colordiffuse>$VAR[ViewDetailsPanelColor]</colordiffuse>
+					<colordiffuse>$VAR[ViewDetailsFocusColor]</colordiffuse><!-- check, redo the color settings could be issue if donzt slept -->
 				</control>
 				
 				<control type="grouplist">

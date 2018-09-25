@@ -463,24 +463,5 @@
 		<value condition="Integer.IsLess(ListItem.Season,1) + !String.IsEmpty(ListItem.Episode)">[B]$LOCALIZE[20381] $INFO[ListItem.Episode][/B]</value>
 		<value condition="!Integer.IsLess(ListItem.Season,1) + !String.IsEmpty(ListItem.Episode)">[B]$VAR[WideView_LargeSeasonLabel,S,:]$VAR[WideView_LargeEpisodeLabel,E,][/B]</value>
 	</variable>
-	<variable name="ToggleNetflixViewDetailsTextColor">
-		<value condition="Skin.HasSetting(View526_DisableFanArt)">$INFO[Skin.String(NetflixPrimaryTextColor)]</value>
-		<value condition="!Skin.HasSetting(View526_DisableFanArt)">$INFO[Skin.String(ViewDetailsTextColor)]</value>
-	</variable>
-	<variable name="ToggleNetflixViewDetailsTextColorPlot">
-		<value condition="Skin.HasSetting(View526_DisableFanArt)">$INFO[Skin.String(NetflixSecondaryTextColor)]</value>
-		<value condition="!Skin.HasSetting(View526_DisableFanArt)">$INFO[Skin.String(ViewDetailsTextColor)]</value>
-	</variable>
-	<variable name="NetflixViewDetailsPanelColor">
-		<value condition="Skin.HasSetting(View526_DisableFanArt)">$INFO[Skin.String(NetflixViewDetailsPanelColor)]</value>
-		<value condition="!Skin.HasSetting(View526_DisableFanArt)">$INFO[Skin.String(ViewDetailsPanelColor)]</value>
-	</variable>
-	<variable name="NetfixViewHighlightTextColor">
-		<value condition="Skin.HasSetting(View526_DisableFanArt)">$INFO[Skin.String(ViewNetfixHighlightTextColor)]</value>
-		<value condition="!Skin.HasSetting(View526_DisableFanArt)">$INFO[Skin.String(ViewDetailsHighlightTextColor)]</value>
-	</variable>
-	<variable name="NetflixViewDetailsBorderFocusColor">
-		<value condition="Skin.HasSetting(View526_DisableFanArt)">$INFO[Skin.String(NetflixViewDetailsBorderFocusColor)]</value>
-		<value condition="!Skin.HasSetting(View526_DisableFanArt)">$INFO[Skin.String(ViewDetailsBorderFocusColor)]</value>
-	</variable>
+	
 </includes>

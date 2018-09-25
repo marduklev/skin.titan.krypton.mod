@@ -25,7 +25,7 @@
 				<width>505</width>
 				<texture border="15">diffuse/bgpanel.png</texture>
 				<visible>![Container.content(MusicVideos) | Container.Content(movies) | container.content(tvshows) | Container.Content(seasons) | container.content(episodes) | [Window.IsActive(tvchannels) | Window.IsActive(tvguide) | Window.IsActive(tvtimers) | Window.IsActive(tvsearch) | Window.IsActive(tvrecordings)]] + Integer.IsGreater(Container(50).NumItems,0)</visible>
-				<colordiffuse>$VAR[ViewDetailsPanelColor]</colordiffuse>
+				<colordiffuse>$VAR[ViewDetailsFocusColor]</colordiffuse><!-- ViewDetailsFocusColor , default=ViewDetailsPanelColor -->
                 <visible>!Skin.HasSetting(View50_HidePanel)</visible>
 			</control>
 			
@@ -34,7 +34,7 @@
 				<width>1105</width>
 				<texture border="15">diffuse/bgpanel.png</texture>
 				<visible>[Container.content(MusicVideos) | Container.Content(movies) | container.content(tvshows) | Container.Content(seasons)] + Integer.IsGreater(Container(50).NumItems,0)</visible>
-				<colordiffuse>$VAR[ViewDetailsPanelColor]</colordiffuse>
+				<colordiffuse>$VAR[ViewDetailsFocusColor]</colordiffuse> <!-- ViewDetailsFocusColor , default=ViewDetailsPanelColor -->
                 <visible>!Skin.HasSetting(View50_HidePanel)</visible>
 			</control>
 			
@@ -43,7 +43,7 @@
 				<width>920</width>
 				<texture border="15">diffuse/bgpanel.png</texture>
 				<visible>[Container.Content(episodes) | [Window.IsActive(tvchannels) | Window.IsActive(tvguide) | Window.IsActive(tvtimers) | Window.IsActive(tvsearch) | Window.IsActive(tvrecordings)]] + Integer.IsGreater(Container(50).NumItems,0)</visible>
-				<colordiffuse>$VAR[ViewDetailsPanelColor]</colordiffuse>
+				<colordiffuse>$VAR[ViewDetailsFocusColor]</colordiffuse> <!-- ViewDetailsFocusColor , default=ViewDetailsPanelColor -->
                 <visible>!Skin.HasSetting(View50_HidePanel)</visible>
 			</control>
 

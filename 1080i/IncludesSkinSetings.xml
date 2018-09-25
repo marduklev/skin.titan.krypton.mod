@@ -1247,7 +1247,7 @@
             <label>$LOCALIZE[31221]</label>
             <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
         </control>
-         <!--viewdetails UNFOCUSED panel -->
+        <!--viewdetails UNFOCUSED panel -->
         <include name="SkinSettings_ColorButton" content="SkinSettings_ColorButton">
             <param name="id" value="31472" />
             <param name="label" value="$LOCALIZE[31472] (Unfocused Color)" />

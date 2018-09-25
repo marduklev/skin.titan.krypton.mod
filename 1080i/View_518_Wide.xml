@@ -3,7 +3,8 @@
 <includes>
     
     <variable name="WideView_LargeEpisodeLabel">
-        <value condition="!Integer.IsGreater(ListItem.Episode,9) + !String.IsEmpty(ListItem.Episode)">$INFO[ListItem.Episode,0]</value>
+		<value condition="Integer.IsLess(ListItem.Season,1) + !String.IsEmpty(ListItem.Episode) + !Integer.IsGreater(ListItem.Episode,9) + !String.IsEmpty(ListItem.Episode)">$INFO[ListItem.Episode]</value>
+		<value condition="!Integer.IsGreater(ListItem.Episode,9) + !String.IsEmpty(ListItem.Episode)">$INFO[ListItem.Episode,0]</value>
         <value condition="Integer.IsGreater(ListItem.Episode,9) + !String.IsEmpty(ListItem.Episode)">$INFO[ListItem.Episode]</value>
     </variable>
 	<variable name="WideView_LargeSeasonLabel">

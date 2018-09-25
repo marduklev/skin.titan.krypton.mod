@@ -76,15 +76,15 @@
 	</variable>
 	
 	<variable name="value_subheader">
-        <value condition="window.isactive(DialogVideoInfo.xml) + !String.IsEmpty(ListItem.Season) + Container.Content(episodes)">$LOCALIZE[20373] $INFO[ListItem.Season] $LOCALIZE[20452] $INFO[ListItem.Episode]: $INFO[ListItem.Title]</value>
+        <value condition="window.isactive(DialogVideoInfo.xml) + !String.IsEmpty(ListItem.Season) + Container.Content(episodes)">$LOCALIZE[20373] [COLOR=$INFO[Skin.String(SecondaryHeaderTextColor)]]$INFO[ListItem.Season][/COLOR] $LOCALIZE[20452] [COLOR=$INFO[Skin.String(SecondaryHeaderTextColor)]]$INFO[ListItem.Episode]: $INFO[ListItem.Title][/COLOR]</value>
 		<value condition="window.isactive(DialogVideoInfo.xml) + !String.IsEmpty(ListItem.Season) + !String.IsEqual(ListItem.Title,ListItem.Label)">$INFO[ListItem.Label]</value>
         <value condition="window.isactive(DialogVideoInfo.xml)">$INFO[ListItem.TagLine]</value>
         <value condition="Window.IsActive(loginscreen)">$INFO[Control.GetLabel(2)]</value>
         <value condition="Skin.String(infoline) + !Skin.String(infoline,auto)">$VAR[infolinevar]</value>
-        <value condition="String.IsEqual(Container.FolderPath,videodb://movies/titles/) + Container.HasFolders">$LOCALIZE[20342]: $INFO[Window(Home).Property(Movies.Count)] • $LOCALIZE[16101]: $INFO[Window(Home).Property(Movies.UnWatched)] • $LOCALIZE[20434]: $INFO[Window(Home).Property(SkinHelper.TotalMovieSets)] ($INFO[Window(Home).Property(SkinHelper.TotalMoviesInSets)] $LOCALIZE[20342])</value>
-        <value condition="String.IsEqual(Container.FolderPath,videodb://movies/titles/)">$LOCALIZE[20342]: $INFO[Window(Home).Property(Movies.Count)] • $LOCALIZE[16102]: $INFO[Window(Home).Property(Movies.Watched)] • $LOCALIZE[16101]: $INFO[Window(Home).Property(Movies.UnWatched)] • $INFO[Control.GetLabel(3)]</value>
+        <value condition="String.IsEqual(Container.FolderPath,videodb://movies/titles/) + Container.HasFolders">$LOCALIZE[20342]: [COLOR=$INFO[Skin.String(SecondaryHeaderTextColor)]]$INFO[Window(Home).Property(Movies.Count)][/COLOR] • $LOCALIZE[16101]: [COLOR=$INFO[Skin.String(SecondaryHeaderTextColor)]]$INFO[Window(Home).Property(Movies.UnWatched)][/COLOR] • $LOCALIZE[20434]: [COLOR=$INFO[Skin.String(SecondaryHeaderTextColor)]]$INFO[Window(Home).Property(SkinHelper.TotalMovieSets)] ($INFO[Window(Home).Property(SkinHelper.TotalMoviesInSets)] $LOCALIZE[20342])[/COLOR]</value>
+        <value condition="String.IsEqual(Container.FolderPath,videodb://movies/titles/)">$LOCALIZE[20342]: [COLOR=$INFO[Skin.String(SecondaryHeaderTextColor)]]$INFO[Window(Home).Property(Movies.Count)][/COLOR] • $LOCALIZE[16102]: [COLOR=$INFO[Skin.String(SecondaryHeaderTextColor)]]$INFO[Window(Home).Property(Movies.Watched)][/COLOR] • $LOCALIZE[16101]: [COLOR=$INFO[Skin.String(SecondaryHeaderTextColor)]]$INFO[Window(Home).Property(Movies.UnWatched)][/COLOR] • $INFO[Control.GetLabel(3)]</value>
         
-        <value condition="String.IsEqual(Container.FolderPath,videodb://tvshows/titles/)">$LOCALIZE[20343]: $INFO[Window(Home).Property(TVShows.Count)] • $LOCALIZE[20360]: $INFO[Window(Home).Property(Episodes.Count)] • $LOCALIZE[16101]: $INFO[Window(Home).Property(Episodes.UnWatched)] • $INFO[Control.GetLabel(3)]</value>
+        <value condition="String.IsEqual(Container.FolderPath,videodb://tvshows/titles/)">$LOCALIZE[20343]: [COLOR=$INFO[Skin.String(SecondaryHeaderTextColor)]]$INFO[Window(Home).Property(TVShows.Count)][/COLOR] • $LOCALIZE[20360]: [COLOR=$INFO[Skin.String(SecondaryHeaderTextColor)]]$INFO[Window(Home).Property(Episodes.Count)][/COLOR] • $LOCALIZE[16101]: [COLOR=$INFO[Skin.String(SecondaryHeaderTextColor)]]$INFO[Window(Home).Property(Episodes.UnWatched)][/COLOR] • $INFO[Control.GetLabel(3)]</value>
         
         <value condition="[Window.IsActive(skinsettings) | Window.IsActive(Custom_SkinSettings.xml)]">$VAR[value_header_skinsettings]</value>
 		<value condition="Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml)">[CR]</value>
@@ -95,7 +95,7 @@
 		<value condition="[window.isactive(tvrecordings) | window.isactive(tvtimers)] + !String.IsEmpty(PVR.backenddiskspace) + Skin.HasSetting(EnableTouchSupport)">$INFO[Pvr.backenddiskspace]</value>
 		<value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.ContentHeader)) + !String.IsEqual(Container.TotalUnwatched,0)">$INFO[Window(Home).Property(SkinHelper.ContentHeader)]$INFO[Container.TotalUnwatched, • , $LOCALIZE[16101]] $INFO[Control.GetLabel(3),• ]</value>
         <value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.ContentHeader))">$INFO[Window(Home).Property(SkinHelper.ContentHeader)] $INFO[Control.GetLabel(3),• ]</value>
-        <value condition="window.isactive(DialogVideoInfo.xml) + !String.IsEmpty(ListItem.Season)">$LOCALIZE[20373] $INFO[ListItem.Season] $LOCALIZE[20452] $INFO[ListItem.Episode]: $INFO[ListItem.Title]</value>
+        <value condition="window.isactive(DialogVideoInfo.xml) + !String.IsEmpty(ListItem.Season)">$LOCALIZE[20373] [COLOR=$INFO[Skin.String(SecondaryHeaderTextColor)]]$INFO[ListItem.Season][/COLOR] $LOCALIZE[20452] [COLOR=$INFO[Skin.String(SecondaryHeaderTextColor)]]$INFO[ListItem.Episode]: $INFO[ListItem.Title][/COLOR]</value>
 		<value condition="window.isactive(DialogVideoInfo.xml)">$INFO[ListItem.TagLine]</value>
 		<value condition="!String.IsEmpty(Container.NumItems) + ![Window.IsActive(tvchannels) | Window.IsActive(radiochannels)] + !String.IsEqual(Container.TotalUnwatched,0)">$INFO[Container.NumItems,, $LOCALIZE[31034]]$INFO[Container.TotalUnwatched, • , $LOCALIZE[16101]] $INFO[Control.GetLabel(3),• ]</value>
         <value condition="!String.IsEmpty(Container.NumItems) + ![Window.IsActive(tvchannels) | Window.IsActive(radiochannels)]">$INFO[Container.NumItems,, $LOCALIZE[31034]] $INFO[Control.GetLabel(3),• ]</value>
@@ -1306,7 +1306,7 @@
         <value>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</value>
     </variable>
     
-    <variable name="musicrating_stars">
+    <variable name="musicrating_stars"><!-- check, https://forum.kodi.tv/showthread.php?tid=250862&pid=2179671#pid2179671 -->
         <value condition="!String.IsEmpty(ListItem.StarRating)">$INFO[ListItem.StarRating,leftrating/]</value>
         <value condition="!String.IsEmpty(ListItem.UserRating)">$INFO[ListItem.UserRating,rating/,.png]</value>
         <value condition="!String.IsEmpty(ListItem.Rating)">$INFO[ListItem.Rating,rating/,.png]</value>
@@ -1321,5 +1321,4 @@
         <value condition="!String.IsEmpty(MusicPlayer.StarRating)">$INFO[MusicPlayer.StarRating,leftrating/]</value>
         <value condition="!String.IsEmpty(MusicPlayer.UserRating)">$INFO[MusicPlayer.UserRating,rating/,.png]</value>
     </variable>
-     	 
 </includes>

@@ -145,7 +145,7 @@
 							<height>80</height>
 							<label>$VAR[View_Item_Header]</label>
 							<font>Bold32</font>
-                            
+                           
 							<textcolor>$INFO[Skin.String(ViewDetailsHighlightTextColor)]</textcolor>
 							<aligny>top</aligny>
 						</control>

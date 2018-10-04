@@ -45,7 +45,7 @@
                  </control>			
 				
 				<!-- MOVIE CAst, bit small, but ...-->
-				<control type="panel" id="353"> <!-- new id [351 / kodi 50] ? ,check if i can work with params, reduse TV/movie into 1 group-->
+				<control type="panel" id="353">
 					<top>710</top>
 					<left>700</left>
 					<height>200</height>
@@ -268,7 +268,16 @@
 							<visible>String.IsEqual(ListItem.DBTYPE,tvshow) | String.IsEqual(ListItem.DBTYPE,movie)</visible>
 							<visible>String.IsEmpty(Window.Property(AdditionalInfo))</visible>							
 						</control>
-						
+						<control type="button" id="204">
+							<!-- stop trailer -->
+							<label>Stop</label>
+							<width>285</width>
+							<height>40</height>
+							<align>center</align>
+							<textoffsetx>0</textoffsetx>
+							<onclick>Stop</onclick>
+                            <visible>Player.HasVideo</visible>
+						</control>
 						<control type="button" id="114">
 							<!--Cast Button-->
 							<label>206</label>
@@ -2145,7 +2154,29 @@
                                 <radioheight>37</radioheight>
                                <!-- <onclick>AlarmClock(focus_delay,SetFocus(96),00:00,silent)</onclick> -->
                             </control>
-
+							<control type="radiobutton" id="204">
+								<label>Stop</label>
+								<visible>Player.HasVideo</visible>
+								<width>550</width>
+								<height>65</height>
+								<aligny>center</aligny>
+								<align>left</align>
+								<textoffsetx>50</textoffsetx>
+								<textoffsety>8</textoffsety>
+								<font>Reg30</font>
+								<textcolor>$INFO[Skin.String(NetflixPrimaryTextColor)]</textcolor>
+								<focusedcolor>$INFO[Skin.String(NetflixPrimaryTextColor)]</focusedcolor>
+								<onclick>Stop</onclick>
+								<texturefocus colordiffuse="$INFO[Skin.String(NetflixPrimaryTextColor)]">netflix/border_netflix.png</texturefocus>
+								<texturenofocus></texturenofocus>
+								<textureradioonfocus colordiffuse="$INFO[Skin.String(NetflixPrimaryTextColor)]">dialogs/videoinfo/tvstudio-icon.png</textureradioonfocus>
+								<textureradioofffocus colordiffuse="$INFO[Skin.String(NetflixPrimaryTextColor)]">dialogs/videoinfo/tvstudio-icon.png</textureradioofffocus>
+								<textureradioonnofocus colordiffuse="$INFO[Skin.String(NetflixPrimaryTextColor)]">dialogs/videoinfo/tvstudio-icon.png</textureradioonnofocus>
+								<textureradiooffnofocus colordiffuse="$INFO[Skin.String(NetflixPrimaryTextColor)]">dialogs/videoinfo/tvstudio-icon.png</textureradiooffnofocus>
+								<radioposx>5</radioposx>
+								<radioposy>0</radioposy>
+								<radiowidth>42</radiowidth>
+							</control>
                             <!-- Rate this title -->
                             <control type="radiobutton" id="99999">
                                 <!-- localize -->

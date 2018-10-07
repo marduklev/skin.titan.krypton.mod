@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--Titan-->
-<includes>
-	
+<includes>	
 	<!-- Footer -->
 	<include name="Footer">
 		<visible>![Control.IsVisible(523) | Control.IsVisible(525) | Control.IsVisible(527)]</visible>
@@ -100,7 +99,7 @@
     </variable>
     <variable name="AdvancedRatings_TextColor">
 		<value condition="Window.IsVisible(movieinformation) + !Skin.HasSetting(UseNetflixInfoDialog)">$INFO[Skin.String(ViewDetailsTextColor)]</value>
-		<value condition="[Control.IsVisible(527) | Control.IsVisible(523) | Control.IsVisible(525) | [Control.IsVisible(526) + Skin.HasSetting(View526_DisableFanArt) + Skin.HasSetting(View_526_nofooterbar)]] | [Window.IsActive(Home) + Skin.String(HomeLayout, netflix2)] | [Window.IsVisible(movieinformation) + Skin.HasSetting(UseNetflixInfoDialog)]">$INFO[Skin.String(RatingsLogoColor)]</value> <!-- default  $INFO[Skin.String(ViewDetailsTextColor)] -->       
+		<value condition="[Control.IsVisible(523) | Control.IsVisible(525) | [Control.IsVisible(526) + Skin.HasSetting(View526_DisableFanArt) + Skin.HasSetting(View_526_nofooterbar)] | [Control.IsVisible(527) + Skin.HasSetting(View527_DisableFanArt)]] | [Window.IsActive(Home) + Skin.String(HomeLayout, netflix2)] | [Window.IsVisible(movieinformation) + Skin.HasSetting(UseNetflixInfoDialog)]">$INFO[Skin.String(RatingsLogoColor)]</value> <!-- default  $INFO[Skin.String(ViewDetailsTextColor)] -->       
 		<value condition="Skin.String(FooterTextColor) + !Skin.String(FooterPanelColor, None)">$INFO[Skin.String(FooterTextColor)]</value>
         <value>ffffffff</value>
     </variable>
@@ -564,7 +563,7 @@
                 <label>$INFO[ListItem.label]</label>
                 <visible>!Control.IsVisible(884)</visible>
                 <scroll>true</scroll>
-                <visible>![Window.IsActive(Videos) | Window.IsActive(videoplaylist)] | ListItem.IsCollection | Skin.HasTheme(classic) | String.IsEmpty(ListItem.VideoAspect) | Skin.String(mediaflagsstyle,disabled) | Skin.String(mediaflagsstyle,classic)</visible>
+                <visible>![Window.IsActive(Videos) | Window.IsActive(videoplaylist)] | ListItem.IsCollection | Skin.HasTheme(classic) | String.IsEmpty(ListItem.VideoAspect) | Skin.String(mediaflagsstyle,disabled) | Skin.String(mediaflagsstyle,classic) | String.IsEmpty(Control.GetLabel(884)</visible>
             </control>
             <control type="label">
                 <visible>Container.Content(songs)</visible>
@@ -762,7 +761,7 @@
 			<width>180</width>
 			<height>55</height>
 			<aspectratio align="left" aligny="center">keep</aspectratio>
-			<colordiffuse>$INFO[Skin.String(ViewNetfixHighlightTextColor)]</colordiffuse>
+			<colordiffuse>$VAR[NetfixViewHighlightTextColor]</colordiffuse>
 			<texture background="true">$VAR[rating_value_texture]</texture>
 		</control>
 	</include>	
@@ -791,8 +790,7 @@
 	</variable>	
 	<variable name="image_imdb250">
 		<value condition="Skin.HasSetting(EnableWhiteRatingInFooter)">flags/white/white_imdb_logo_250.png</value>   
-		<value condition="!Skin.HasSetting(EnableWhiteRatingInFooter)">flags/imdb_logo_250.png</value>
-	  
+		<value condition="!Skin.HasSetting(EnableWhiteRatingInFooter)">flags/imdb_logo_250.png</value>  
 	</variable>
 	<variable name="image_tvdb">
 		<value condition="Skin.HasSetting(EnableWhiteRatingInFooter)">flags/white/white_tvdbtrans.png</value>   
@@ -817,16 +815,11 @@
 	<variable name="image_metacritic">
 		<value condition="Skin.HasSetting(EnableWhiteRatingInFooter)">flags/white/white_metacritic.png</value>   
 		<value condition="!Skin.HasSetting(EnableWhiteRatingInFooter)">flags/metacritic.png</value>     
-    </variable>
-	 
-	<!-- var image studiologo_image,re check  
+    </variable>	 
 	<variable name="image_StudioLogo">
 		<value condition="String.IsEqual(Skin.String(studiologos.path),resource://resource.images.studios.coloured/)">$INFO[ListItem.Studio,resource://resource.images.studios.coloured/,.png]</value>
 		<value condition="String.IsEqual(Skin.String(studiologos.path),resource://resource.images.studios.white/)">$INFO[ListItem.Studio,resource://resource.images.studios.white/,.png]</value>
 		<value condition="String.IsEqual(Skin.String(studiologos.path),resource://resource.images.studios.squarehd/)">$INFO[ListItem.Studio,resource://resource.images.studios.squarehd/,.png]"</value>		
-		<value>$INFO[Window(home).Property(SkinHelper.ListItem.StudioLogo)]</value>				
-	</variable>  -->  
-	<variable name="image_StudioLogo">
 		<value condition="!String.IsEmpty(Skin.String(studiologos.path))">$INFO[ListItem.Studio,$INFO[Skin.String(studiologos.path)],.png]</value>
 		<value>$INFO[Window(home).Property(SkinHelper.ListItem.StudioLogo)]</value>				
 	</variable>
@@ -859,5 +852,4 @@
             </control>
         </control>
     </include>
-
 </includes>

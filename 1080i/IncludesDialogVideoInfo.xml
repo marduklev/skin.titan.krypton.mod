@@ -260,7 +260,7 @@
 							<textoffsetx>0</textoffsetx>
 							<label>20410</label>
 							<onclick condition="!Player.HasVideo + String.IsEqual(ListItem.DBTYPE,movie)">PlayMedia($INFO[ListItem.Trailer],1)</onclick> <!--sometimes huge delay Playmedia($INFO[Window(Home).Property(SkinHelper.ListItem.Trailer)],1) ,faster but dont get all  PlayMedia($INFO[ListItem.Trailer],1) -->    
-							<onclick condition="!Player.HasVideo + !String.IsEqual(ListItem.DBTYPE,movie)">RunScript(script.skin.helper.service,action=playtraileryoutube,mode=windowed,title=$INFO[ListItem.Title],local=true)</onclick> <!--sometimes huge delay Playmedia($INFO[Window(Home).Property(SkinHelper.ListItem.Trailer)],1) ,faster but dont get all  PlayMedia($INFO[ListItem.Trailer],1) -->    												
+							<onclick condition="!Player.HasVideo + !String.IsEqual(ListItem.DBTYPE,movie)">RunScript(script.skin.helper.service,action=playtraileryoutube,title=$INFO[ListItem.Title],local=true)</onclick> <!--sometimes huge delay Playmedia($INFO[Window(Home).Property(SkinHelper.ListItem.Trailer)],1) ,faster but dont get all  PlayMedia($INFO[ListItem.Trailer],1) -->    												
 							<altlabel>244</altlabel>
                             <usealttexture>Player.HasVideo</usealttexture>
                             <onclick condition="Player.HasVideo">FullScreen</onclick>
@@ -565,8 +565,6 @@
 						<visible>String.IsEmpty(Window.Property(AdditionalInfo))</visible>
 						<visible>!Window.IsActive(script-ExtendedInfo Script-DialogVideoInfo.xml) + !Window.IsActive(script-ExtendedInfo Script-DialogInfo.xml)</visible>
 						<include>animation_window_open_close</include>
-						
-						
 						<control type="grouplist">
 							<posx>65</posx>
 							<posy>170</posy>
@@ -585,8 +583,6 @@
 								<align>justify</align>
 								<font>Bold24</font>
 							</control>
-							
-							
 							<control type="group">							
 								<!--Premiered or Year -->
 								<width>950</width>
@@ -1187,7 +1183,7 @@
 							<left>700</left>
 							<top>455</top>
 							<width>960</width>
-                            <height>540</height>			<!-- (720 * 0.75) -->
+                            <height>540</height>
 							<visible>Player.HasVideo</visible>						
 							<control type="image">
 								<aligny>bottom</aligny>
@@ -2137,8 +2133,8 @@
                                 <focusedcolor>$INFO[Skin.String(NetflixPrimaryTextColor)]</focusedcolor>
 								<label>$VAR[Trailer_fs]</label>
 								<onclick condition="!Player.HasVideo + String.IsEqual(ListItem.DBTYPE,movie)">PlayMedia($INFO[ListItem.Trailer],1)</onclick>						
-								<onclick condition="!Player.HasVideo + !String.IsEqual(ListItem.DBTYPE,movie)">RunScript(script.skin.helper.service,action=playtraileryoutube,mode=windowed,title=$INFO[ListItem.Title],local=true)</onclick>  							
-								<onclick condition="!Player.HasVideo + [String.IsEmpty(ListItem.Trailer) + String.IsEqual(ListItem.DBTYPE,movie)]">RunScript(script.skin.helper.service,action=playtraileryoutube,mode=windowed,title=$INFO[ListItem.Title],local=true)</onclick>								
+								<onclick condition="!Player.HasVideo + !String.IsEqual(ListItem.DBTYPE,movie)">RunScript(script.skin.helper.service,action=playtraileryoutube,title=$INFO[ListItem.Title],local=true)</onclick>  							
+								<onclick condition="!Player.HasVideo + [String.IsEmpty(ListItem.Trailer) + String.IsEqual(ListItem.DBTYPE,movie)]">RunScript(script.skin.helper.service,action=playtraileryoutube,title=$INFO[ListItem.Title],local=true)</onclick>								
 								<onclick condition="Player.HasVideo">FullScreen</onclick>
 								<onclick condition="Player.HasVideo">SetProperty(BaseWindow,InfoDialog,Home)</onclick>
                                 <onclick condition="Player.HasVideo">SetProperty(TrailerPlaying,fullscreen,home)</onclick>                                
@@ -2152,7 +2148,6 @@
                                 <radioposy>0</radioposy>
                                 <radiowidth>42</radiowidth>
                                 <radioheight>37</radioheight>
-                               <!-- <onclick>AlarmClock(focus_delay,SetFocus(96),00:00,silent)</onclick> -->
                             </control>
 							<control type="radiobutton" id="204">
 								<label>Stop</label>
@@ -2176,7 +2171,7 @@
 								<radioposx>5</radioposx>
 								<radioposy>0</radioposy>
 								<radiowidth>42</radiowidth>
-							</control>
+							</control>	   
                             <!-- Rate this title -->
                             <control type="radiobutton" id="99999">
                                 <!-- localize -->

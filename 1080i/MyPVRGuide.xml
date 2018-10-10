@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--Titan-->
 <window>
-    <defaultcontrol always="true">11</defaultcontrol>
+    <defaultcontrol always="true">10</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
 	<views>10,11,12,13</views>
     <menucontrol>9000</menucontrol>
@@ -22,7 +22,7 @@
             </control>
 		</control>
          <include condition="!String.IsEmpty(Window(home).Property(pvrGuideOnFullscreenVideo))">NowPlayingBackground</include>
-         <!--Hidden-->
+        <!--Hidden-->
         <control type="label" id="29">
             <description>Empty so we can pass the values up one level</description>
             <visible>False</visible>

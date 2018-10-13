@@ -1158,6 +1158,7 @@
 					<align>left</align>
 					<font>Light20</font>
 					<textcolor>white</textcolor>
+					<shadowcolor>-</shadowcolor>			
 					<label>$INFO[Player.Time]</label>
 					<visible>!String.IsEqual(Window(Home).Property(subtitlemenu), show)</visible>
 				</control>
@@ -1180,7 +1181,7 @@
 			<!--Clock-->
             <control type="label">
                 <right>20</right>
-				<posy>-35</posy>
+				<posy>20</posy>
 				<width>400</width>
 				<height>100</height>
 				<align>right</align>
@@ -1194,7 +1195,7 @@
 			<!-- SHOWS END TIME RIGHT -->
 		    <control type="label">
 				<right>23</right>
-				<posy>40</posy>		
+				<posy>100</posy>		
 				<width>890</width>
 				<align>right</align>
 				<font>Reg32</font>		
@@ -3182,7 +3183,7 @@
 			<control type="image">
 				<width>100%</width>
 				<height>100%</height>
-				<texture border="15">overlay/Vignette.png</texture>
+				<texture border="15">special://home/addons/resource.images.backgroundoverlays.basic/resources/Vignette.png</texture>
 				<colordiffuse>$INFO[Skin.String(OSDPanelColor)]</colordiffuse>
 			</control>
 			<!--Video Cover-->

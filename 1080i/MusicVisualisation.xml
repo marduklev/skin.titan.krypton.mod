@@ -10,7 +10,6 @@
             <visible>[!Control.IsVisible(3333) | String.IsEmpty(Control.GetLabel(3333))] + [!Control.IsVisible(3334) | String.IsEmpty(Control.GetLabel(3334))]</visible>
 		</control>
          <include>NowPlayingBackground</include>
-         
          <!-- lyrics overlay -->
          <control type="group">
             <visible>!Skin.HasSetting(DisableLyricsOverlay) + Window.IsActive(script-cu-lrclyrics-main.xml)</visible>

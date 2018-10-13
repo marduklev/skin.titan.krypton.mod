@@ -3,7 +3,7 @@
     <include file="Defaults.xml" />
     <include file="IncludesVariables.xml" />
 	<include file="IncludesDialogVideoInfo.xml" />
-	<include file="Mod_Progress_Variables_Netflix.xml" />							   			
+	<include file="Mod_Progress_Variables_Netflix.xml" />
     <include file="IncludesHomeTitanTiles.xml" />
     <include file="IncludesHomeWidgets.xml" />
 	<include file="IncludesHomeTitanTilesSubMenu.xml" />
@@ -45,7 +45,7 @@
     <include file="View_523_Netflix.xml" />
 	<include file="View_525_Netflix_Landscape.xml" />
 	<include file="View_526_Wide_Netflix.xml" />
-	<include file="View_527_TSE.xml" />										 
+	<include file="View_527_TSE.xml" />
     <include file="IncludesViews.xml" />
     <include file="IncludesMediaFlags.xml" />
     <include file="IncludesViewsLayoutPoster.xml" />
@@ -107,7 +107,7 @@
         <texturenofocus />
         <label>-</label>
         <font>-</font>
-    </include>						  
+    </include>
     <include name="DimensionsFullscreen">
         <posx>0</posx>
         <posy>0</posy>
@@ -482,7 +482,7 @@
             <onclick>SendClick(312)</onclick>
             <textoffsetx>10</textoffsetx>
             <font>Reg22</font>
-            <label>$ADDON[script.skinshortcuts 32044] >></label>
+            <label>$ADDON[script.skinshortcuts 32044]</label>
         </control>
         <control type="button" id="900$PARAM[widgetpos]2">
             <description>widget style</description>

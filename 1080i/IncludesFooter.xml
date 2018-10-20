@@ -105,7 +105,7 @@
     </variable>
 	<variable name="FooterImageColor">
 		<value condition="Skin.HasSetting(EnableWhiteRatingInFooter)">$VAR[AdvancedRatings_TextColor]</value>
-		<value condition="!Skin.HasSetting(EnableWhiteRatingInFooter)">None</value>
+		<value condition="!Skin.HasSetting(EnableWhiteRatingInFooter)">-</value>
 	 </variable>
     
     <!-- includes layout ratings / studio -->

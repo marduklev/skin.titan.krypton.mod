@@ -1175,7 +1175,7 @@
                                 <shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
                                 <scroll>false</scroll>
                                 <visible>!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.airdaytime.label)) + !String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.NextEpisode.Label))</visible> <!-- !String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.NextEpisode.Label)) -->
-                            </control>				
+                            </control>
                         </control>
                         
 						<!-- trailer window -->
@@ -1184,15 +1184,15 @@
 							<top>455</top>
 							<width>960</width>
                             <height>540</height>
-							<visible>Player.HasVideo</visible>						
+							<visible>Player.HasVideo</visible>
 							<control type="image">
 								<aligny>bottom</aligny>
 								<texture border="15">diffuse/bgpanel.png</texture>
 								<colordiffuse>ff000000</colordiffuse>
-							</control>						
-							<control type="videowindow">								
 							</control>
-						</control>					
+							<control type="videowindow">
+							</control>
+						</control>
                     </control>
 					
                     <!-- Large Plot , not needed, but keep-->
@@ -1463,7 +1463,7 @@
 		</control>
 	</include>
 	
-	<include name ="NetflixInfo">
+	<include name="NetflixInfo">
 		<control type="group">
 			<visible>![Skin.HasSetting(UseExtendedInfoDialog) + System.HasAddon(script.extendedinfo)]</visible>
 			<!-- base bg ,check unsure if half cut is that great-->
@@ -1488,9 +1488,10 @@
 				<!-- trailer video preview -->
 				<control type="group">
 					<width>100%</width>
-					<height>100%</height>					
+					<height>100%</height>
 					<animation effect="fade" start="100" end="0" delay="200" time="2000" pulse="false" condition="!Player.HasVideo">Conditional</animation>	
-					<control type="videowindow"></control>
+					<control type="videowindow">
+					</control>
 					<control type="image">
 						<texture flipx="true" colordiffuse="$VAR[Netflix2_PanelColor]" border="15">overlay/gradient_overlay_info.png</texture>
 					</control>
@@ -2163,7 +2164,7 @@
 								<focusedcolor>$INFO[Skin.String(NetflixPrimaryTextColor)]</focusedcolor>
 								<onclick>Stop</onclick>
 								<texturefocus colordiffuse="$INFO[Skin.String(NetflixPrimaryTextColor)]">netflix/border_netflix.png</texturefocus>
-								<texturenofocus></texturenofocus>
+								<texturenofocus>-</texturenofocus>
 								<textureradioonfocus colordiffuse="$INFO[Skin.String(NetflixPrimaryTextColor)]">dialogs/videoinfo/tvstudio-icon.png</textureradioonfocus>
 								<textureradioofffocus colordiffuse="$INFO[Skin.String(NetflixPrimaryTextColor)]">dialogs/videoinfo/tvstudio-icon.png</textureradioofffocus>
 								<textureradioonnofocus colordiffuse="$INFO[Skin.String(NetflixPrimaryTextColor)]">dialogs/videoinfo/tvstudio-icon.png</textureradioonnofocus>

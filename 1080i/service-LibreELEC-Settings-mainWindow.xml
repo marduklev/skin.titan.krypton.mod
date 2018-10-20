@@ -31,7 +31,7 @@
 			
 			<!-- close dialog -->
 			<control type="button">
-				<label></label>
+				<label>-</label>
 				<include>animation_fade_visible_hidden</include>
 				<width>60</width>
 				<height>60</height>
@@ -1317,7 +1317,7 @@
 				<orientation>horizontal</orientation>
 				<control type="button" id="1504">
 					<width>300</width>
-					<label></label>
+					<label>-</label>
 					<height>80</height>
 					<align>center</align>
 					<include>DialogButtonOther</include>

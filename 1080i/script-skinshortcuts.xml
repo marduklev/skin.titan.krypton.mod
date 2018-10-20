@@ -134,7 +134,7 @@
 					
 					<!--blank label-->
 					<control type="label">
-						<label></label>
+						<label>-</label>
 						<font>Reg26</font>
 						<scroll>false</scroll>
 						<height>30</height>
@@ -302,7 +302,7 @@
 					
 					<!--blank label-->
 					<control type="label">
-						<label></label>
+						<label>-</label>
 						<font>Reg26</font>
 						<scroll>false</scroll>
 						<height>25</height>
@@ -787,7 +787,7 @@
                 <control type="label" id="9060"> 
 					<width>500</width>
 					<align>center</align>
-					<label></label>
+					<label>-</label>
                     <height>45</height>
 				</control>
                 <control type="button" id="9061"> 

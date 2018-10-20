@@ -103,7 +103,7 @@
 						<posy>0</posy>
 						<width>1100</width>
 						<height>20</height>
-						<label></label>
+						<label>-</label>
 					</control>
 				</control>
 			
@@ -116,7 +116,7 @@
 					<height>149</height>
 					<align>center</align>
 					<aligny>center</aligny>
-					<label></label>
+					<label>-</label>
 					<pulseonselect>false</pulseonselect>
 					<texturefocus colordiffuse="white">home/basichome_left.png</texturefocus>
 					<texturenofocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">home/basichome_left.png</texturenofocus>
@@ -132,7 +132,7 @@
 					<height>149</height>
 					<align>center</align>
 					<aligny>center</aligny>
-					<label></label>
+					<label>-</label>
 					<pulseonselect>false</pulseonselect>
 					<texturefocus colordiffuse="white">home/basichome_right.png</texturefocus>
 					<texturenofocus colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">home/basichome_right.png</texturenofocus>

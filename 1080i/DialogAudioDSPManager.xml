@@ -44,7 +44,7 @@
 				<itemlayout width="440" height="70">
                     <control type="group">
                         <control type="button">
-                            <label></label>
+                            <label>-</label>
                             <width>440</width>
                             <height>60</height>
                         </control>

@@ -585,7 +585,7 @@
                     <textureslidernib colordiffuse="$INFO[Skin.String(OSDProgressBarColor)]">diffuse/seekslider_ball.png</textureslidernib>
                     <textureslidernibfocus>colors/color_white.png</textureslidernibfocus>
                     <visible>Player.Seeking + Player.HasVideo</visible>
-					<!-- not working in music=always stay left- thats why i add  + Player.HasVideo-->
+					<!-- not working in music=always stay left- thats why i add + Player.HasVideo-->
                 </control>
 
 				<!--Process/Seekbar-->
@@ -842,13 +842,12 @@
 					<left>0</left>
 					<top>6</top>
 					<width>45</width>
-					<height>45</height>				
+					<height>45</height>
 					<texture>dialogs/videoinfo/director-icon.png</texture>
 					<colordiffuse>$INFO[Skin.String(OSDPrimaryTextColor)]</colordiffuse>	<!-- $INFO[Skin.String(OSDPrimaryTextColor)] -->
 					<visible>VideoPlayer.Content(movies) | VideoPlayer.Content(episodes)</visible>
-					<visible></visible>										
-					<aspectratio align="left" aligny="top">keep</aspectratio>				
-				</control>					
+					<aspectratio align="left" aligny="top">keep</aspectratio>
+				</control>
 				<control type="label">
 					<visible>Player.HasVideo + !String.IsEmpty(VideoPlayer.Director)</visible>
 					<left>-8</left>
@@ -2035,7 +2034,7 @@
 					<onclick>PlayerControl(Previous)</onclick>
 				</control>
 				<control type="button" id="202">
-					<label></label>
+					<label>-</label>
 					<!--RR-->
 					<!--visible>ControlGroup(20).HasFocus()</visible-->
 					<include>animation_fade_visible_hidden</include>
@@ -2047,8 +2046,8 @@
 					<onclick>PlayerControl(Rewind)</onclick>
 				</control>
 				<control type="togglebutton" id="203">
-					<label></label>
-					<altlabel></altlabel>
+					<label>-</label>
+					<altlabel>-</altlabel>
 					<!--Play Pause-->
 					<!--visible>ControlGroup(20).HasFocus()</visible-->
 					<include>animation_fade_visible_hidden</include>
@@ -2063,7 +2062,7 @@
 					<onclick>PlayerControl(Play)</onclick>
 				</control>
 				<control type="button" id="204">
-					<label></label>
+					<label>-</label>
 					<!--Stop-->
 					<!--visible>ControlGroup(20).HasFocus()</visible-->
 					<include>animation_fade_visible_hidden</include>
@@ -2075,7 +2074,7 @@
 					<onclick>PlayerControl(Stop)</onclick>
 				</control>
 				<control type="button" id="205">
-					<label></label>
+					<label>-</label>
 					<!--FF-->
 					<!--visible>ControlGroup(20).HasFocus()</visible-->
 					<include>animation_fade_visible_hidden</include>
@@ -2224,7 +2223,7 @@
 				<onclick>PlayerControl(Previous)</onclick>
 			</control>
 			<control type="button" id="202">
-				<label></label>
+				<label>-</label>
 				<!--RR-->
 				<visible>!Skin.HasSetting(OSDDisablePlaybackControls)</visible>
 				<include>animation_fade_visible_hidden</include>
@@ -2236,8 +2235,8 @@
 				<onclick>PlayerControl(Rewind)</onclick>
 			</control>
 			<control type="togglebutton" id="203">
-				<label></label>
-				<altlabel></altlabel>
+				<label>-</label>
+				<altlabel>-</altlabel>
 				<!--Play Pause-->
 				<visible>!Skin.HasSetting(OSDDisablePlaybackControls)</visible>
 				<include>animation_fade_visible_hidden</include>
@@ -2252,7 +2251,7 @@
 				<onclick>PlayerControl(Play)</onclick>
 			</control>
 			<control type="button" id="204">
-				<label></label>
+				<label>-</label>
 				<!--Stop-->
 				<visible>!Skin.HasSetting(OSDDisablePlaybackControls)</visible>
 				<include>animation_fade_visible_hidden</include>
@@ -2264,7 +2263,7 @@
 				<onclick>PlayerControl(Stop)</onclick>
 			</control>
 			<control type="button" id="205">
-				<label></label>
+				<label>-</label>
 				<!--FF-->
 				<visible>!Skin.HasSetting(OSDDisablePlaybackControls)</visible>
 				<include>animation_fade_visible_hidden</include>
@@ -2712,7 +2711,7 @@
 				<onup>SetProperty(subtitlemenu,show,Home)</onup>
 				<onup>Control.SetFocus(1401)</onup>
 				
-				<texturefocus colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">$PARAM[iconspath]Subtitles.png</texturefocus>
+				<texturefocus colordiffuse="$INFO[Skin.String(OSDButtonsFocusColor)]">$PARAM[iconspath]subtitles_fo.png</texturefocus>
 				<texturenofocus colordiffuse="$INFO[Skin.String(OSDButtonsColor)]">$PARAM[iconspath]Subtitles.png</texturenofocus>
 				<onclick condition="!VideoPlayer.HasSubtitles">ActivateWindow(SubtitleSearch)</onclick>
 				<onclick condition="!String.IsEqual(Window(Home).Property(subtitlemenu), show) + VideoPlayer.HasSubtitles">SetProperty(subtitlemenu,show,Home)</onclick>
@@ -3381,7 +3380,7 @@
      <variable name="PlayerActionLabel">
 		<value condition="[Player.Paused + Player.Caching] + !Player.Seeking">[B]$LOCALIZE[15107]:[/B] $INFO[Player.CacheLevel]%</value>
 		<value condition="!String.IsEmpty(Player.SeekStepSize) + ![player.forwarding | player.rewinding] + Player.seeking">[B]$LOCALIZE[31255][/B] $INFO[Player.SeekStepSize]</value>
-		<value condition="Player.DisplayAfterSeek  + ![player.forwarding | player.rewinding] + !String.IsEmpty(Player.SeekOffset)">[B]$LOCALIZE[31255][/B] $INFO[Player.SeekOffset]</value>
+		<value condition="Player.DisplayAfterSeek + ![player.forwarding | player.rewinding] + !String.IsEmpty(Player.SeekOffset)">[B]$LOCALIZE[31255][/B] $INFO[Player.SeekOffset]</value>
 		<value condition="Player.seeking">[B]$LOCALIZE[31255][/B] $INFO[Player.SeekTime] - $INFO[Player.Duration]</value>
 		<value condition="player.forwarding2x">[B]$LOCALIZE[31253][/B] x2</value>
 		<value condition="player.forwarding4x">[B]$LOCALIZE[31253][/B] x4</value>
@@ -3400,8 +3399,8 @@
 	 <variable name="PlayerActionLabelSmall">
 		<value condition="[Player.Paused + Player.Caching] + !Player.Seeking">[B]$LOCALIZE[15107]:[/B] $INFO[Player.CacheLevel]%</value>
 		<value condition="!String.IsEmpty(Player.SeekStepSize) + ![player.forwarding | player.rewinding] + Player.seeking">[B]$LOCALIZE[31255][/B] $INFO[Player.SeekStepSize]</value>
-		<value condition="Player.DisplayAfterSeek  + ![player.forwarding | player.rewinding] + !String.IsEmpty(player.chaptercount) + !String.IsEqual(player.chaptercount,00)">$INFO[player.chapter,[B]$LOCALIZE[21396]:[/B] ,]$INFO[player.chaptercount,/,]</value>
-		<value condition="Player.DisplayAfterSeek  + ![player.forwarding | player.rewinding] + !String.IsEmpty(Player.SeekOffset)">[B]$LOCALIZE[31255][/B] $INFO[Player.SeekOffset]</value>
+		<value condition="Player.DisplayAfterSeek + ![player.forwarding | player.rewinding] + !String.IsEmpty(player.chaptercount) + !String.IsEqual(player.chaptercount,00)">$INFO[player.chapter,[B]$LOCALIZE[21396]:[/B] ,]$INFO[player.chaptercount,/,]</value>
+		<value condition="Player.DisplayAfterSeek + ![player.forwarding | player.rewinding] + !String.IsEmpty(Player.SeekOffset)">[B]$LOCALIZE[31255][/B] $INFO[Player.SeekOffset]</value>
 		<value condition="Player.seeking + !String.IsEmpty(player.chaptercount) + !String.IsEqual(player.chaptercount,00)">$INFO[player.chapter,[B]$LOCALIZE[21396]:[/B] ,]$INFO[player.chaptercount,/,]</value>
 		<value condition="Player.seeking">[B]$LOCALIZE[31255][/B] $INFO[Player.SeekTime] - $INFO[Player.Duration]</value>
 		<value condition="player.forwarding2x">[B]$LOCALIZE[31253][/B] x2</value>
@@ -3420,7 +3419,7 @@
 	 <variable name="PlayerActionLabelLarge">
 		<value condition="[Player.Paused + Player.Caching] + !Player.Seeking">[B]$LOCALIZE[15107]:[/B] $INFO[Player.CacheLevel]%</value>
 		<value condition="!String.IsEmpty(Player.SeekStepSize) + ![player.forwarding | player.rewinding] + Player.seeking">[B]$LOCALIZE[31255][/B] $INFO[Player.SeekStepSize]</value>
-		<value condition="Player.DisplayAfterSeek  + ![player.forwarding | player.rewinding] + !String.IsEmpty(Player.SeekOffset)">[B]$LOCALIZE[31255][/B] $INFO[Player.SeekOffset]</value>
+		<value condition="Player.DisplayAfterSeek + ![player.forwarding | player.rewinding] + !String.IsEmpty(Player.SeekOffset)">[B]$LOCALIZE[31255][/B] $INFO[Player.SeekOffset]</value>
 		<value condition="Player.seeking">[B]$LOCALIZE[31255][/B] $INFO[Player.SeekTime] - $INFO[Player.Duration]</value>
 		<value condition="player.forwarding2x">[B]$LOCALIZE[31253][/B] x2</value>
 		<value condition="player.forwarding4x">[B]$LOCALIZE[31253][/B] x4</value>

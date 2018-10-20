@@ -834,7 +834,7 @@
                 <!-- whitespace -->
                 <width>8</width>
                 <height>30</height>
-                <label></label>
+                <label>-</label>
                 <visible>!String.IsEmpty(Control.GetLabel(44224))</visible>
             </control>
 
@@ -858,7 +858,7 @@
                 <!-- whitespace -->
                 <width>8</width>
                 <height>30</height>
-                <label></label>
+                <label>-</label>
                 <visible>!String.IsEmpty(Control.GetLabel(44224))</visible>
                 <visible>!String.StartsWith(ListItem.Path,videodb://movies/sets/)</visible>
             </control>
@@ -884,7 +884,7 @@
                 <!-- whitespace -->
                 <width>8</width>
                 <height>30</height>
-                <label></label>
+                <label>-</label>
                 <visible>!String.IsEmpty(Control.GetLabel(44230))</visible>
                 <visible>!String.StartsWith(ListItem.Path,videodb://movies/sets/)</visible>
             </control>
@@ -910,7 +910,7 @@
                 <!-- whitespace -->
                 <width>8</width>
                 <height>30</height>
-                <label></label>
+                <label>-</label>
                 <visible>!String.IsEmpty(Control.GetLabel(44226)) + !String.StartsWith(Window.Property(xmlfile),My)</visible>
                 <visible>!String.StartsWith(ListItem.Path,videodb://movies/sets/) + !String.Contains(Window(Home).Property(ListItem.Rating),songrating) + ![Window.IsActive(Home) + Skin.String(HomeLayout,netflix2)]</visible>
             </control>
@@ -935,7 +935,7 @@
                 <!-- whitespace -->
                 <width>10</width>
                 <height>30</height>
-                <label></label>
+                <label>-</label>
                 <visible>!String.IsEmpty(Control.GetLabel(44228))</visible>
             </control>
             

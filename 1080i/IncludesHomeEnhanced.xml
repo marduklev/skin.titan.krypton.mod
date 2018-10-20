@@ -213,7 +213,7 @@
 				<visible>String.IsEmpty(Container(300).ListItem.Property(widget)) + String.IsEmpty(Container(300).ListItem.Property(widget.1))</visible>
 				<itemlayout width="360" height="60">
 					<control type="button">
-						<label></label>
+						<label>-</label>
 						<width>337</width>
 						<height>60</height>
 						<font>Reg24</font>
@@ -234,7 +234,7 @@
 				</itemlayout>
 				<focusedlayout width="360" height="60">
 					<control type="button">
-						<label></label>
+						<label>-</label>
 						<width>337</width>
 						<height>60</height>
 						<font>Reg24</font>
@@ -278,8 +278,8 @@
 			</control>
 		</control>
 		
- 		<!--RSS Text without touch-->			
-		<control type="rss">	
+ 		<!--RSS Text without touch-->
+		<control type="rss">
 			<description>RSS Feed</description>
 			<posx>80</posx>
 			<bottom>10</bottom>
@@ -295,7 +295,7 @@
             <visible>[String.IsEmpty(Container(300).ListItem.Property(infoline)) | String.IsEqual(Container(300).ListItem.Property(infoline),none)]</visible>
             <visible>system.getbool(lookandfeel.enablerssfeeds)</visible>
 		</control>
-		<!--RSS Text with touch-->			
+		<!--RSS Text with touch-->
 		<control type="rss">	
 			<description>RSS Feed</description>
 			<posx>315</posx>

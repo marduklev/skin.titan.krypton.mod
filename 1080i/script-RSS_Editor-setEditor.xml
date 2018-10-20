@@ -65,7 +65,7 @@
 				<scrolltime>200</scrolltime>
 				<itemlayout height="65">
 					<control type="button">
-						<label></label>
+						<label>-</label>
 						<width>600</width>
 					</control>
 					<control type="label">
@@ -81,7 +81,7 @@
 				</itemlayout>
 				<focusedlayout height="65">
 					<control type="button">
-						<label></label>
+						<label>-</label>
 						<width>600</width>
 					</control>
 					<control type="label">

@@ -78,7 +78,7 @@
 					<description>Sort asc</description>
 					<include>SideBladeMenuButton</include>
 					<alttexturefocus border="5" colordiffuse="$INFO[Skin.String(ButtonFocusColor)]">colors/color_white.png</alttexturefocus>
-					<alttexturenofocus></alttexturenofocus>
+					<alttexturenofocus>-</alttexturenofocus>
 					<label>584</label>
 					<altlabel>585</altlabel>
 					<usealttexture>Container.SortDirection(Ascending)</usealttexture>

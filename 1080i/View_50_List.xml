@@ -54,13 +54,13 @@
 			
 			 <!--Info-->
             <control type="grouplist">
-                <!--Regie, Duration... Movies, TV-Shows, Sesaons, Music-Videos-->
+                <!--Regie, Duration... Movies, TV-Shows, Sesaons, Music-Videos, why has it actions -->
                 <visible>Container.Content(MusicVideos) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons)</visible>
                          <itemgap>0</itemgap>
                 <onup>500</onup>
                 <ondown>500</ondown>
                 <onleft>100</onleft>
-                <onright></onright>
+                <onright>noop</onright>
                 <orientation>vertical</orientation>
                 <posx>570</posx>
                 <posy>20</posy>
@@ -124,7 +124,7 @@
                 <onup>500</onup>
                 <ondown>500</ondown>
                 <onleft>100</onleft>
-                <onright></onright>
+                <onright>noop</onright>
                 <orientation>vertical</orientation>
                 <control type="label">
                     <posx>0</posx>
@@ -176,7 +176,7 @@
                 <onup>500</onup>
                 <ondown>500</ondown>
                 <onleft>100</onleft>
-                <onright></onright>
+                <onright>noop</onright>
                 <orientation>vertical</orientation>
                 <control type="button">
                     <width>870</width>
@@ -429,7 +429,8 @@
                         <fadetime>400</fadetime>
                         <colordiffuse>list_separator</colordiffuse>
                         <texture>common/separator.png</texture>
-                    </control><control type="image">
+                    </control>
+					<control type="image">
                         <!--Separator-->
                         <posx>1150</posx>
                         <posy>56</posy>

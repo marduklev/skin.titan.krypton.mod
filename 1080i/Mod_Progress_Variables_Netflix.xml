@@ -398,7 +398,7 @@
 		<value condition="[String.IsEqual(ListItem.DBTYPE,song) | String.IsEqual(ListItem.Property(DBTYPE),song)] | [String.IsEqual(ListItem.DBTYPE,musicvideo) | String.IsEqual(ListItem.Property(DBTYPE),musicvideo)]">musicvideo-song :$INFO[Window(Home).Property(ListItem.Artist)]$INFO[ListItem.Title, | ,]$INFO[Window(Home).Property(ListItem.Duration), (, min)]</value> 
 		<!--
 		<value condition="[String.Contains(Control.GetLabel(29475),color_transparent) | !Skin.HasSetting(NoClearLogoNetflix)] + [String.IsEqual(ListItem.DBTYPE,album) | String.IsEqual(ListItem.Property(DBTYPE),album)]">Album :$INFO[Window(Home).Property(ListItem.Artist)]$INFO[Window(Home).Property(ListItem.Year), (,)]$INFO[Window(Home).Property(ListItem.Genre), - ,]</value> 		
-		[!Skin.HasSetting(NoClearLogoNetflix)  | Skin.HasSetting(NoClearLogoNetflix)] + 
+		[!Skin.HasSetting(NoClearLogoNetflix) | Skin.HasSetting(NoClearLogoNetflix)] + 
 		-->
 		<value condition="[String.IsEqual(ListItem.DBTYPE,album) | String.IsEqual(ListItem.Property(DBTYPE),album)]">Album :$INFO[Window(Home).Property(ListItem.Artist)]$INFO[Window(Home).Property(ListItem.Title), - , ]$INFO[Window(Home).Property(ListItem.Year), (,)]$INFO[Window(Home).Property(ListItem.Genre), - ,]</value> 			
 		<value condition="[String.IsEqual(ListItem.DBTYPE,artist) |	String.IsEqual(ListItem.Property(DBTYPE),artist)] + ![String.IsEqual(ListItem.DBTYPE,song) | String.IsEqual(ListItem.Property(DBTYPE),song)]">artist :[B]$INFO[Window(Home).Property(ListItem.Artist)][/B]</value>				
@@ -657,9 +657,9 @@
         <value condition="!String.IsEmpty(ListItem.TagLine)">[B]$INFO[ListItem.TagLine][/B]</value>
         <value condition="!String.IsEmpty(Window(Home).Property(ListItem.TagLine))">[B]$INFO[Window(Home).Property(ListItem.TagLine)][/B]</value>
         <!-- Watch Tag Info -->
-        <value condition="ControlGroup(505).HasFocus() | [String.IsEqual(ListItem.DBTYPE,tvshow)  | String.IsEqual(Window(Home).Property(ListItem.Property(DBTYPE)),tvshow)]">$VAR[WatchNowTagInfo]</value>
+        <value condition="ControlGroup(505).HasFocus() | [String.IsEqual(ListItem.DBTYPE,tvshow) | String.IsEqual(Window(Home).Property(ListItem.Property(DBTYPE)),tvshow)]">$VAR[WatchNowTagInfo]</value>
         <!-- Album/Song Info -->
-        <value condition="[String.IsEqual(ListItem.DBTYPE,album)  | String.IsEqual(Window(Home).Property(ListItem.Property(DBTYPE)),album)]">$INFO[ListItem.Album]</value>
+        <value condition="[String.IsEqual(ListItem.DBTYPE,album) | String.IsEqual(Window(Home).Property(ListItem.Property(DBTYPE)),album)]">$INFO[ListItem.Album]</value>
         <value condition="!String.IsEmpty(ListItem.Artist)">$INFO[ListItem.TrackNumber,#, ]$INFO[ListItem.Title, ","]$INFO[ListItem.Album, (,)]</value>
         <!-- PVR Info -->
         <value condition="String.IsEmpty(ListItem.DBTYPE) + !String.IsEmpty(ListItem.Property(StartDateTime))">$INFO[ListItem.Channel]</value>

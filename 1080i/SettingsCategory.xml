@@ -68,7 +68,7 @@
         </control>
         <control type="button" id="7">
             <description>Default Button</description>
-            <label></label>
+            <label>-</label>
             <font>Reg28</font>
             <align>left</align>
             <height>47</height>

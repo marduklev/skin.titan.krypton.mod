@@ -44,8 +44,8 @@
 					<posy>-48</posy>
 					<width>96</width>
 					<height>48</height>
-					<label></label>
-					<font></font>
+					<label>-</label>
+					<font>-</font>
 					<onclick>PreviousMenu</onclick>
 					<texturefocus>dialogs/trakt/close-fo.png</texturefocus>
 					<texturenofocus>dialogs/trakt/close-nofo.png</texturenofocus>
@@ -63,7 +63,7 @@
 					<textcolor>black</textcolor>
 					<shadowcolor>lightgrey</shadowcolor>
 					<wrapmultiline>true</wrapmultiline>
-					<label></label><!-- this is set from the code -->
+					<label>-</label><!-- this is set from the code -->
 					<align>center</align>
 					<aligny>center</aligny>
 				</control>
@@ -74,7 +74,7 @@
 					<width>360</width>
 					<height>80</height>
 					<font>Bold34</font>
-					<label></label><!-- this is set from the code -->
+					<label>-</label><!-- this is set from the code -->
 					<textcolor>red</textcolor>
 					<shadowcolor>black</shadowcolor>
 					<align>center</align>
@@ -88,7 +88,7 @@
 					<height>80</height>
 					<font>Reg30</font>
 					<wrapmultiline>true</wrapmultiline>
-					<label></label><!-- this is set from the code -->
+					<label>-</label><!-- this is set from the code -->
 					<textcolor>black</textcolor>
 					<shadowcolor>lightgrey</shadowcolor>
 					<align>center</align>

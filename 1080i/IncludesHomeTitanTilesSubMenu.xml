@@ -45,7 +45,7 @@
 				<control type="group">
 					<posy>120</posy>
 					<control type="button">
-						<label></label>
+						<label>-</label>
 						<width>358</width>
 						<height>60</height>
 						<font>Reg24</font>
@@ -70,7 +70,7 @@
 				<control type="group">
 					<posy>120</posy>
 					<control type="button">
-						<label></label>
+						<label>-</label>
 						<width>358</width>
 						<height>60</height>
 						<font>Reg24</font>

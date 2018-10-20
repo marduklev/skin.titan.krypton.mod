@@ -69,7 +69,7 @@
                     <scroll>true</scroll>
                 </control>
                 <control type="label" id="10012">
-                    <label></label>
+                    <label>-</label>
                     <description>Item to Rate Title</description>
                     <posx>867</posx>
                     <posy>114</posy>
@@ -83,7 +83,7 @@
                     <scroll>true</scroll>
                 </control>
                 <control type="label" id="10013">
-                    <label></label>
+                    <label>-</label>
                     <description>Bottom Ratings text</description>
                     <posx>0</posx>
                     <posy>300</posy>
@@ -96,7 +96,7 @@
 					<shadowcolor>grey</shadowcolor>
                 </control>
                 <control type="button">
-                    <label></label>
+                    <label>-</label>
                     <description>Close Window button</description>
                     <posx>804</posx>
                     <posy>-39</posy>
@@ -111,7 +111,7 @@
             <!-- Dialogue Button content -->
             <control type="group" id="10015">
                 <control type="button" id="11030">
-                    <label></label>
+                    <label>-</label>
                     <description>1 Button</description>
                     <posx>120</posx>
                     <posy>195</posy>
@@ -129,7 +129,7 @@
                     <animation effect="zoom" end="115,115" center="auto" time="100">focus</animation>
                 </control>
                 <control type="button" id="11031">
-                    <label></label>
+                    <label>-</label>
                     <description>2 Button</description>
                     <posx>188</posx>
                     <posy>195</posy>
@@ -157,7 +157,7 @@
                     <visible>Control.HasFocus(11030)</visible>
                 </control>
                 <control type="button" id="11032">
-                    <label></label>
+                    <label>-</label>
                     <description>3 Button</description>
                     <posx>255</posx>
                     <posy>195</posy>
@@ -185,7 +185,7 @@
                     <visible>Control.HasFocus(11030)|Control.HasFocus(11031)</visible>
                 </control>
                 <control type="button" id="11033">
-                    <label></label>
+                    <label>-</label>
                     <description>4 Button</description>
                     <posx>322</posx>
                     <posy>195</posy>
@@ -213,7 +213,7 @@
                     <visible>Control.HasFocus(11030)|Control.HasFocus(11031)|Control.HasFocus(11032)</visible>
                 </control>
                 <control type="button" id="11034">
-                    <label></label>
+                    <label>-</label>
                     <description>5 Button</description>
                     <posx>390</posx>
                     <posy>195</posy>
@@ -241,7 +241,7 @@
                     <visible>Control.HasFocus(11030)|Control.HasFocus(11031)|Control.HasFocus(11032)|Control.HasFocus(11033)</visible>
                 </control>
                 <control type="button" id="11035">
-                    <label></label>
+                    <label>-</label>
                     <description>6 Button</description>
                     <posx>458</posx>
                     <posy>195</posy>
@@ -269,7 +269,7 @@
                     <visible>Control.HasFocus(11030)|Control.HasFocus(11031)|Control.HasFocus(11032)|Control.HasFocus(11033)|Control.HasFocus(11034)</visible>
                 </control>
                 <control type="button" id="11036">
-                    <label></label>
+                    <label>-</label>
                     <description>7 Button</description>
                     <posx>525</posx>
                     <posy>195</posy>
@@ -297,7 +297,7 @@
                     <visible>Control.HasFocus(11030)|Control.HasFocus(11031)|Control.HasFocus(11032)|Control.HasFocus(11033)|Control.HasFocus(11034)|Control.HasFocus(11035)</visible>
                 </control>
                 <control type="button" id="11037">
-                    <label></label>
+                    <label>-</label>
                     <description>8 Button</description>
                     <posx>592</posx>
                     <posy>195</posy>
@@ -325,7 +325,7 @@
                     <visible>Control.HasFocus(11030)|Control.HasFocus(11031)|Control.HasFocus(11032)|Control.HasFocus(11033)|Control.HasFocus(11034)|Control.HasFocus(11035)|Control.HasFocus(11036)</visible>
                 </control>
                 <control type="button" id="11038">
-                    <label></label>
+                    <label>-</label>
                     <description>9 Button</description>
                     <posx>660</posx>
                     <posy>195</posy>
@@ -353,7 +353,7 @@
                     <visible>Control.HasFocus(11030)|Control.HasFocus(11031)|Control.HasFocus(11032)|Control.HasFocus(11033)|Control.HasFocus(11034)|Control.HasFocus(11035)|Control.HasFocus(11036)|Control.HasFocus(11037)</visible>
                 </control>
                 <control type="button" id="11039">
-                    <label></label>
+                    <label>-</label>
                     <description>10 Button</description>
                     <posx>728</posx>
                     <posy>195</posy>

@@ -2,7 +2,7 @@
 <!--Titan-->
 <window>   
     <defaultcontrol always="true">9005</defaultcontrol>
-	<onload condition="System.HasAlarm(trailer_delay)">CancelAlarm(trailer_delay,silent)</onload>
+	<onload condition="System.HasAlarm(trailer_delay)">CancelAlarm(trailer_delay,true)</onload>
 	<onload condition="Player.HasVideo + ![VideoPlayer.Content(movies) | VideoPlayer.Content(episodes) | VideoPlayer.Content(musicvideos) | VideoPlayer.Content(livetv)]">SetProperty(TrailerPlaying,windowed,Home)</onload>
 	<onload condition="String.IsEqual(Window(Home).Property(BaseWindow),InfoDialog)">ClearProperty(BaseWindow,Home)</onload>
 	<onunload condition="!String.IsEmpty(Window(Home).Property(TrailerPlaying)) + !String.IsEqual(Window(Home).Property(TrailerPlaying),fullscreen) + !Player.HasVideo">PlayerControl(Stop)</onunload>

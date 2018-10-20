@@ -194,7 +194,7 @@
 				</control>
 				
 				<control type="label" id="12">
-					<label></label>
+					<label>-</label>
 					<!--Object Info RSS-->
 					<description>Header Label</description>
 					<posx>140</posx>

@@ -79,7 +79,7 @@
 				<itemlayout width="545" height="65">
 					<control type="group">
 						<control type="button">
-							<label></label>
+							<label>-</label>
 							<width>545</width>
 							<height>60</height>
 							<font>Reg24</font>
@@ -103,7 +103,7 @@
 				<focusedlayout width="545" height="65">
 					<control type="group">
 						<control type="button">
-							<label></label>
+							<label>-</label>
 							<width>545</width>
 							<height>60</height>
 							<font>Reg24</font>

@@ -130,7 +130,8 @@
                             <control type="image">
                                 <width>100%</width>
                                 <height>60</height>
-                                <texture border="5">diffuse/panel.png</texture><colordiffuse>$INFO[Skin.String(ButtonFocusColor)]</colordiffuse>
+                                <texture border="5">diffuse/panel.png</texture>
+								<colordiffuse>$INFO[Skin.String(ButtonFocusColor)]</colordiffuse>
                             </control>
                             <control type="label">
                                 <posx>20</posx>

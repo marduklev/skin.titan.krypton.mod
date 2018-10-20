@@ -878,13 +878,13 @@
         [Control.IsVisible(504) + Skin.HasSetting(View504_DetailsShowFanart)] |
         [Control.IsVisible(53) + Skin.HasSetting(View53_DetailsShowFanart)]]
         </visible>
-        <visible>![!String.IsEmpty(Window(Home).Property(TrailerPlaying)) + Skin.HasSetting(DetailsAutoTrailer)]</visible>
+        <visible>![!String.IsEmpty(Window(Home).Property(TrailerPlaying)) + Skin.HasSetting(DetailsAutoTrailer)]</visible> <!-- check, search for Property(TrailerPlaying)), need to set for autoplay -->
         <animation effect="slide" end="0,-8" time="0" condition="[Skin.HasSetting(DetailsLeftHidepanel) + !Control.IsVisible(516) + !Control.IsVisible(51) + !Control.IsVisible(504)] | [Skin.HasSetting(View516_HidePanel) + Control.IsVisible(516)] | [Skin.HasSetting(View51_HidePanel) + Control.IsVisible(51)] | [Skin.HasSetting(View504_HidePanel) + Control.IsVisible(504)]">Conditional</animation><posx>50</posx>
         <bottom>13%</bottom>
         <height>736</height>
         <control type="image">
             <texture border="15">diffuse/bgpanel.png</texture>
-            <colordiffuse>$VAR[ViewDetailsFocusColor]</colordiffuse><!-- COLOR CHECK :unsure if i replace as it should be ViewDetailsFocusColor , DEFAULT IS ViewDetailsPanelColor, wich is THE UNFOCUSED PANEL COLOR-->
+            <colordiffuse>$VAR[ViewDetailsFocusColor]</colordiffuse>
             <visible>!Control.IsVisible(522)</visible>
             <visible>[!Skin.HasSetting(DetailsLeftHidepanel) + !Control.IsVisible(516) + !Control.IsVisible(51) + !Control.IsVisible(504)] | [!Skin.HasSetting(View516_HidePanel) + Control.IsVisible(516)] | [!Skin.HasSetting(View51_HidePanel) + Control.IsVisible(51)] | [!Skin.HasSetting(View504_HidePanel) + Control.IsVisible(504)]</visible>
         </control>

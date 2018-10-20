@@ -28,7 +28,7 @@
 		<height>149</height>
 		<align>center</align>
 		<aligny>center</aligny>
-		<label></label>
+		<label>-</label>
 		<pulseonselect>false</pulseonselect>
 		<textcolor fallback="white">$INFO[Skin.String(ButtonTextColor)]</textcolor>
         <focusedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</focusedcolor>
@@ -80,7 +80,7 @@
 		<height>149</height>
 		<align>center</align>
 		<aligny>center</aligny>
-		<label></label>
+		<label>-</label>
 		<pulseonselect>false</pulseonselect>
 		<textcolor fallback="white">$INFO[Skin.String(ButtonTextColor)]</textcolor>
         <focusedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</focusedcolor>
@@ -108,7 +108,7 @@
 </include>
 
 <include name="touchbutton_layout">
-    <label></label>
+    <label>-</label>
     <include>animation_fade_visible_hidden</include>
     <width>60</width>
     <height>60</height>
@@ -311,7 +311,7 @@
 			</focusedlayout>
 			<content>
 				<item id="1">
-					<label></label>
+					<label>-</label>
 					<thumb>-</thumb>
 					<onclick>ClearProperty(ShowViewSubMenu, Home)</onclick>
 					<onclick>ClearProperty(ShowWidget, Home)</onclick>
@@ -338,7 +338,7 @@
 			</focusedlayout>
 			<content>
 				<item id="1">
-					<label></label>
+					<label>-</label>
 					<thumb>-</thumb>
 					<onclick>ClearProperty(ShowViewSubMenu, Home)</onclick>
 					<onclick>ClearProperty(ShowWidget, Home)</onclick>

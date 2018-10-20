@@ -177,7 +177,7 @@
         <disabledcolor>$INFO[Skin.String(GeneralTextColor)]</disabledcolor>
     </include>
 
-    <include name ="textcolorworkaround">
+    <include name="textcolorworkaround">
         <!--hardcoded colors for use in some controls (edit for example) that didn't support dynamic coloring pre Kodi 15.2 -->
         <textcolor>white</textcolor>
         <disabledcolor>grey</disabledcolor>

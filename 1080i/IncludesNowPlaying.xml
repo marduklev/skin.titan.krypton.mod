@@ -7,7 +7,7 @@
             <!--Panel-->
             <visible>!Skin.HasSetting(DisableNowPlayingInfoBar)</visible>
             <visible>Player.HasAudio</visible>
-            <visible>!Window.IsActive(settings) + !Window.IsActive(SettingsCategory.xml)  + !Window.IsActive(systeminfo) + !Window.IsActive(skinsettings) + !Control.IsVisible(57)</visible>
+            <visible>!Window.IsActive(settings) + !Window.IsActive(SettingsCategory.xml) + !Window.IsActive(systeminfo) + !Window.IsActive(skinsettings) + !Control.IsVisible(57)</visible>
             <visible>!Window.IsActive(notification) + !Window.IsActive(extendedprogressdialog) + !Window.IsActive(movieinformation)</visible>
 			<visible>String.IsEmpty(Window(Home).Property(ThemeMediaMB3IsAlive))</visible>
 			<visible>String.IsEmpty(Window(10025).Property(PlayingBackgroundMedia)) + String.IsEmpty(Window(Home).Property(TrailerPlaying))</visible>
@@ -79,7 +79,7 @@
                 <posx>255</posx>
                 <posy>124</posy>
                 <width>285</width>
-                <texturebg></texturebg>
+                <texturebg>-</texturebg>
                 <midtexture border="4">common/progress/ProgressMidSmall.png</midtexture>
                 <info>Player.Progress</info>
                 <visible>true</visible>
@@ -92,7 +92,7 @@
             <!--Panel-->
             <visible>!Skin.HasSetting(DisableNowPlayingInfoBar)</visible>
             <visible>Player.HasVideo</visible>
-            <visible>!Window.IsActive(settings) + !Window.IsActive(SettingsCategory.xml)  + !Window.IsActive(systeminfo) + !Window.IsActive(skinsettings) + !Control.IsVisible(57)</visible>
+            <visible>!Window.IsActive(settings) + !Window.IsActive(SettingsCategory.xml) + !Window.IsActive(systeminfo) + !Window.IsActive(skinsettings) + !Control.IsVisible(57)</visible>
             <visible>!Window.IsActive(notification) + !Window.IsActive(extendedprogressdialog) + !Window.IsActive(movieinformation)</visible>
 			<visible>String.IsEmpty(Window(10025).Property(PlayingBackgroundMedia)) + String.IsEmpty(Window(Home).Property(TrailerPlaying))</visible>
             <posx>590</posx>
@@ -151,7 +151,7 @@
                 <posx>357</posx>
                 <posy>124</posy>
                 <width>285</width>
-                <texturebg></texturebg>
+                <texturebg>-</texturebg>
                 <midtexture border="4">common/progress/ProgressMidSmall.png</midtexture>
                 <info>Player.Progress</info>
                 <visible>true</visible>
@@ -184,9 +184,9 @@
 			<control type="group">
 				<animation effect="slide" end="250,0" delay="0" time="0" condition="Player.HasVideo">conditional</animation>
 				<control type="image">
-					<posx>0</posx>
+					<posx>-250</posx>
 					<posy>-5</posy>
-					<width>100%</width>
+					<width>110%</width>
 					<height>145</height>
 					<texture border="5">diffuse/panel.png</texture>
 					<colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
@@ -208,7 +208,7 @@
 					<width>1150</width>
 					<align>left</align>
 					<font>Bold45</font>
-					<textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
+					<textcolor>$INFO[Skin.String(SecondaryHeaderTextColor)]</textcolor>
 					<label>$VAR[NowPlayingTitle]</label>
 					<scroll>false</scroll>
 				</control>
@@ -316,6 +316,8 @@
 						<texture>colors/color_black.png</texture>
 					</control>
 					<control type="videowindow">
+						<width>285</width>
+						<height>130</height>
 					</control>
 				</control>
 			</control>
@@ -436,7 +438,7 @@
                         <textcolor>$INFO[Skin.String(GeneralTextColor)]</textcolor>
                     </control>
                     <control type="label">
-                        <label></label>
+                        <label>-</label>
                         <visible>!String.Contains(System.Language,German)</visible>
                         <width min="0" max="400">auto</width>
                         <height>50</height>
@@ -479,8 +481,8 @@
                     <onclick>PlayerControl(Previous)</onclick>
                 </control>
                 <control type="togglebutton">
-                    <label></label>
-                    <altlabel></altlabel>
+                    <label>-</label>
+                    <altlabel>-</altlabel>
                     <include>animation_fade_visible_hidden</include>
                     <width>70</width>
                     <height>70</height>
@@ -493,7 +495,7 @@
                     <onclick>PlayerControl(Play)</onclick>
                 </control>
                 <control type="button">
-                    <label></label>
+                    <label>-</label>
                     <!--Stop-->
                     <include>animation_fade_visible_hidden</include>
                     <width>70</width>

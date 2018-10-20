@@ -3,7 +3,7 @@
     <include name="HomeWin10">
         <!-- Header -->
 		<include>Header</include>
-		<control type ="group" id="9000">
+		<control type="group" id="9000">
             <!-- all widgets -->
             <control type="grouplist" id="77777">
                 <posx>30</posx>
@@ -150,7 +150,7 @@
 
             <!-- menu button -->
             <control type="button" id="1">
-                <label></label>
+                <label>-</label>
                 <posx>40</posx>
                 <top>20</top>
                 <include>animation_fade_visible_hidden</include>

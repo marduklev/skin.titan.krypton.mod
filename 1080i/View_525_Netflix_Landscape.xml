@@ -103,8 +103,8 @@
                     <posx>250</posx>
                     <top>297</top>
                     <include>Netflix_FlagsDetails</include>
-					<animation effect="slide" start="0" end="-168,0" condition="String.IsEmpty(ListItem.UserRating) + String.IsEmpty(Window(Home).Property(ListItem.UserRating)) + String.IsEmpty(Window(Home).Property(ListItem.UserRating))
-                                + String.IsEmpty(ListItem.Rating) + String.IsEmpty(Window(Home).Property(ListItem.Rating)) + String.IsEmpty(Window(Home).Property(ListItem.Rating))
+					<animation effect="slide" start="0" end="-168,0" condition="String.IsEmpty(ListItem.UserRating) + String.IsEmpty(Window(Home).Property(ListItem.UserRating)) + String.IsEmpty(Window(Home).Property(ListItem.UserRating)) 
+                                + String.IsEmpty(ListItem.Rating) + String.IsEmpty(Window(Home).Property(ListItem.Rating)) + String.IsEmpty(Window(Home).Property(ListItem.Rating)) 
                                 + String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.Rating))">Conditional
 					</animation>
                 </control>
@@ -230,7 +230,7 @@
 							<scrollspeed>20</scrollspeed>
 						</control>
 					</itemlayout>
-					<focusedlayout></focusedlayout>
+					<focusedlayout>-</focusedlayout>
 					<content>$VAR[castInfo]</content>
                 </control>
 			</control>
@@ -240,10 +240,10 @@
                 <height>60</height>
                 <right>20</right>
                 <top>20</top>
-                <font></font>
+                <font>-</font>
                 <selected>Control.HasFocus(5001)</selected>
-                <texturefocus></texturefocus>
-                <texturenofocus></texturenofocus>
+                <texturefocus>-</texturefocus>
+                <texturenofocus>-</texturenofocus>
                 <textureradiofocus colordiffuse="$INFO[Skin.String(ButtonTextFocusColor)]">touchcontrols/icon_back.png</textureradiofocus>
                 <textureradionofocus colordiffuse="$INFO[Skin.String(ButtonTextColor)]">touchcontrols/icon_back.png</textureradionofocus>
                 <radiowidth>60</radiowidth>

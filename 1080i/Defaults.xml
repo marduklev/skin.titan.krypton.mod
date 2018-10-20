@@ -50,7 +50,7 @@
         <align>center</align>
         <aligny>center</aligny>
         <font>Light28</font>
-        <label></label>
+        <label>-</label>
         <textcolor fallback="white">$INFO[Skin.String(ButtonTextColor)]</textcolor>
         <focusedcolor>$INFO[Skin.String(ButtonFocusTextColor)]</focusedcolor>
         <disabledcolor>aaffffff</disabledcolor>

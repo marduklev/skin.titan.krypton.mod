@@ -67,7 +67,7 @@
                 <texture border="5">dialogs/trakt/qrCode.png</texture>
             </control>
             <control type="button">
-                    <label></label>
+                    <label>-</label>
                     <description>Close Window button</description>
                     <posx>664</posx>
                     <posy>-59</posy>

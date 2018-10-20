@@ -43,7 +43,7 @@
 				<posy>225</posy>
 				<width>1100</width>
 				<height>100</height>
-				<label></label>
+				<label>-</label>
 				<include>DialogHeader_Alt</include>
 				<align>center</align>
 				<wrapmultiline>true</wrapmultiline>
@@ -365,8 +365,8 @@
 				<onleft>6</onleft>
                 <onup>661</onup>
                 <ondown>661</ondown>
-				<animation effect="fade" start="0" end="100" time="400" condition="Control.HasFocus(1661) | Skin.HasSetting(EnableTouchSupport) | Container.Scrolling  | Skin.HasSetting(alwaysShowScrollbars)">Conditional</animation>
-				<animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(1661) | Skin.HasSetting(EnableTouchSupport) | Container.Scrolling  | Skin.HasSetting(alwaysShowScrollbars)]">Conditional</animation>
+				<animation effect="fade" start="0" end="100" time="400" condition="Control.HasFocus(1661) | Skin.HasSetting(EnableTouchSupport) | Container.Scrolling | Skin.HasSetting(alwaysShowScrollbars)">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(1661) | Skin.HasSetting(EnableTouchSupport) | Container.Scrolling | Skin.HasSetting(alwaysShowScrollbars)]">Conditional</animation>
 			</control>
             
             <!--description -->
@@ -407,7 +407,7 @@
                     <visible>!Window.IsVisible(Custom_MediaDialog.xml)</visible>
                     <right>0</right>
                     <description>Close</description>
-                    <label></label>
+                    <label>-</label>
                     <width>500</width>
                     <include>DialogButtonOther</include>
                     <height>80</height>

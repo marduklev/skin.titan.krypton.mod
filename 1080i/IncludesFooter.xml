@@ -373,7 +373,7 @@
 				<width>400</width>
 				<height>110</height>
 				<aspectratio aligny="center" align="right">keep</aspectratio>
-				<visible>Skin.HasSetting(StudioInFooter)</visible>			
+				<visible>[[Window.IsActive(videos) + Skin.HasSetting(StudioInFooter)] | [Window.IsActive(home) + Skin.String(HomeLayout,netflix2) + Skin.HasSetting(NetflixHomeStudio)]]</visible>
 				<visible>!Control.IsVisible(527)</visible>
 				<include>studiologo_image</include>
 				<bordersize>1</bordersize>

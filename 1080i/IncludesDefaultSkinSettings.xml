@@ -26,7 +26,7 @@
 		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(View513_ShowCDart)</onload>
 		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(View508_ShowCDart)</onload>
 		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(View58_ShowCDart)</onload>
-		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(View59_ShowCDart)</onload>																						  
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(View59_ShowCDart)</onload>
 		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(PanelViewShowInfo)</onload>
 		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(ShowlabelsLandscape)</onload>
 		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(EnableQuickJump)</onload>		
@@ -37,7 +37,7 @@
 		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetString(SkinHelper.ShowInfoAtPlaybackStart, 4)</onload>
 		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetString(GuideRows, 9)</onload>
 		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(GuideShowInfo)</onload>
-		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(ShowWeatherVideoInfoOSD)</onload>																										 
+		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(ShowWeatherVideoInfoOSD)</onload>
 		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(HideWatchedRecentlyAdded)</onload>
 		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(IsTitanSkin)</onload>
 		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(SmartShortcuts.playlists)</onload>
@@ -69,7 +69,6 @@
 		<onload condition="!Skin.String(SpinnerTexture.Color)">Skin.SetString(SpinnerTexture.Color, ffff0000)</onload>
         <onload condition="!Skin.String(mediaflagsstyle)">Skin.SetString(mediaflagsstyle, large)</onload>
         <onload condition="!Skin.String(osdmediaflagsstyle)">Skin.SetString(osdmediaflagsstyle, large)</onload>
-        <onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(NetflixHomeShowLargeThumb)</onload>
         <onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(View523_DetailsShowFanart)</onload>
 		<onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(View525_DetailsShowFanart)</onload>
         <onload condition="!Skin.HasSetting(HomeMenuDefaults46)">Skin.SetBool(WatchedIndicator.Playing)</onload>

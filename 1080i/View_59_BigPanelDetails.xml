@@ -14,8 +14,9 @@
         <animation effect="slide" end="-627" time="250" condition="Skin.HasSetting(View59_ShowInfoRight)">Conditional</animation>
         <viewtype label="31428">mediainfo</viewtype>
         <right>30</right>
-        <bottom>8%</bottom>
-        <height>810</height>
+        <include condition="!Skin.HasSetting(View59_ShowCDart)">bottom_view59</include>
+		<include condition="Skin.HasSetting(View59_ShowCDart)">bottom_view59_disk</include>
+		<height>810</height>
         <width>1190</width>
         <orientation>vertical</orientation>
         <onleft>9000</onleft>
@@ -87,12 +88,13 @@
 			<animation effect="fade" start="0" end="100" time="400" condition="[Control.HasFocus(60) | Skin.HasSetting(EnableTouchSupport) | Container.Scrolling | Skin.HasSetting(alwaysShowScrollbars)] + !Control.IsVisible(6002)">Conditional</animation>
 			<animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(60) | Skin.HasSetting(EnableTouchSupport) | Container.Scrolling | Skin.HasSetting(alwaysShowScrollbars)] | Control.IsVisible(6002)">Conditional</animation>
 		</control>
-      
-	
-	  
-		
-	  
     </control>
 
   </include>
+	<include name="bottom_view59">
+		<bottom>11.2%</bottom>
+	</include>
+	<include name="bottom_view59_disk">
+		<bottom>8%</bottom>
+	</include>	   
 </includes>

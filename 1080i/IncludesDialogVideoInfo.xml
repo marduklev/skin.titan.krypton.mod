@@ -1000,8 +1000,8 @@
 									!String.IsEmpty(ListItem.AudioLanguage) | 
 									!String.IsEmpty(ListItem.Property(AudioLanguage.1)) | 
 									!String.IsEmpty(ListItem.Property(AudioLanguage.2)) | 
-									!String.IsEmpty(ListItem.Property(AudioLanguage.3))			<!-- $INFO[Window(home).Property(SkinHelper.ListItem.AudioStreams.[num start0])] $INFO[Window(home).Property(SkinHelper.ListItem.AudioStreams.[num start0].Language)]-->				
-									</visible>									
+									!String.IsEmpty(ListItem.Property(AudioLanguage.3))
+									</visible>
 									<width>50</width>
 									<height>30</height>
 									<aspectratio>keep</aspectratio>
@@ -1138,7 +1138,7 @@
 								<left>0</left>
 								<font>Light22</font>
                                 <align>center</align>
-                                <label>$INFO[Window(Home).Property(SkinHelper.ListItem.Budget.formatted), • [B]Budget: [/B], $ • ][CR]$INFO[Window(Home).Property(SkinHelper.ListItem.Revenue.formatted), • [B]Gesammt Einnahmen: [/B]$, • ][CR]$INFO[Window(Home).Property(SkinHelper.ListItem.BoxOffice), • [B]Einnahme am 1.KINOTAG: [/B], • ]</label>
+                                <label>$INFO[Window(Home).Property(SkinHelper.ListItem.Budget.formatted), • [B]Budget: [/B], $ • ][CR]$INFO[Window(Home).Property(SkinHelper.ListItem.Revenue.formatted), • [B]Gesamt Einnahmen: [/B]$, • ][CR]$INFO[Window(Home).Property(SkinHelper.ListItem.BoxOffice), • [B]Einnahme am 1.KINOTAG: [/B], • ]</label>
                                 <textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
 								<shadowcolor>$INFO[Skin.String(ViewDetailsTextShadowColor)]</shadowcolor>
                                 <scroll>false</scroll> 

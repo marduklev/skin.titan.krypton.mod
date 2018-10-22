@@ -1505,6 +1505,34 @@
 				<scroll>false</scroll>
 				<visible>player.paused + !Control.IsVisible(552233) + ![Window.IsVisible(OSDVideoSettings) | Window.IsVisible(OSDAudioSettings) | Window.IsVisible(subtitlesearch)]</visible>
 			</control>
+			<!--Clock-->
+			<control type="label">
+				<right>23</right>
+				<posy>10</posy>
+				<width>400</width>
+				<height>100</height>
+				<align>right</align>
+				<info>System.Time</info>
+				<font>Light52</font>
+				<aligny>center</aligny>
+				<textcolor>$INFO[Skin.String(OSDSecondaryTextColor)]</textcolor>
+				<shadowcolor>$INFO[Skin.String(OSDSecondaryTextShadowColor)]</shadowcolor>
+				<visible>Skin.HasSetting(ShowClockRemainingTimeNetflixOSD)</visible>
+				<visible>!String.IsEqual(Window(Home).Property(subtitlemenu), show)</visible>
+			</control>
+			<!-- SHOWS END TIME RIGHT ,check strange behaviour, uses animation from other include - e.g. normal have animation, slim has not -->
+		    <control type="label">
+				<right>23</right>
+				<posy>85</posy>
+				<width>890</width>
+				<align>right</align>
+				<font>Reg26</font>
+				<textcolor>$INFO[Skin.String(OSDPrimaryTextColor)]</textcolor>
+				<shadowcolor>$INFO[Skin.String(OSDPrimaryTextShadowColor)]</shadowcolor>
+				<label>$VAR[PlayerActionLabel]</label>
+				<visible>Skin.HasSetting(ShowClockRemainingTimeNetflixOSD)</visible>
+				<visible>!String.IsEqual(Window(Home).Property(subtitlemenu), show)</visible>
+			</control>
 		</control>
 	</include>
 

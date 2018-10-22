@@ -127,7 +127,7 @@
 			<height>30</height>
 			<aligny>bottom</aligny>
 			<texture>netflix/genre.png</texture>
-			<colordiffuse>$INFO[Skin.String(ViewNetfixHighlightTextColor)]</colordiffuse>    
+			<colordiffuse>$INFO[Skin.String(NetflixSecondaryTextColor)]</colordiffuse>    
 		</control>
 		<control type="label">
 			<left>60</left>
@@ -148,7 +148,7 @@
 			<height>40</height>
 			<aligny>bottom</aligny>
 			<texture>netflix/tvshowstatus.png</texture>
-			<colordiffuse>$INFO[Skin.String(NetflixSecondaryTextColor)]</colordiffuse>    
+			<colordiffuse>$VAR[ToggleNetflixViewDetailsTextColorPlot]</colordiffuse>    
 		</control>
 		<control type="label">
 			<left>55</left>				
@@ -631,48 +631,6 @@
 	<include name="ThumbsUpMin8"><visible>Integer.IsGreaterOrEqual(ListItem.Rating,8)</visible></include>
 	<include name="ThumbsUpMin9"><visible>Integer.IsGreaterOrEqual(ListItem.Rating,9)</visible></include>
 	<include name="ThumbsUpMin10"><visible>Integer.IsEqual(ListItem.Rating,10)</visible></include>
-    
-		
-	
-    <!-- netflix home clearlogo -->
-    <variable name="HomeNetflixInfoClearlogo">
-        <!-- normal -->
-        <value condition="!String.IsEmpty(ListItem.ChannelLogo)">$INFO[ListItem.ChannelLogo]</value>
-        
-		<value condition="!String.IsEmpty(ListItem.Art(tvshow.clearlogo))">$INFO[ListItem.Art(tvshow.clearlogo)]</value>
-        <value condition="!String.IsEmpty(ListItem.Art(clearlogo))">$INFO[ListItem.Art(clearlogo)]</value>
-        <!-- spotlight -->
-        <value condition="[Control(1508).HasFocus | ControlGroup(505).HasFocus()] + !String.IsEmpty(Container(1508).ListItem.Art(clearlogo))">$INFO[Container(1508).ListItem.Art(clearlogo)]</value>
-        <!-- home -->
-        <value condition="!String.IsEmpty(Window(Home).Property(ListItem.ChannelLogo))">$INFO[Window(Home).Property(ListItem.ChannelLogo)]</value>
-        <value condition="!String.IsEmpty(Window(home).Property(ListItem.Art.ClearLogo))">$INFO[Window(home).Property(ListItem.Art.ClearLogo)]</value>
-        <!-- skinhelper fallback -->
-        <value condition="!String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.ChannelLogo))">$INFO[Window(Home).Property(SkinHelper.ListItem.ChannelLogo)]</value>
-        <value condition="!String.IsEmpty(Window(home).Property(SkinHelper.ListItem.Art.ClearLogo))">$INFO[Window(home).Property(SkinHelper.ListItem.Art.ClearLogo)]</value>
-    </variable>
-
-    <!-- Netflix Sublabel - tagline/watch now/album or song/pvr -->
-    <variable name="NetflixSublabel">
-        <!-- Tagline Info -->
-        <value condition="!String.IsEmpty(ListItem.TagLine)">[B]$INFO[ListItem.TagLine][/B]</value>
-        <value condition="!String.IsEmpty(Window(Home).Property(ListItem.TagLine))">[B]$INFO[Window(Home).Property(ListItem.TagLine)][/B]</value>
-        <!-- Watch Tag Info -->
-        <value condition="ControlGroup(505).HasFocus() | [String.IsEqual(ListItem.DBTYPE,tvshow) | String.IsEqual(Window(Home).Property(ListItem.Property(DBTYPE)),tvshow)]">$VAR[WatchNowTagInfo]</value>
-        <!-- Album/Song Info -->
-        <value condition="[String.IsEqual(ListItem.DBTYPE,album) | String.IsEqual(Window(Home).Property(ListItem.Property(DBTYPE)),album)]">$INFO[ListItem.Album]</value>
-        <value condition="!String.IsEmpty(ListItem.Artist)">$INFO[ListItem.TrackNumber,#, ]$INFO[ListItem.Title, ","]$INFO[ListItem.Album, (,)]</value>
-        <!-- PVR Info -->
-        <value condition="String.IsEmpty(ListItem.DBTYPE) + !String.IsEmpty(ListItem.Property(StartDateTime))">$INFO[ListItem.Channel]</value>
-        <value condition="String.IsEmpty(ListItem.DBTYPE) + !String.IsEmpty(ListItem.Property(DateTime)) + !String.IsEmpty(ListItem.Label2)">$INFO[ListItem.Label2]</value>
-        <value condition="String.IsEmpty(ListItem.DBTYPE) + !String.IsEmpty(ListItem.StartTime)">$INFO[ListItem.Label]</value>
-    </variable>
-
-    <!-- Watch Tag Info -->
-    <!-- localize -->
-    <variable name="WatchNowTagInfo">
-        <value condition="Integer.IsGreater(ListItem.Property(TotalSeasons),1) + String.IsEqual(ListItem.Property(UnWatchedEpisodes),ListItem.Property(TotalEpisodes))">[B]Watch Season 1 Now[/B]</value>
-        <value condition="ControlGroup(505).HasFocus()">[B]Watch Now[/B]</value>
-    </variable>
 
     <!-- Netflix More Details (pseudo-random) -->
     <variable name="NetflixMoreDetails">

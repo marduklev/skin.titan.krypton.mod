@@ -46,7 +46,7 @@
 				<control type="image">
 					<height>40</height>
 					<width>110</width>
-					<texture colordiffuse="$INFO[Skin.String(NetflixDetailsFlagColor)]">netflix/frame/detail-frame.png</texture><!-- 	$INFO[Skin.String(ViewDetailsTextColor)] -->						
+					<texture colordiffuse="$INFO[Skin.String(NetflixDetailsFlagColor)]">netflix/frame/detail-frame.png</texture>				
 				</control>
 				<control type="label">
 					<left>1</left>
@@ -79,7 +79,7 @@
 				<control type="image">
 					<height>38</height>
 					<width>82</width>
-					<texture colordiffuse="$INFO[Skin.String(NetflixDetailsFlagColor)]">$VAR[audiovideoframe]</texture><!-- 	$INFO[Skin.String(ViewDetailsTextColor)] -->						
+					<texture colordiffuse="$INFO[Skin.String(NetflixDetailsFlagColor)]">$VAR[audiovideoframe]</texture>				
 				</control>
 				<control type="label">
 					<left>0</left>
@@ -156,7 +156,7 @@
 			<width>1200</width>
 			<!--<label>$INFO[Window(Home).Property(SkinHelper.ListItem.airdaytime.label),[B]$LOCALIZE[31212][/B] $LOCALIZE[31213] • ] $INFO[Window(Home).Property(SkinHelper.ListItem.NextEpisode.Label),• ]</label>-->
 			<label>$INFO[Window(Home).Property(SkinHelper.ListItem.Lastepisode.airdate.Label),[B]$LOCALIZE[31214]:[/B] ,]</label>
-			<textcolor>$INFO[Skin.String(NetflixSecondaryTextColor)]</textcolor>
+			<textcolor>$VAR[ToggleNetflixViewDetailsTextColorPlot]</textcolor>
 			<align>left</align>
 			<aligny>center</aligny>
 			<font>Reg24</font>			

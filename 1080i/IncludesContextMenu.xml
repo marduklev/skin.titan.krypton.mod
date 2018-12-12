@@ -306,6 +306,19 @@
             <visible>!Skin.HasSetting(KioskMode.Enabled)</visible>
         </control>
         
+		<control type="radiobutton" id="31793">
+			<!--auto play trailer-->
+			<visible>
+            Control.IsVisible(512) | Control.IsVisible(516) | Control.IsVisible(510) | Control.IsVisible(505) |
+            Control.IsVisible(51) | Control.IsVisible(59) | Control.IsVisible(55) | Control.IsVisible(504) |  Control.IsVisible(52) | 
+            Control.IsVisible(53) | Control.IsVisible(523) | Control.IsVisible(525) | Control.IsVisible(507)
+            </visible>
+			<include>SideBladeMenuButton</include>
+			<label>31793</label>
+			<onclick>Skin.ToggleSetting(DetailsAutoTrailer)</onclick>
+			<selected>Skin.HasSetting(DetailsAutoTrailer)</selected>
+            <visible>!skin.hastheme(classic)</visible>
+		</control>								 
  		<control type="radiobutton" id="3010">
 			<!--Show info-->
 			<include>SideBladeMenuButton</include>
@@ -313,6 +326,8 @@
 			<onclick condition="Control.IsVisible(507)">Skin.ToggleSetting(FanArtViewShowInfo)</onclick>
             <onclick condition="Control.IsVisible(524)">Skin.ToggleSetting(ShowCaseViewShowInfo)</onclick>
             <onclick condition="Control.IsVisible(52)">Skin.ToggleSetting(PanelViewShowInfo)</onclick>
+			<onclick condition="Control.IsVisible(52) + Skin.HasSetting(PanelViewShowFanart)">Skin.ToggleSetting(PanelViewShowFanart)</onclick>
+			<onclick condition="Control.IsVisible(52) + Skin.HasSetting(InfoBottom_View52)">Skin.ToggleSetting(InfoBottom_View52)</onclick>
             <onclick condition="Control.IsVisible(502)">Skin.ToggleSetting(LandscapeViewShowInfo)</onclick>
             <onclick condition="Control.IsVisible(503)">Skin.ToggleSetting(LogoViewShowInfo)</onclick>
             <onclick condition="Control.IsVisible(51)">Skin.ToggleSetting(BigListViewShowInfo)</onclick>
@@ -335,6 +350,22 @@
             Control.IsVisible(51) | 
             Control.IsVisible(516)
             </visible>
+		</control>
+		<control type="radiobutton" id="666669">
+			<include>SideBladeMenuButton</include>
+			<label>Show fanart</label>
+			<onclick condition="Control.IsVisible(52)">Skin.ToggleSetting(PanelViewShowFanart)</onclick>
+			<onclick condition="Control.IsVisible(52) + Skin.HasSetting(PanelViewShowInfo) ">Skin.ToggleSetting(PanelViewShowInfo)</onclick>
+            <onclick condition="Control.IsVisible(52) + Skin.HasSetting(InfoBottom_View52)">Skin.ToggleSetting(InfoBottom_View52)</onclick>
+			<selected>[Control.IsVisible(52) + Skin.HasSetting(PanelViewShowFanart)]</selected>
+			<visible>Control.IsVisible(52)</visible>
+		</control>
+		<control type="radiobutton" id="677779">
+			<include>SideBladeMenuButton</include>
+			<label>Move Info to Bottom</label>
+			<onclick condition="Control.IsVisible(52)">Skin.ToggleSetting(InfoBottom_View52)</onclick>
+            <selected>[Control.IsVisible(52) + Skin.HasSetting(InfoBottom_View52)]</selected>
+			<visible>Control.IsVisible(52) + [Skin.HasSetting(PanelViewShowInfo) | Skin.HasSetting(PanelViewShowFanart)]</visible>
 		</control>
         
         <!-- show info for poster row-->
@@ -391,19 +422,6 @@
             Control.IsVisible(53) | Control.IsVisible(523) | Control.IsVisible(525)
             </visible>
 		</control>
-        <control type="radiobutton" id="31793">
-			<!--auto play trailer-->
-			<visible>
-            Control.IsVisible(512) | Control.IsVisible(516) | Control.IsVisible(510) | Control.IsVisible(505) |
-            Control.IsVisible(51) | Control.IsVisible(59) | Control.IsVisible(55) | Control.IsVisible(504) | 
-            Control.IsVisible(53) | Control.IsVisible(523) | Control.IsVisible(525)
-            </visible>
-			<include>SideBladeMenuButton</include>
-			<label>31793</label>
-			<onclick>Skin.ToggleSetting(DetailsAutoTrailer)</onclick>
-			<selected>Skin.HasSetting(DetailsAutoTrailer)</selected>
-            <visible>!skin.hastheme(classic)</visible>
-		</control>
         
         <control type="radiobutton" id="3006">
 			<!--horizontal navigation ion landscape view-->
@@ -414,7 +432,6 @@
             <onclick>ReloadSkin()</onclick>
 			<selected>Skin.HasSetting(View_501_HorizontalNavigation)</selected>
 		</control>
-
         <control type="button" id="3020">
 			<!--Show tags-->
 			<include>SideBladeMenuButton</include>
@@ -461,6 +478,7 @@
             <onclick condition="Control.IsVisible(53)">Skin.ToggleSetting(View53_ShowInfoRight)</onclick>
             <onclick condition="Control.IsVisible(51)">Skin.ToggleSetting(View51_ShowInfoRight)</onclick>
             <onclick condition="Control.IsVisible(504)">Skin.ToggleSetting(View504_ShowInfoRight)</onclick>
+			<onclick condition="Control.IsVisible(507)">Skin.ToggleSetting(View507_ShowInfoRight)</onclick>
 			<selected>
             [Control.IsVisible(512) + Skin.HasSetting(View512_ShowInfoRight)] |
             [Control.IsVisible(516) + Skin.HasSetting(View516_ShowInfoRight)] |
@@ -470,15 +488,58 @@
             [Control.IsVisible(59) + Skin.HasSetting(View59_ShowInfoRight)] |
             [Control.IsVisible(55) + Skin.HasSetting(View55_ShowInfoRight)] |
             [Control.IsVisible(504) + Skin.HasSetting(View504_ShowInfoRight)] |
-            [Control.IsVisible(53) + Skin.HasSetting(View53_ShowInfoRight)]
+            [Control.IsVisible(53) + Skin.HasSetting(View53_ShowInfoRight)] |
+            [Control.IsVisible(507) + Skin.HasSetting(View507_ShowInfoRight)]
             </selected>
 			<visible>
             [Control.IsVisible(51) + Skin.HasSetting(BigListViewShowInfo)] |
             [Control.IsVisible(516) + Skin.HasSetting(SlimListViewShowInfo)] |
             Control.IsVisible(512) | Control.IsVisible(510) | Control.IsVisible(505) | 
             Control.IsVisible(59) | Control.IsVisible(55) | Control.IsVisible(504) |
-            Control.IsVisible(53)
+            Control.IsVisible(53) | [Control.IsVisible(507) + Skin.HasSetting(FanArtViewShowInfo)]
             </visible>
+		</control>
+		<control type="radiobutton" id="317934">
+			<include>SideBladeMenuButton</include>
+			<label>Frame on Info</label>
+			<onclick condition="Control.IsVisible(507)">Skin.ToggleSetting(507_framedInfo)</onclick>
+			<selected>[Control.IsVisible(507) + Skin.HasSetting(507_framedInfo)]
+            </selected>
+			<visible>[Control.IsVisible(507) + Skin.HasSetting(FanArtViewShowInfo)]
+            </visible>
+		</control>
+		<control type="radiobutton" id="317935">
+			<include>SideBladeMenuButton</include>
+			<label>Frame on Fanart</label>
+			<onclick condition="Control.IsVisible(507)">Skin.ToggleSetting(507_framedFanart)</onclick>
+			<selected>[Control.IsVisible(507) + Skin.HasSetting(507_framedFanart)]
+            </selected>
+			<visible>Control.IsVisible(507)</visible>
+		</control>
+		<control type="radiobutton" id="317930">
+			<include>SideBladeMenuButton</include>
+			<label>Bello Showcase[CR](by Nessus)</label>
+			<onclick condition="Control.IsVisible(507)">Skin.ToggleSetting(507_BelloNero)</onclick>
+			<selected>[Control.IsVisible(507) + Skin.HasSetting(507_BelloNero)]
+            </selected>
+			<visible>Control.IsVisible(507) + !Skin.HasSetting(FanArtViewShowInfo)</visible>
+		</control>
+		<!-- custm tvmelody settings -->
+		<control type="radiobutton" id="55145">
+			<include>SideBladeMenuButton</include>
+			<!-- <visible>System.HasAddon(script.tvmelodies)</visible> -->
+			<!-- <visible>Control.IsVisible(**)</visible> -->
+			<textureradioonfocus colordiffuse="$INFO[Skin.String(ButtonFocusTextColor)]">common/settings1.png</textureradioonfocus>
+			<textureradioonnofocus colordiffuse="$INFO[Skin.String(SideBladeTextColor)]">common/settings1.png</textureradioonnofocus>
+			<textureradioofffocus colordiffuse="$INFO[Skin.String(ButtonFocusTextColor)]">common/settings1.png</textureradioofffocus>
+			<textureradiooffnofocus colordiffuse="$INFO[Skin.String(SideBladeTextColor)]">common/settings1.png</textureradiooffnofocus>
+			<radiowidth>115</radiowidth>
+            <radioheight>35</radioheight>
+            <radioposx>0</radioposx>
+            <radioposy>12</radioposy>
+			<label>OST Theme Options</label>
+			<onclick condition="System.HasAddon(script.tvmelodies)">Addon.OpenSettings(script.tvmelodies)</onclick>
+			<onclick condition="!System.HasAddon(script.tvmelodies)">InstallAddon(script.tvmelodies)</onclick>
 		</control>
         <control type="radiobutton" id="3046">
 			<!--Use alternate aspect ratio for landscape-->
@@ -612,9 +673,13 @@
         <control type="radiobutton" id="33451">
             <include>SideBladeMenuButton</include>
             <label>31029</label>
-			<onclick>Skin.ToggleSetting(View_526_nofooterbar)</onclick>			
-			<selected>Skin.HasSetting(View_526_nofooterbar)</selected>          
-			<visible>Control.IsVisible(526)</visible>			
+			<onclick condition="Control.IsVisible(526)">Skin.ToggleSetting(View_526_nofooterbar)</onclick>			
+			<onclick condition="Control.IsVisible(507)">Skin.ToggleSetting(View_507_nofooterbar)</onclick>			
+			<selected>
+			Control.IsVisible(526) + Skin.HasSetting(View_526_nofooterbar) | 
+			Control.IsVisible(507) + Skin.HasSetting(View_507_nofooterbar)
+			</selected>          
+			<visible>Control.IsVisible(526) | Control.IsVisible(507)</visible>			
         </control>
         
         <control type="radiobutton" id="3059">
@@ -657,7 +722,7 @@
             Control.IsVisible(504) | Control.IsVisible(58) | Control.IsVisible(508) | Control.IsVisible(59) | Control.IsVisible(522) | 
             Control.IsVisible(513) | Control.IsVisible(514) | Control.IsVisible(51) | Control.IsVisible(52) | 
             Control.IsVisible(502) | Control.IsVisible(523) | Control.IsVisible(525) | [Control.IsVisible(50) + Container.Content(movies)] |
-            [Control.IsVisible(516) + [Container.Content(albums) | Container.Content(songs)] + !IsEmpty(ListItem.Album) + !IsEmpty(ListItem.Thumb)]
+            [Control.IsVisible(516) + [Container.Content(albums) | Container.Content(songs)] + !String.IsEmpty(ListItem.Album) + !String.IsEmpty(ListItem.Thumb)]
             </visible>
             <visible>!Control.IsVisible(88882) + !Control.IsVisible(88883)</visible>
 		</control>
@@ -776,7 +841,7 @@
             <onclick condition="Control.IsVisible(502)">Skin.ToggleSetting(View502_DisableFanArt)</onclick>
             <onclick condition="Control.IsVisible(505)">Skin.ToggleSetting(View505_DisableFanArt)</onclick>
             <onclick condition="Control.IsVisible(506)">Skin.ToggleSetting(View506_DisableFanArt)</onclick>
-            <onclick condition="Control.IsVisible(507)">Skin.ToggleSetting(View507_DisableFanArt)</onclick>
+            <onclick condition="Control.IsVisible(507) + Skin.HasSetting(View507_DisableFanArt)">Skin.ToggleSetting(View507_DisableFanArt)</onclick>
             <onclick condition="Control.IsVisible(508)">Skin.ToggleSetting(View508_DisableFanArt)</onclick>
             <onclick condition="Control.IsVisible(509)">Skin.ToggleSetting(View509_DisableFanArt)</onclick>
             <onclick condition="Control.IsVisible(510)">Skin.ToggleSetting(View510_DisableFanArt)</onclick>
@@ -823,7 +888,7 @@
             Control.IsVisible(55) | Control.IsVisible(56) | Control.IsVisible(57) | 
             Control.IsVisible(58) | Control.IsVisible(59) | Control.IsVisible(524) | 
             Control.IsVisible(501) | Control.IsVisible(502) | Control.IsVisible(505) | 
-            Control.IsVisible(506) | Control.IsVisible(507) | Control.IsVisible(508) | 
+            Control.IsVisible(506) | [Control.IsVisible(507) + Skin.HasSetting(View507_DisableFanArt)] | Control.IsVisible(508) | 
             Control.IsVisible(509) | Control.IsVisible(510) | Control.IsVisible(511) | 
             Control.IsVisible(512) | Control.IsVisible(513) | Control.IsVisible(514) | 
             Control.IsVisible(515) | Control.IsVisible(526) | Control.IsVisible(527)
@@ -897,7 +962,7 @@
             [Skin.HasSetting(View523_DisableExtraFanArt) + Control.IsVisible(523)] |
 			[Skin.HasSetting(View525_DisableExtraFanArt) + Control.IsVisible(525)]
             </selected>
-			<visible>Skin.HasSetting(ShowFanartBackground) + Skin.HasSetting(SkinHelper.EnableExtraFanart) + !IsEmpty(ListItem.Art(FanArt))</visible>
+			<visible>Skin.HasSetting(ShowFanartBackground) + Skin.HasSetting(SkinHelper.EnableExtraFanart) + !String.IsEmpty(ListItem.Art(FanArt))</visible>
 			<visible>
             Control.IsVisible(10) | Control.IsVisible(50) | Control.IsVisible(51) | 
             Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(54) | 
@@ -978,8 +1043,8 @@
                     <label>19019</label>
                     <include>SideBladeMenuButton</include>
 					<onclick condition="Window.IsActive(TVChannels) | Window.IsActive(RadioChannels)">NextChannelGroup</onclick>
-					<onclick condition="IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVChannels)</onclick>
-					<onclick condition="!IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioChannels)</onclick>
+					<onclick condition="String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVChannels)</onclick>
+					<onclick condition="!String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioChannels)</onclick>
                 </control>
                 <control type="button" id="101">
 					<description>TV Guide</description>
@@ -989,8 +1054,8 @@
 					<include>SideBladeMenuButton</include>
 					<label>22020</label>
 					<onclick condition="Window.IsActive(TVGuide) | Window.IsActive(RadioGuide)">NextChannelGroup</onclick>
-					<onclick condition="IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVGuide)</onclick>
-					<onclick condition="!IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioGuide)</onclick>
+					<onclick condition="String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVGuide)</onclick>
+					<onclick condition="!String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioGuide)</onclick>
 				</control>
 				<control type="button" id="102">
 					<description>Recordings</description>
@@ -999,8 +1064,8 @@
 					<textwidth>400</textwidth>
 					<include>SideBladeMenuButton</include>
 					<label>19163</label>
-					<onclick condition="IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVRecordings)</onclick>
-					<onclick condition="!IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioRecordings)</onclick>
+					<onclick condition="String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVRecordings)</onclick>
+					<onclick condition="!String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioRecordings)</onclick>
 				</control>
 				<control type="button" id="103">
 					<description>Timers</description>
@@ -1009,8 +1074,8 @@
 					<textwidth>400</textwidth>
 					<include>SideBladeMenuButton</include>
 					<label>19040</label>
-					<onclick condition="IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVTimers)</onclick>
-					<onclick condition="!IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioTimers)</onclick>
+					<onclick condition="String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVTimers)</onclick>
+					<onclick condition="!String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioTimers)</onclick>
 				</control>
                 <control type="button" id="105">
 					<description>Timer Rules</description>
@@ -1019,8 +1084,8 @@
 					<textwidth>400</textwidth>
 					<include>SideBladeMenuButton</include>
 					<label>19138</label>
-					<onclick condition="IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVTimerRules)</onclick>
-					<onclick condition="!IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioTimerRules)</onclick>
+					<onclick condition="String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVTimerRules)</onclick>
+					<onclick condition="!String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioTimerRules)</onclick>
 				</control>
 				<control type="button" id="104">
 					<description>Search</description>
@@ -1029,8 +1094,8 @@
 					<textwidth>400</textwidth>
 					<include>SideBladeMenuButton</include>
 					<label>137</label>
-					<onclick condition="IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVSearch)</onclick>
-					<onclick condition="!IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioSearch)</onclick>
+					<onclick condition="String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(TVSearch)</onclick>
+					<onclick condition="!String.IsEmpty(Window.Property(IsRadio))">ActivateWindow(RadioSearch)</onclick>
 				</control>
 				<control type="button" id="28">
 					<description>Channel Groups</description>
@@ -1060,8 +1125,7 @@
                     <onclick>Container.NextViewMode</onclick>
                     <visible>!Skin.HasSetting(KioskMode.Enabled)</visible>
                     <visible>Window.IsActive(tvguide)</visible>
-				</control>
-				
+				</control>				
 				<control type="button" id="3">
 					<description>Sort by button</description>
 					<include>SideBladeMenuButton</include>

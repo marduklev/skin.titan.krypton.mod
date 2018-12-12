@@ -282,15 +282,7 @@
 				<ondown condition="!Player.HasVideo + Integer.IsLessOrEqual(Container(523).NumItems,10)">9000</ondown><!-- need check for new titan default layout - maybe less items -->
 				<ondown condition="Skin.HasSetting(EnableQuickJump) + Integer.IsGreater(Container(523).NumItems,10) + !Player.HasVideo">7000</ondown>
 				<ondown condition="!Skin.HasSetting(EnableQuickJump) + Integer.IsGreater(Container(523).NumItems,10) + !Player.HasVideo">60</ondown>
-				<!-- play trailer Movie -->
-				<onup condition="!Player.HasVideo + Container.Content(movies)">PlayMedia($INFO[ListItem.Trailer],1)</onup> <!-- Playmedia($INFO[Window(Home).Property(SkinHelper.ListItem.Trailer),1]) get some, also missing some , also not possible for TV SHows -->
-				<!-- play trailer TV Show / Set -->
-				<onup condition="!Player.HasVideo + [ListItem.IsCollection | Container.Content(tvshows)]">RunScript(script.skin.helper.service,action=playtraileryoutube,title=$INFO[ListItem.Title],local=true)</onup> <!-- action=searchyoutube,title=$INFO[ListItem.Title,, *your languaage*], $INFO[ListItem.System.Language]-->							
-				<!-- stop trailer playing,  keybord default <x>stop</x>-->
-				<ondown condition="Player.HasVideo">Stop</ondown>
-				<!-- get fullscreen , <tab>FullScreen</tab>-->
-				<onup condition="Player.HasVideo">fullscreen</onup>
-				
+				<include>trailer_onup</include>
 				<itemlayout height="247" width="170" background="true" condition="!Skin.HasSetting(View523_SameHeight)">
 					<control type="group">
 						<width>170</width>

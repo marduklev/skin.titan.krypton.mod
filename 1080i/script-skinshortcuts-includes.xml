@@ -750,7 +750,7 @@
 			<thumb />
 			<property name="labelID">20126</property>
 			<property name="defaultID">20126</property>
-			<visible>[[[System.HasLoginScreen | IntegerGreaterThan(System.ProfileCount,1)] + System.Loggedon] + [System.HasLoginScreen]] + String.IsEqual(Container(300).ListItem.Property(submenuVisibility),powermenu)</visible>
+			<visible>[[[System.HasLoginScreen | Integer.IsGreater(System.ProfileCount,1)] + System.Loggedon] + [System.HasLoginScreen]] + String.IsEqual(Container(300).ListItem.Property(submenuVisibility),powermenu)</visible>
 			<onclick condition="Window.IsActive(DialogButtonMenu.xml)">Close</onclick>
 			<onclick>System.LogOff</onclick>
 			<property name="path">System.LogOff</property>
@@ -797,16 +797,17 @@
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
 			<property name="mainmenuid">12</property>
-			<label>$LOCALIZE[13016]</label>
-			<label2>Kodi Command</label2>
-			<icon>common/shutdown1.png</icon>
-			<thumb />
-			<property name="labelID">13016</property>
-			<property name="defaultID">13016</property>
+			<label>Global Search</label>
+			<label2>Program</label2>
+			<icon>DefaultAddon.png</icon>
+			<thumb>image://C%3a%5capps%5cKodi%20Krypton%5cportable_data%5caddons%5cscript.globalsearch%5cicon.png/</thumb>
+			<property name="labelID">script.globalsearch</property>
+			<property name="defaultID">script.globalsearch</property>
+			<property name="translatedPath">RunAddOn(script.globalsearch)</property>
 			<onclick condition="Window.IsActive(DialogButtonMenu.xml)">Close</onclick>
-			<onclick>ShutDown</onclick>
-			<property name="path">ShutDown</property>
-			<property name="list">ShutDown</property>
+			<onclick>RunAddOn(script.globalsearch)</onclick>
+			<property name="path">RunAddOn(script.globalsearch)</property>
+			<property name="list">RunAddOn(script.globalsearch)</property>
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Container(300).ListItem.Property(submenuVisibility),powermenu)</visible>
 			<property name="group">powermenu</property>
 			<property name="isSubmenu">True</property>
@@ -1817,7 +1818,7 @@
 			<thumb />
 			<property name="labelID">20126</property>
 			<property name="defaultID">20126</property>
-			<visible>[[System.HasLoginScreen | IntegerGreaterThan(System.ProfileCount,1)] + System.Loggedon] + [System.HasLoginScreen]</visible>
+			<visible>[[System.HasLoginScreen | Integer.IsGreater(System.ProfileCount,1)] + System.Loggedon] + [System.HasLoginScreen]</visible>
 			<onclick condition="Window.IsActive(DialogButtonMenu.xml)">Close</onclick>
 			<onclick>System.LogOff</onclick>
 			<property name="path">System.LogOff</property>
@@ -1864,16 +1865,17 @@
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
 			<property name="mainmenuid">12</property>
-			<label>$LOCALIZE[13016]</label>
-			<label2>Kodi Command</label2>
-			<icon>common/shutdown1.png</icon>
-			<thumb />
-			<property name="labelID">13016</property>
-			<property name="defaultID">13016</property>
+			<label>Global Search</label>
+			<label2>Program</label2>
+			<icon>DefaultAddon.png</icon>
+			<thumb>image://C%3a%5capps%5cKodi%20Krypton%5cportable_data%5caddons%5cscript.globalsearch%5cicon.png/</thumb>
+			<property name="labelID">script.globalsearch</property>
+			<property name="defaultID">script.globalsearch</property>
+			<property name="translatedPath">RunAddOn(script.globalsearch)</property>
 			<onclick condition="Window.IsActive(DialogButtonMenu.xml)">Close</onclick>
-			<onclick>ShutDown</onclick>
-			<property name="path">ShutDown</property>
-			<property name="list">ShutDown</property>
+			<onclick>RunAddOn(script.globalsearch)</onclick>
+			<property name="path">RunAddOn(script.globalsearch)</property>
+			<property name="list">RunAddOn(script.globalsearch)</property>
 			<visible>String.IsEqual(System.ProfileName,Master user)</visible>
 			<property name="group">powermenu</property>
 			<property name="isSubmenu">True</property>
@@ -1906,7 +1908,7 @@
 			<thumb />
 			<property name="labelID">20126</property>
 			<property name="defaultID">20126</property>
-			<visible>[[[System.HasLoginScreen | IntegerGreaterThan(System.ProfileCount,1)] + System.Loggedon] + [System.HasLoginScreen]] + String.IsEqual(Window(10000).Property(submenuVisibility),powermenu)</visible>
+			<visible>[[[System.HasLoginScreen | Integer.IsGreater(System.ProfileCount,1)] + System.Loggedon] + [System.HasLoginScreen]] + String.IsEqual(Window(10000).Property(submenuVisibility),powermenu)</visible>
 			<onclick condition="Window.IsActive(DialogButtonMenu.xml)">Close</onclick>
 			<onclick>System.LogOff</onclick>
 			<property name="path">System.LogOff</property>
@@ -1953,16 +1955,17 @@
 		<item id="4">
 			<property name="id">$NUMBER[4]</property>
 			<property name="mainmenuid">12</property>
-			<label>$LOCALIZE[13016]</label>
-			<label2>Kodi Command</label2>
-			<icon>common/shutdown1.png</icon>
-			<thumb />
-			<property name="labelID">13016</property>
-			<property name="defaultID">13016</property>
+			<label>Global Search</label>
+			<label2>Program</label2>
+			<icon>DefaultAddon.png</icon>
+			<thumb>image://C%3a%5capps%5cKodi%20Krypton%5cportable_data%5caddons%5cscript.globalsearch%5cicon.png/</thumb>
+			<property name="labelID">script.globalsearch</property>
+			<property name="defaultID">script.globalsearch</property>
+			<property name="translatedPath">RunAddOn(script.globalsearch)</property>
 			<onclick condition="Window.IsActive(DialogButtonMenu.xml)">Close</onclick>
-			<onclick>ShutDown</onclick>
-			<property name="path">ShutDown</property>
-			<property name="list">ShutDown</property>
+			<onclick>RunAddOn(script.globalsearch)</onclick>
+			<property name="path">RunAddOn(script.globalsearch)</property>
+			<property name="list">RunAddOn(script.globalsearch)</property>
 			<visible>[String.IsEqual(System.ProfileName,Master user)] + String.IsEqual(Window(10000).Property(submenuVisibility),powermenu)</visible>
 			<property name="group">powermenu</property>
 			<property name="isSubmenu">True</property>

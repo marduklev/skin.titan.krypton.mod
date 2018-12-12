@@ -4,16 +4,16 @@
 	<controls>
         <control type="group">          
             <!--Info Panel-->
-            <include>OSDInfoPanel</include>		<!-- = "552233" -->
+            <include>OSDInfoPanel</include>
 			<!-- clearart variable netflix OSD -->
             <control type="image">
-			    <posy>770</posy>
-				<align>center</align>				
+			    <posy>740</posy>
+				<align>center</align>
                 <width>100%</width>
                 <height>200</height>
                 <fadetime>600</fadetime>
                 <aspectratio align="center" aligny="bottom">keep</aspectratio>
-                <texture background="true">$VAR[VideoPlayerClearArt]</texture> 	<!-- may used in netflix panel $VAR[VideoPlayerClearArt] -->
+                <texture background="true">$VAR[VideoPlayerClearArt]</texture>
                 <visible>!Control.IsVisible(662244) + Skin.HasSetting(OSDShowClearArt) + Skin.HasSetting(UseNetflixOSDPanel)</visible>				
 				<animation end="0,-95" time="0" effect="slide" condition="[Skin.HasSetting(OSDLargeSeekingLabel) + [Player.paused | Player.Seeking]]">Conditional</animation>  
             </control>			

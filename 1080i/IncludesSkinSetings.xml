@@ -245,7 +245,7 @@
                 <visible>![Skin.HasSetting(UseSingleShortcut) + Skin.String(HomeLayout, simplehor)]</visible>
                 <visible>Skin.String(HomeLayout, enhanced) | Skin.String(HomeLayout, netflix2) | Skin.String(HomeLayout, win10) | Skin.String(HomeLayout, simplehor) | String.Contains(Skin.String(HomeLayout), lowhorizontal)</visible>
             </control>
-            <!--use large mainmenu on netflix home-->
+            <!--use large mainmenu on netflix home, check 18.1.9
             <control type="radiobutton" id="31805">
                 <include>SkinSettings_Button</include>
                 <label>31805</label>
@@ -253,7 +253,8 @@
                 <selected>Skin.HasSetting(NetFlixHome_LargeMenu)</selected>
                 <visible>String.Contains(Skin.String(HomeLayout), netflix)</visible>
             </control>
-            <!--enable home menu animation-->
+			-->
+             <!--enable home menu animation-->
             <control type="radiobutton" id="31620">
                 <include>SkinSettings_Button</include>
                 <label>31620</label>
@@ -292,7 +293,6 @@
                 <label>31198</label>
                 <onclick>Skin.ToggleSetting(DisablePowerMenu)</onclick>
                 <selected>Skin.HasSetting(DisablePowerMenu)</selected>
-				<visible>!String.Contains(Skin.String(HomeLayout), netflix)</visible>
 			</control>
             <!--hide power button-->
             <control type="radiobutton" id="23027">
@@ -301,8 +301,7 @@
                 <onclick>Skin.ToggleSetting(HidePowerMenu)</onclick>
                 <selected>Skin.HasSetting(HidePowerMenu)</selected>
                 <visible>!Skin.HasSetting(DisablePowerMenu)</visible>
-				<visible>!String.Contains(Skin.String(HomeLayout), netflix)</visible>
-            </control>
+			</control>
 
             <!--no titles on home tiles-->
             <control type="radiobutton" id="13014">
@@ -804,6 +803,26 @@
                 <onclick>Skin.ToggleSetting(DisableLandscapeThumbs)</onclick>
                 <selected>Skin.HasSetting(DisableLandscapeThumbs)</selected>
             </control>
+			<!-- OST theme playback by lib 
+            <control type="radiobutton" id="++">
+            <include>SkinSettings_Button</include>
+                <label>Play OST Themes</label>
+                <onclick>Skin.ToggleSetting(LibraryOSTthemes)</onclick>
+                <selected>Skin.HasSetting(LibraryOSTthemes)</selected>
+            </control> removed -->
+			<!--
+			<include name="SkinSettings_AddonButton" content="SkinSettings_AddonButton">
+                <param name="id" value="55145" />
+                <param name="addon" value="script.tvmelodies" />
+            </include> 
+			-->
+			<!-- Local Trailer -->
+            <control type="radiobutton" id="55146">
+				<include>SkinSettings_Button</include>
+				<label>Placeholder/WIP: Always use Local Traier</label>
+				<onclick>Skin.ToggleSetting(Library_NoOnlineLookupTrailer)</onclick>
+				<selected>Skin.HasSetting(Library_NoOnlineLookupTrailer)</selected>
+			</control>
             <!-- alternative logo location -->
             <control type="button" id="13027">
                 <include>SkinSettings_Button</include>
@@ -1029,14 +1048,15 @@
                 <selected>Skin.String(actorthumbslookup,true)</selected>
                 <visible>!Skin.HasSetting(UseExtendedInfoDialog)</visible>
             </control>
-            <!-- trailer behaviour in videoinfo -->
+            <!-- trailer behaviour in videoinfo 
 			<control type="radiobutton" id="31694">
                 <include>SkinSettings_Button</include>
-                <label>$LOCALIZE[20410] $LOCALIZE[37026] $LOCALIZE[208]</label>       <!-- trailer  auto - - play - maybe make  VAR depending to language sometime-->        
+                <label>$LOCALIZE[20410] $LOCALIZE[37026] $LOCALIZE[208]</label>
                 <onclick>Skin.ToggleSetting(videoinfo_traileraction,auto)</onclick>
                 <selected>Skin.HasSetting(videoinfo_traileraction,auto)</selected>
 				<visible>!Skin.HasSetting(UseExtendedInfoDialog)</visible>
             </control>
+			disabled in case of play in loop bug -->
 			<!-- Enable auto-hide details when trailer is playing -->
             <control type="radiobutton" id="41634">
                 <include>SkinSettings_Button</include>
@@ -1246,13 +1266,19 @@
         <include name="SkinSettings_ColorButton" content="SkinSettings_ColorButton">
             <param name="id" value="31472" />
             <param name="label" value="$LOCALIZE[31472] (Unfocused Color)" />
-            <param name="skinsetting" value="ViewDetailsPanelColor" /><!-- need be renamed with append [NF]-->
+            <param name="skinsetting" value="ViewDetailsPanelColor" />
         </include>
 		 <!--viewdetails FOCUS panel color -->
         <include name="SkinSettings_ColorButton" content="SkinSettings_ColorButton">
             <param name="id" value="31571" />
             <param name="label" value="$LOCALIZE[31472] ($LOCALIZE[31180]) " />
-            <param name="skinsetting" value="ViewDetailsFocusColor" /><!-- need be renamed to [ViewDetailsPanelColorFO]-->
+            <param name="skinsetting" value="ViewDetailsFocusColor" />
+        </include>
+		<!--viewdetails BG color overlay of fanart , needed for 507 (523,525,526,527 use netflix colors) -->
+        <include name="SkinSettings_ColorButton" content="SkinSettings_ColorButton">
+            <param name="id" value="31575" />
+            <param name="label" value="WIP -view507 + ... $LOCALIZE[745]" />
+            <param name="skinsetting" value="ViewDetailsBGColor" />
         </include>
 		<!--viewdetails text color-->
         <include name="SkinSettings_ColorButton" content="SkinSettings_ColorButton">
@@ -1582,7 +1608,8 @@
                 <label>$LOCALIZE[31661]</label>
                 <onclick>Skin.ToggleSetting(osdgradientstyle)</onclick>
                 <selected>Skin.HasSetting(osdgradientstyle)</selected>
-                <visible>!skin.hastheme(classic) | !Skin.HasSetting(UseNetflixOSDPanel)</visible>
+				<visible>!skin.hastheme(classic)</visible>
+				<visible>!Skin.HasSetting(UseNetflixOSDPanel)</visible>
             </control>
             <!-- Volume Indicator Style -->
             <control type="button" id="31809">
@@ -2508,22 +2535,7 @@
                 <onclick condition="Skin.String(AutoStartPlayList)">Skin.Reset(AutoStartPlayList)</onclick>
                 <selected>Skin.String(AutoStartPlayList)</selected>
             </control>
-			
-			<control type="radiobutton" id="55145">
-            <!-- Manfeeds theme by lib -->
-            <include>SkinSettings_Button</include>
-                <label>OST Themes(thx to manfeed)</label>
-                <onclick>Skin.ToggleSetting(LibraryOSTthemes)</onclick>
-                <selected>Skin.HasSetting(LibraryOSTthemes)</selected>               
-            </control>
-			<!-- enable local language trailers -->
-            <control type="radiobutton" id="41633">
-                <include>SkinSettings_Button</include>
-                <label>Enable regional trailers (system language)</label>
-                <onclick>Skin.ToggleSetting(LocalTrailers)</onclick>
-                <selected>Skin.HasSetting(LocalTrailers)</selected>
-            </control>				
-            <control type="radiobutton" id="5159">
+			<control type="radiobutton" id="5159">
                 <description>Kiosk mode</description>
                 <include>SkinSettings_Button</include>
                 <label>31318</label>
@@ -3196,6 +3208,11 @@
             <include name="SkinSettings_AddonButton" content="SkinSettings_AddonButton">
                 <param name="id" value="31007" />
                 <param name="addon" value="service.nextup.notification" />
+            </include>
+			<!-- moved to lib settings -->
+			<include name="SkinSettings_AddonButton" content="SkinSettings_AddonButton">
+                <param name="id" value="55145" />
+                <param name="addon" value="script.tvmelodies" />
             </include>
             <include name="SkinSettings_AddonButton" content="SkinSettings_AddonButton">
                 <param name="id" value="31008" />

@@ -7,7 +7,6 @@
     <onload>Dialog.Close(busydialog)</onload>
     <allowoverlay>no</allowoverlay>
     <controls>
-	
 	<include>DialogOverlayExtra</include>
 
 
@@ -112,7 +111,7 @@
 			<ondown>300</ondown>
 			<onback>300</onback>
             <orientation>horizontal</orientation>
-            <focusposition>-</focusposition>
+            <!-- <focusposition>-</focusposition> -->
             <scrolltime tween="cubic" easing="inout">500</scrolltime>
 			<itemlayout width="170" height="64">
 				<control type="image">
@@ -138,7 +137,7 @@
                     <label>$LOCALIZE[13009]</label>
                     <icon>common/exit1.png</icon>
                     <visible>System.ShowExitButton + Window.IsActive(loginscreen)</visible>
-                    <onclick condition="Window.IsActive(shutdownmenu)">Close</onclick>
+                    <onclick condition="Window.IsActive(shutdownmenu)">Dialog.Close(shutdownmenu)</onclick>
                     <onclick>Quit()</onclick>
                 </item>
                 <item id="998">
@@ -146,14 +145,14 @@
                     <label>$LOCALIZE[13005]</label>
                     <icon>common/shutdown1.png</icon>
                     <visible>System.CanPowerDown + Window.IsActive(loginscreen)</visible>
-                    <onclick condition="Window.IsActive(shutdownmenu)">Close</onclick>
+                    <onclick condition="Window.IsActive(shutdownmenu)">Dialog.Close(shutdownmenu)</onclick>
                     <onclick>PowerDown</onclick>
                 </item>
                 <item id="999">
                     <label>$LOCALIZE[13013]</label>
                     <icon>common/reboot1.png</icon>
                     <visible>System.CanReboot + Window.IsActive(loginscreen)</visible>
-                    <onclick condition="Window.IsActive(shutdownmenu)">Close</onclick>
+                    <onclick condition="Window.IsActive(shutdownmenu)">Dialog.Close(shutdownmenu)</onclick>
                     <onclick>Reboot</onclick>
                 </item>
             </content>

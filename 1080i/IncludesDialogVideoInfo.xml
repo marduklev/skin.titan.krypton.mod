@@ -150,16 +150,18 @@
                     <control type="label">
                         <posx>61</posx>
                         <posy>10</posy>
-                        <width min="80" max="900">auto</width>
-                        <height>100</height>
-                        <font>Bold45</font>
+						<width>600</width>
+						<height>100</height>
+						<wrapmultiline>true</wrapmultiline>
+						<font>Bold45</font>
                         <align>left</align>
+						<aligny>bottom</aligny>
                         <textcolor>$INFO[Skin.String(ViewDetailsHighlightTextColor)]</textcolor>
                         <label>$VAR[value_header]</label>
                         <shadowcolor>$INFO[Skin.String(ViewDetailsHighlightShadowColor)]</shadowcolor>
                     </control>
                      <control type="label">
-                        <posy>85</posy>
+                        <posy>105</posy>
                         <posx>61</posx>
                         <width min="0" max="900">auto</width>
                         <height>50</height>
@@ -1552,7 +1554,7 @@
                     <!-- Title -->
                     <!-- clearlogo [800x310] -->
                     <control type="image" id="887766">
-                        <visible>!Skin.HasSetting(NoClearLogoNetflix) + !String.IsEmpty(Control.GetLabel(887766))</visible>
+                        <visible>!String.IsEmpty(Control.GetLabel(887766))</visible>
                         <height>230</height>
                         <width>593</width>
                         <align>left</align>
@@ -1561,7 +1563,7 @@
                     </control>
                     <!-- text title -->
                     <control type="textbox">
-                        <visible>Skin.HasSetting(NoClearLogoNetflix) | String.IsEmpty(Control.GetLabel(887766))</visible>
+                        <visible>String.IsEmpty(Control.GetLabel(887766))</visible>
                         <top>55</top>
                         <width max="1000">auto</width>
                         <height>auto</height>
@@ -1918,8 +1920,9 @@
                                 <!-- Set InfoDialog as BaseWindow -->
                                 <onclick>SetProperty(BaseWindow,InfoDialog,Home)</onclick>
                                 <onclick>close</onclick>
-                                <onclick>PlayMedia($ESCINFO[Container(5050).ListItem.FileNameAndPath],resume)</onclick>
-                                <itemlayout width="550" height="65">
+                                <!-- <onclick>PlayMedia($ESCINFO[Container(5050).ListItem.FileNameAndPath],resume)</onclick> -->
+								<onclick>PlayMedia($INFO[listitem.path]$INFO[listitem.filename],resume)</onclick>
+								<itemlayout width="550" height="65">
                                     <!-- play logo -->
                                     <control type="image">
                                         <top>20</top>
@@ -2078,13 +2081,9 @@
                                 <!-- Set InfoDialog as BaseWindow -->
                                 <onclick>SetProperty(BaseWindow,InfoDialog,Home)</onclick>
                                 <onclick>close</onclick>
-                                <!-- play movie -->
-                                <onclick condition="!Control.IsVisible(5050) + String.IsEqual(ListItem.DBTYPE,episode)">PlayMedia(videodb://tvshows/$INFO[ListItem.DBID])</onclick>
-                                <!-- play episode -->
-                                <onclick condition="!Control.IsVisible(5050) + String.IsEqual(ListItem.DBTYPE,movie)">PlayMedia(videodb://movies/$INFO[ListItem.DBID])</onclick>
-                                <!-- fallback to native play button -->
-                                <onclick condition="!Control.IsVisible(5050) + !String.IsEqual(ListItem.DBTYPE,episode) + !String.IsEqual(ListItem.DBTYPE,movie)">SendClick(8)</onclick>
-                                <!-- currently works only if FILE FOLDERS structured with seasons folders -->
+                               <onclick condition="!Control.IsVisible(5050)">SendClick(8)</onclick>
+								<!-- <onclick condition="!Control.IsVisible(5050)">PlayMedia($INFO[listitem.path]$INFO[listitem.filename])</onclick>-->
+								<!-- currently works only if FILE FOLDERS structured with seasons folders -->
                                 <onclick condition="Control.IsVisible(5050)">PlayMedia($ESCINFO[Container(5050).ListItem.Path],isdir,playoffset=$VAR[NextUpEpisodeMinusOne])</onclick>
                             </control>
 

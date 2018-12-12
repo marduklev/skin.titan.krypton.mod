@@ -70,7 +70,7 @@
                     <visible>Skin.HasSetting(View525_DetailsShowFanart)</visible>
 					<animation effect="fade" start="100" end="0" delay="200" time="1500" pulse="false" condition="Player.HasVideo">Conditional</animation>
                 </control>
-                <!-- NEW rating STARS -->
+                <!-- rating STARS -->
 				<control type="group">
                     <posx>65</posx>
                     <top>288</top>
@@ -86,7 +86,8 @@
                     <texture background="true" fallback="colors/color_transparent.png">$VAR[ListItemClearLogo]</texture>
                     <visible>!String.IsEmpty(Control.GetLabel(29477))</visible>
                 </control>
-				<control type="textbox"> <!-- if Clear LOGO N/A -->
+				<!-- clearlogo n/a -->		  
+				<control type="textbox">
                     <height>300</height>
                     <width>800</width>
                     <left>70</left>
@@ -118,8 +119,8 @@
                     <align>left</align>
                     <aligny>top</aligny>
                     <label>$INFO[ListItem.Label]</label> 
-                    <textcolor>$INFO[Skin.String(ViewNetfixHighlightTextColor)]</textcolor> <!-- always red, def is $INFO[Skin.String(ViewDetailsTextColor)]-->
-                    <visible>Container.Content(episodes) | Container.Content(seasons)</visible> <!-- shows season and episode below Clear Logo -->
+                    <textcolor>$INFO[Skin.String(ViewNetfixHighlightTextColor)]</textcolor>
+                    <visible>Container.Content(episodes) | Container.Content(seasons)</visible>
                 </control>
 				<!-- subtitle: MOTTO for Movies-->
                 <control type="label">
@@ -303,15 +304,7 @@
 		<ondown condition="!Player.HasVideo + Integer.IsLessOrEqual(Container(525).NumItems,4)">9000</ondown>
 		<ondown condition="Skin.HasSetting(EnableQuickJump) + Integer.IsGreater(Container(525).NumItems,4) + !Player.HasVideo">7000</ondown>
 		<ondown condition="!Skin.HasSetting(EnableQuickJump) + Integer.IsGreater(Container(525).NumItems,4) + !Player.HasVideo">60</ondown>
-		<!-- play trailer Movie -->
-		<onup condition="!Player.HasVideo + Container.Content(movies)">PlayMedia($INFO[ListItem.Trailer],1)</onup> <!-- Playmedia($INFO[Window(Home).Property(SkinHelper.ListItem.Trailer),1]) get some, also missing some , also not possible for TV SHows -->
-		<!-- play trailer TV Show / Set -->
-		<onup condition="!Player.HasVideo + [ListItem.IsCollection | Container.Content(tvshows)]">RunScript(script.skin.helper.service,action=playtraileryoutube,title=$INFO[ListItem.Title],local=true)</onup> <!-- action=searchyoutube,title=$INFO[ListItem.Title,, *your languaage*], $INFO[ListItem.System.Language]-->
-		<!-- stop trailer playing,  keybord default <x>stop</x>-->
-		<ondown condition="Player.HasVideo">Stop</ondown>
-		<!-- get fullscreen , <tab>FullScreen</tab>-->
-		<onup condition="Player.HasVideo">fullscreen</onup>
-		
+		<include>trailer_onup</include>
 		<!-- non fixed -->
         <itemlayout width="400" height="224" condition="!Skin.HasSetting(View525_UseFixedLayout)">
 			<control type="group">
@@ -328,6 +321,7 @@
 				<width>400</width>
 				<height>224</height>
 				<bottom>-80</bottom>
+				<include>AutoTrailerButton</include>						
 				<include>ThumbsViewLayoutFocus</include>
 			</control>
 			<!-- D I S C A R T -->	
@@ -361,6 +355,7 @@
 				<width>480</width>
 				<height>269</height>
 				<bottom>-135</bottom>
+				<include>AutoTrailerButton</include>						
 				<include>ThumbsViewLayoutFocus</include>
 			</control>
 			<!-- D I S C A R T -->

@@ -15,7 +15,10 @@
                 <aspectratio align="center" aligny="bottom">keep</aspectratio>
                 <texture background="true">$VAR[VideoPlayerClearArt]</texture>
                 <visible>!Control.IsVisible(662244) + Skin.HasSetting(OSDShowClearArt) + Skin.HasSetting(UseNetflixOSDPanel)</visible>				
+				<visible>![Window.IsVisible(OSDVideoSettings) | Window.IsVisible(OSDAudioSettings) | Window.IsVisible(SubtitleSearch)]</visible>
 				<animation end="0,-95" time="0" effect="slide" condition="[Skin.HasSetting(OSDLargeSeekingLabel) + [Player.paused | Player.Seeking]]">Conditional</animation>  
+				<animation effect="fade" start="100" end="40" time="350"  condition="[Skin.HasSetting(OSDLargeSeekingLabel) + Player.paused] + Skin.HasSetting(EnableOSDInfo)">Conditional</animation>
+		
             </control>			
             <!--OSD Panel-->
             <control type="group">

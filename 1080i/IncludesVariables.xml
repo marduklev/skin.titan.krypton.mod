@@ -253,7 +253,7 @@
         <value condition="!String.IsEmpty(ListItem.Thumb)">$INFO[ListItem.Thumb]</value>
         <value condition="Container.Content(artists)">resource://resource.images.skinicons.wide/artist.png</value>
         <value condition="[Container.Content(genres) | String.IsEqual(ListItem.DBTYPE,genre)]">resource://resource.images.skinicons.wide/genre.png</value>
-        <value condition="Container.Content(studios)">$INFO[ListItem.Label,special://skin/extras/flags/studios/,.png]</value>
+        <value condition="Container.Content(studios)">$INFO[Skin.String(SkinHelper.studiologos.path)]$INFO[ListItem.Label].png</value>
 		<value condition="Container.Content(actors) + String.IsEmpty(ListItem.Thumb)">resource://resource.images.skinicons.wide/ActorPoster.png</value>
 		<value condition="Container.Content(directors) + String.IsEmpty(ListItem.Thumb)">resource://resource.images.skinicons.wide/ActorPoster.png</value>
 		<value condition="Container.Content(years)">resource://resource.images.skinicons.wide/Year.png</value>
@@ -970,8 +970,9 @@
         <value>Top</value>
      </variable>
      
-     <variable name="osdpanelimage">
-        <value condition="Skin.HasSetting(osdgradientstyle)">diffuse/gradient.png</value>
+      <variable name="osdpanelimage">
+        <value condition="[Skin.HasSetting(osdgradientstyle) + Skin.HasSetting(EnableOSDInfo) + Skin.HasSetting(UseSlimOSDPanel)] | [Skin.HasSetting(osdgradientstyle) + !Skin.HasSetting(UseSlimOSDPanel)]">diffuse/gradient.png</value>
+		<value condition="Skin.HasSetting(osdgradientstyle) + Skin.HasSetting(EnableOSDInfo)">diffuse/gradient.png</value>
         <value>diffuse/panel.png</value>
      </variable>
      

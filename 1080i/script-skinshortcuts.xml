@@ -83,7 +83,7 @@
 							<height>73.3</height>
 							<width>166.7</width>
 							<aspectratio>keep</aspectratio>
-							<texture background="true" aligny="center" >$INFO[Container(211).ListItem.Icon]</texture>
+							<texture background="true" aligny="center">$INFO[Container(211).ListItem.Icon]</texture>
 						</control>
 						<control type="label"> <!--label-->
 							<left>175</left>

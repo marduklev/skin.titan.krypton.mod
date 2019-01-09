@@ -296,7 +296,6 @@
 						<visible>!Skin.HasSetting(DisableNowPlayingDiscArt) + [!String.IsEmpty(Player.Art(poster)) | !String.IsEmpty(Player.Art(tvshow.poster))]</visible>
 					</control>
 					<control type="image">
-						<visible>!Control.IsVisible(526)</visible>
 						<!--Cover image-->
 						<width>240</width>
 						<height>135</height>

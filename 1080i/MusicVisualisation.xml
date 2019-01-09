@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--Titan-->
 <window>
-	<defaultcontrol></defaultcontrol>
-	<allowoverlay>false</allowoverlay>
-    <controls>
+	<defaultcontrol>-</defaultcontrol>
+	<controls>
          <!--fallback background -->
         <control type="group">
 			<include>GlobalBackground</include>

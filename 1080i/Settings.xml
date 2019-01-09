@@ -2,7 +2,7 @@
 <!--Titan-->
 <window>
     <defaultcontrol always="true">9000</defaultcontrol>
-    <allowoverlay>no</allowoverlay>
+    
     <include>DefaultSkinSettings</include>
 	<!--set trailer alarm off-->
     <onload condition="System.HasAlarm(trailer_delay)">CancelAlarm(trailer_delay,true)</onload>

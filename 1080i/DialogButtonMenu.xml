@@ -5,7 +5,7 @@
 	<onload>SetProperty(shutdownmenuactive,true,Home)</onload>
 	<onunload>ClearProperty(shutdownmenuactive,Home)</onunload>
     <onload>Dialog.Close(busydialog)</onload>
-    <allowoverlay>no</allowoverlay>
+    
     <controls>
 	<include>DialogOverlayExtra</include>
 

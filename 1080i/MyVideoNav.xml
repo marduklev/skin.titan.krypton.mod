@@ -19,9 +19,9 @@
 	
     <controls>
 	
-        <!-- Video Background -->
         <include>GlobalBackground</include>
-		
+		<!-- Video Background -->
+		<include condition="!Skin.HasSetting(DisableNowPlayingBackground)">NowPlayingBackground</include>
 		<!-- all Views -->
         <include>allViews</include>
 		
@@ -155,7 +155,7 @@
         <include>Header</include>
  
 		<!--NowPlaying-->
-		<include condition="!Skin.HasTheme(classic) + !Skin.HasSetting(LowPerformanceMode)">NowPlayingModern</include>
+		<include condition="!Skin.HasTheme(classic) + !Skin.HasSetting(LowPerformanceMode)">NowPlayingInfoBar</include>
 
 		<!--NowPlaying-->
         <include condition="Skin.HasTheme(classic)">NowPlayingMusicClassic</include>

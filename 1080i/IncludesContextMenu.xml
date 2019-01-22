@@ -611,7 +611,7 @@
 			<label>31155</label>
 			<onclick>Skin.ToggleSetting(DetailsTopHidepanel)</onclick>
 			<selected>Skin.HasSetting(DetailsTopHidepanel)</selected>
-			<visible>[Skin.HasSetting(PanelViewShowInfo) + Control.IsVisible(52)] | [Skin.HasSetting(ShowCaseViewShowInfo) + Control.IsVisible(524)] | [Skin.HasSetting(LandscapeViewShowInfo) + Control.IsVisible(502)] | [Skin.HasSetting(LogoViewShowInfo) + Control.IsVisible(503)]</visible>
+			<visible>[[Skin.HasSetting(PanelViewShowInfo) | Skin.HasSetting(PanelViewShowFanart)] + Control.IsVisible(52)] | [Skin.HasSetting(ShowCaseViewShowInfo) + Control.IsVisible(524)] | [Skin.HasSetting(LandscapeViewShowInfo) + Control.IsVisible(502)] | [Skin.HasSetting(LogoViewShowInfo) + Control.IsVisible(503)]</visible>
 		</control>
         <control type="radiobutton" id="3054">
 			<!--Hide panel behind pvr guide-->

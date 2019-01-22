@@ -149,11 +149,8 @@
                 <top>675</top>
                 <height>55</height>
                 <width>180</width>
-                <animation type="VisibleChange">
-					<effect type="slide" start="0" end="-180" delay="1000" time="400"/>
-                </animation>
-                
-                <control type="image">
+				<animation effect="slide" start="0" end="-180" delay="1000" time="400">Visible</animation>
+				<control type="image">
                     <height>55</height>
                     <width>5</width>
                     <align>left</align>
@@ -163,7 +160,7 @@
 				<control type="image">
                     <left>10</left>
 					<height>55</height>
-                    <width>178</width>
+                    <width>200</width>
                     <texture colordiffuse="cc242424">colors/color_white.png</texture>
                 </control>
                 <control type="label" id="5633398">
@@ -240,8 +237,8 @@
                         <align>center</align>
                         <textcolor>$INFO[Skin.String(HomeSpotlightButtonNoFocusColor)]</textcolor>                       
 						<focusedcolor>$INFO[Skin.String(HomeSpotlightButtonFocusLabelColor)]</focusedcolor>
-                        <texturefocus colordiffuse="$INFO[Skin.String(HomeSpotlightButtonFocusBGColor)]" border="5">diffuse/panel.png</texturefocus><!-- diffuse/panel.png, netflix/bg/bg_hardedge.png-->
-                        <texturenofocus colordiffuse="$INFO[Skin.String(HomeSpotlightButtonNoFocusColor)]" border="5">diffuse/panel_trans.png</texturenofocus><!-- diffuse/panel_trans.png, netflix/frame/frame_hardedge.png-->
+                        <texturefocus colordiffuse="$INFO[Skin.String(HomeSpotlightButtonFocusBGColor)]" border="5">diffuse/panel.png</texturefocus> <!-- diffuse/panel.png, netflix/bg/bg_hardedge.png-->
+                        <texturenofocus colordiffuse="$INFO[Skin.String(HomeSpotlightButtonNoFocusColor)]" border="5">diffuse/panel_trans.png</texturenofocus> <!-- diffuse/panel_trans.png, netflix/frame/frame_hardedge.png-->
                         <textureradioonfocus colordiffuse="$INFO[Skin.String(HomeSpotlightButtonFocusLabelColor)]">netflix/play.png</textureradioonfocus>
                         <textureradioofffocus colordiffuse="$INFO[Skin.String(HomeSpotlightButtonFocusLabelColor)]">netflix/play.png</textureradioofffocus>
                         <textureradioonnofocus colordiffuse="$INFO[Skin.String(HomeSpotlightButtonNoFocusColor)]">netflix/play.png</textureradioonnofocus>
@@ -482,7 +479,7 @@
                 </control>
                 <!-- ratings & studio -->
                 <control type="group">
-                    <visible>[Skin.HasSetting(showratingnetflixhome) + !Player.HasVideo] | [Player.HasVideo + !Skin.HasSetting(HideMediaFlagsTrailer)]</visible>
+                    <!-- <visible>[Skin.HasSetting(showratingnetflixhome) + !Player.HasVideo] | [Player.HasVideo + !Skin.HasSetting(HideMediaFlagsTrailer)]</visible> -->
                     <right>20</right>
                     <top>475</top>
                     <height>150</height>
@@ -936,48 +933,44 @@
                 <onclick>SetFocus(9000)</onclick>
             </control>
 
-            <!-- logo / user profile button -->
-            <control type="group" id="40000">
+            <!-- logo and bla,   make condition here and in depening on header setting  extras/skinsettinh.xml - home header options , also need bools on home load  if some settings are hidden -->
+            <control type="grouplist" id="40000">
                 <visible>!Window.IsActive(notification) + !Window.IsActive(extendedprogressdialog) + !Control.IsVisible(88888)</visible>
-                <top>30</top>
-                <width>385</width>
-                <height>80</height>
+                <posy>20</posy>
+				<posx>0</posx>
+                <width>440</width>
+                <height>150</height>
+				<orientation>vertical</orientation>
                 <animation effect="slide" end="0,60" condition="Control.IsVisible(1)">Conditional</animation>
                 <include>animation_fade_visible_hidden</include>
                 <!-- logo -->
-                <control type="group" id="40000">
-                    <visible>!Control.IsVisible(40001)</visible>
-                    <height>80</height>
-                    <width>275</width>
-                    <left>50</left>
-                    <!-- default Logo image -->
-                    <control type="image">
-                        <height>80</height>
-                        <width>275</width>
-                        <aspectratio align="left">keep</aspectratio>
-                        <colordiffuse>$INFO[Skin.String(HeaderTextColor)]</colordiffuse>
-                        <texture background="true">special://skin/extras/media/bingie_logo.png</texture>
-                        <visible>!Skin.String(CustomLogoImage)</visible>
-                    </control>
-                    <!-- custom Logo image -->
-                    <control type="image">
-                        <height>80</height>
-                        <width>275</width>
-                        <aspectratio align="left">keep</aspectratio>
-                        <texture background="true">$INFO[Skin.String(CustomLogoImage)]</texture>
-                        <visible>Skin.String(CustomLogoImage)</visible>
-                    </control>
-                </control>
-
-                <!-- profile logo, label & switch button -->
+                <control type="image"> <!-- 325x125 -->
+					<visible>!Skin.HasSetting(DisableSkinIconMainMenu)</visible>
+					<left>10</left>
+					<height>80</height>
+					<width>275</width>
+					<aspectratio align="center">keep</aspectratio>
+					<texture background="true" fallback="home/kodi_logo_light.png">$INFO[Skin.String(CustomLogoImage)]</texture>
+				</control>
+				<control type="label">
+					<visible>!Skin.HasSetting(DisableSkinIconMainMenu) + !Skin.HasSetting(DisableProfileMainMenu)</visible>
+					<left>0</left>
+					<height>10</height>
+					<width>1</width>
+					<label>-</label>
+				</control>
+				<!-- user profile -->
                 <control type="group" id="40001">
-                    <visible>System.HasLoginScreen | Skin.HasSetting(DisableLogoMainMenu)</visible>
-                    <height>60</height>
+                    <visible>!Skin.HasSetting(DisableProfileMainMenu)</visible>
+					<height>60</height>
+					<width>440</width>
+					<left>5</left>
                     <control type="button" id="40002">
                         <!-- localize & hardcoded color -->
                         <label>[B]$INFO[System.ProfileName][/B][CR][COLOR ffc0c0c0]Switch Profiles[/COLOR]</label>
                         <textoffsetx>115</textoffsetx>
                         <align>left</align>
+						<aligny>bottom</aligny>
                         <width>384</width>
                         <height>60</height>
                         <font>Reg20</font>
@@ -999,7 +992,7 @@
                         <width>50</width>
                         <height>50</height>
                         <texture background="true">$INFO[System.ProfileThumb]</texture>
-                    </control>
+					</control>
                 </control>
             </control>
 
@@ -1064,7 +1057,6 @@
                             <height>35</height>
                             <texture background="true">$INFO[ListItem.Icon]</texture>
                             <colordiffuse>$INFO[Skin.String(MainMenuFocusTextColor)]</colordiffuse> <!-- add second color for icon -->
-                           
                         </control>
                     </control>
                     <!-- menu item label -->
@@ -1158,27 +1150,7 @@
 					</control>
 				</focusedlayout>
 				<content>
-					<include condition="!Window.IsActive(loginscreen)">skinshortcuts-group-powermenu</include>
-					<!-- shutdown menu options for loginscreen -->
-					<item id="997">
-						<label>$LOCALIZE[13009]</label>
-						<visible>System.ShowExitButton + Window.IsActive(loginscreen)</visible>
-						<onclick condition="Window.IsActive(shutdownmenu)">Close</onclick>
-						<onclick>Quit()</onclick>
-					</item>
-					<item id="998">
-						<property name="id">$NUM[4]</property>
-						<label>$LOCALIZE[13005]</label>
-						<visible>System.CanPowerDown + Window.IsActive(loginscreen)</visible>
-						<onclick condition="Window.IsActive(shutdownmenu)">Close</onclick>
-						<onclick>PowerDown</onclick>
-					</item>
-					<item id="999">
-						<label>$LOCALIZE[13013]</label>
-						<visible>System.CanReboot + Window.IsActive(loginscreen)</visible>
-						<onclick condition="Window.IsActive(shutdownmenu)">Close</onclick>
-						<onclick>Reboot</onclick>
-					</item>
+					<include>skinshortcuts-group-powermenu</include>
 				</content>
 			</control>
 		</control>

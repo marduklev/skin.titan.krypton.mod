@@ -6,7 +6,7 @@
     <include>DefaultSkinSettings</include>
 	<!--set trailer alarm off-->
     <onload condition="System.HasAlarm(trailer_delay)">CancelAlarm(trailer_delay,true)</onload>
-    <onload>AlarmClock(setfocus,SetFocus(9000),00:00,silent)</onload>
+    <onload>AlarmClock(setfocus,SetFocus(9000),00:00,silent)</onload> <!-- focus as alarm needed ?-->
     <controls>
         <!--Global Background-->
         <include>GlobalBackground</include>

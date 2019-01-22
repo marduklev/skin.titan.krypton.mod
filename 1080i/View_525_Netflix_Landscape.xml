@@ -217,7 +217,7 @@
 						</control>
 						<control type="label">
 							<font>reg18</font>
-							<label>$INFO[Container(50).ListItem.Label,[B],[/B][CR]]$INFO[Container(50).ListItem.Label2]</label>
+							<label>$INFO[ListItem.Label,[B],[/B][CR]]$INFO[ListItem.Label2]</label>
 							<wrapmultiline>true</wrapmultiline>
 							<textcolor>$INFO[Skin.String(NetflixPrimaryTextColor)]</textcolor>
 							<top>220</top>

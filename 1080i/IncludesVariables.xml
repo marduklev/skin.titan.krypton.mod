@@ -402,7 +402,7 @@
 		<value condition="Container.Content(Movies) + [!String.IsEmpty(ListItem.Duration) | !String.IsEmpty(ListItem.Year) | !String.IsEmpty(ListItem.Genre)]">$INFO[ListItem.Year,, • ]$VAR[ListItemDuration]$INFO[ListItem.Genre, • ]</value>
 		<value condition="Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0) + [Container.Content(Seasons) | Container.Content(TVShows)] + [!String.IsEmpty(ListItem.Year) | !String.IsEmpty(ListItem.MPAA) | !String.IsEmpty(ListItem.Property(TotalEpisodes))]">$INFO[ListItem.Year,, • ]$INFO[ListItem.MPAA,, • ]$INFO[ListItem.Property(TotalEpisodes),$LOCALIZE[20360] • ] $INFO[ListItem.Property(UnWatchedEpisodes), (,) ]</value>
 		<value condition="!Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0) + [Container.Content(Seasons) | Container.Content(TVShows)] + [!String.IsEmpty(ListItem.Year) | !String.IsEmpty(ListItem.MPAA) | !String.IsEmpty(ListItem.Property(TotalEpisodes))]">$INFO[ListItem.Year,, • ]$INFO[ListItem.MPAA,, • ]$INFO[ListItem.Property(TotalEpisodes),$LOCALIZE[20360] • ]</value>
-        <value condition="String.StartsWith(Window.Property(xmlfile),MyPVR)">[B]$INFO[ListItem.ChannelName,, • ][/B]$VAR[ListDateInfoPVR]</value>
+        <value condition="String.StartsWith(Window.Property(xmlfile),MyPVR)">$INFO[ListItem.ChannelName,, • ]$VAR[ListDateInfoPVR]</value>
  		<value condition="!String.IsEmpty(ListItem.Duration)">$VAR[ListItemDuration]</value>
 		<value condition="!String.IsEmpty(ListItem.Label2)">$INFO[ListItem.Label2]</value>
 	</variable>
@@ -1324,4 +1324,36 @@
         <value condition="!String.IsEmpty(MusicPlayer.StarRating)">$INFO[MusicPlayer.StarRating,leftrating/]</value>
         <value condition="!String.IsEmpty(MusicPlayer.UserRating)">$INFO[MusicPlayer.UserRating,rating/,.png]</value>
     </variable>
+	<!-- Next Up Notification vars -->
+    <!-- next up resolution -->
+    <variable name="NextUpResolution">
+        <value condition="Integer.IsGreater(Control.GetLabel(3011),1080)">UHD</value>
+        <value condition="Integer.IsGreater(Control.GetLabel(3011),700)">HD</value>
+        <value condition="Integer.IsLess(Control.GetLabel(3011),700)">SD</value>
+    </variable>
+    <!-- next up thumb episode/tvshow based on setting preference 
+    <variable name="NextUpThumb">
+        <value condition="!String.IsEmpty(Control.GetLabel(3005)) + Skin.HasSetting(PreferTvShowThumbWidget)">$INFO[Control.GetLabel(3005)]</value>
+        <value condition="!String.IsEmpty(Control.GetLabel(3008))">$INFO[Control.GetLabel(3008)]</value>
+        <value condition="!String.IsEmpty(Control.GetLabel(3005))">$INFO[Control.GetLabel(3005)]</value>
+    </variable>
+	-->
+	<!-- UpNext Notification vars -->
+	<variable name="nextupbutton">
+		<value condition="Control.HasFocus(3012)">black</value>
+		<value condition="!Control.HasFocus(3012)">white</value>
+    </variable>
+	<variable name="nextupbutton_TimeRemaining">
+		<value condition="Integer.IsGreater(Player.TimeRemaining(ss),30)">nextupicons/30.png</value>
+		<value condition="Integer.IsLessOrEqual(Player.TimeRemaining(ss),30)">$INFO[Player.TimeRemaining(ss),nextupicons/,.png]</value>
+    </variable>
+    <variable name="NextUpThumb">
+		<value condition="!String.IsEmpty(Window.Property(thumb))">$INFO[Window.Property(thumb)]</value>
+        <value condition="!String.IsEmpty(Window.Property(fanart))">$INFO[Window.Property(fanart)]</value>
+		<value>$INFO[Window.Property(landscape)]</value>
+    </variable>
+	<variable name="UpNextPanel">
+		<value condition="!Skin.HasSetting(UpNext_Use_Inked_Panel)">nextupicons/UpNext_corner.png</value> <!-- panel use just transparency, left border use color + transparency/diffuse -->
+        <value condition="Skin.HasSetting(UpNext_Use_Inked_Panel)">nextupicons/UpNext_corner_iverted.png</value> <!-- <texture colordiffuse="red">nextupicons/UpNext_corner_iverted.png</texture>  panel use color + transparency/diffuse-->
+	</variable>			 
 </includes>

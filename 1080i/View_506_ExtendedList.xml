@@ -155,7 +155,7 @@
 							<posy>360</posy>
 							<width>400</width>
 							<height>80</height>
-							<label>[COLOR=$INFO[Skin.String(ViewDetailsHighlightTextColor)]]$INFO[ListItem.Genre,,[CR]][/COLOR]$VAR[ListDetails]</label>
+							<label>$VAR[ListDetails]</label><!-- removed genre because its part of list details, abit anoying, but kept it atm -->
 							<font>Reg24</font>
 							<textcolor>$INFO[Skin.String(ViewDetailsListItemTextFocusColor)]</textcolor>
 						</control>

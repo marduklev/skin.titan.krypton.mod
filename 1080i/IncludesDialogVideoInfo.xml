@@ -59,14 +59,35 @@
 					<visible>String.IsEmpty(Window.Property(AdditionalInfo))</visible>
 					<visible>!Player.HasVideo</visible>					
                     <itemlayout height="178" width="120"> 			
-							<control type="image">
-								<include>PosterThumbBG</include>
-							</control>
-							<control type="image">
-								<texture border="1" diffuse="diffuse/poster.png" background="true" fallback="DefaultActor.png">$INFO[ListItem.Thumb]</texture>
-								<aspectratio scalediffuse="true" aligny="top" align="center">scale</aspectratio>
-								<bordersize>4</bordersize>
-							</control>														
+						<control type="image">
+							<include>PosterThumbBG</include>
+						</control>
+						<control type="image">
+							<texture border="1" diffuse="diffuse/poster.png" background="true" fallback="DefaultActor.png">$INFO[ListItem.Thumb]</texture>
+							<aspectratio scalediffuse="true" aligny="top" align="center">scale</aspectratio>
+							<bordersize>4</bordersize>
+						</control>		
+						<control type="image">
+							<texture>diffuse/bgpanel.png</texture>
+							<colordiffuse>black</colordiffuse>
+							<visible>true</visible>
+							<top>145</top>
+							<left>0</left>
+							<width>120</width>
+							<height>40</height>
+							<align>center</align>
+                        </control>
+						<control type="label">
+							<font>reg14</font>
+							<label>$INFO[ListItem.Label,[B],[/B][CR]]$INFO[ListItem.Label2]</label>
+							<textcolor>white</textcolor>
+							<top>145</top>
+							<left>0</left>
+							<width>117</width>
+							<height>40</height>
+							<align>center</align>
+							<textoffsetx>0</textoffsetx>
+                        </control>
 					</itemlayout>					
                     <focusedlayout height="180" width="122">                        
 							<control type="image">
@@ -95,7 +116,7 @@
                 </control>
 				
 				<!-- CAST TV SHOW-->
-				<control type="panel" id="353"> <!-- new id [351 / kodi 50] ? -->
+				<control type="panel" id="353">
 					<top>620</top>
 					<left>700</left>
 					<height>400</height>
@@ -109,14 +130,34 @@
 					<visible>String.IsEmpty(Window.Property(AdditionalInfo))</visible>									
 					<visible>!Player.HasVideo</visible>
                     <itemlayout height="243" width="158">																				
-							<control type="image">
-								<include>PosterThumbBG</include>
-							</control>							  
-							<control type="image">
-								<texture border="1" diffuse="diffuse/poster.png" background="true" fallback="DefaultActor.png">$INFO[ListItem.Thumb]</texture>
-								<aspectratio scalediffuse="true" aligny="top" align="center">scale</aspectratio>
-								<bordersize>4</bordersize>
-							</control>
+						<control type="image">
+							<include>PosterThumbBG</include>
+						</control>							  
+						<control type="image">
+							<texture border="1" diffuse="diffuse/poster.png" background="true" fallback="DefaultActor.png">$INFO[ListItem.Thumb]</texture>
+							<aspectratio scalediffuse="true" aligny="top" align="center">scale</aspectratio>
+							<bordersize>4</bordersize>
+						</control>
+						<control type="image">
+							<texture>diffuse/bgpanel.png</texture>
+							<colordiffuse>black</colordiffuse>
+							<visible>true</visible>
+							<top>220</top>
+							<width>158</width>
+							<height>50</height>
+							<align>center</align>
+						</control>
+						<control type="label">
+							<font>reg18</font>
+							<label>$INFO[ListItem.Label,[B],[/B][CR]]$INFO[ListItem.Label2]</label>
+							<textcolor>white</textcolor>
+							<top>220</top>
+							<left>0</left>
+							<width>155</width>
+							<height>50</height>
+							<align>center</align>
+							<textoffsetx>0</textoffsetx>
+						</control>
 					</itemlayout>					
                     <focusedlayout height="257" width="173">
 							<control type="image">
@@ -261,11 +302,12 @@
 							<align>center</align>
 							<textoffsetx>0</textoffsetx>
 							<label>20410</label>
-							<onclick condition="!Player.HasVideo + String.IsEqual(ListItem.DBTYPE,movie)">PlayMedia($INFO[ListItem.Trailer],1)</onclick> <!--sometimes huge delay Playmedia($INFO[Window(Home).Property(SkinHelper.ListItem.Trailer)],1) ,faster but dont get all  PlayMedia($INFO[ListItem.Trailer],1) -->    
-							<onclick condition="!Player.HasVideo + !String.IsEqual(ListItem.DBTYPE,movie)">RunScript(script.skin.helper.service,action=playtraileryoutube,title=$INFO[ListItem.Title],local=true)</onclick> <!--sometimes huge delay Playmedia($INFO[Window(Home).Property(SkinHelper.ListItem.Trailer)],1) ,faster but dont get all  PlayMedia($INFO[ListItem.Trailer],1) -->    												
 							<altlabel>244</altlabel>
                             <usealttexture>Player.HasVideo</usealttexture>
-                            <onclick condition="Player.HasVideo">FullScreen</onclick>
+							<onclick condition="!String.IsEmpty(Window(home).Property(trailer_avail))">PlayMedia($INFO[Window(Home).Property(filename_formatted)]$INFO[ListItem.Title,,-trailer.mp4],1)</onclick>
+							<onclick condition="String.IsEmpty(Window(home).Property(trailer_avail)) + !Player.HasVideo + String.IsEqual(ListItem.DBTYPE,movie)">PlayMedia($INFO[ListItem.Trailer],1)</onclick> <!--sometimes huge delay Playmedia($INFO[Window(Home).Property(SkinHelper.ListItem.Trailer)],1) ,faster but dont get all  PlayMedia($INFO[ListItem.Trailer],1) -->    
+							<onclick condition="String.IsEmpty(Window(home).Property(trailer_avail)) + !Player.HasVideo + !String.IsEqual(ListItem.DBTYPE,movie)">RunScript(script.skin.helper.service,action=playtraileryoutube,title=$INFO[ListItem.Title],local=true)</onclick> <!--sometimes huge delay Playmedia($INFO[Window(Home).Property(SkinHelper.ListItem.Trailer)],1) ,faster but dont get all  PlayMedia($INFO[ListItem.Trailer],1) -->    												
+							<onclick condition="Player.HasVideo">FullScreen</onclick>
 							<visible>Skin.HasSetting(videoinfo_button_trailer)</visible>
 							<visible>String.IsEqual(ListItem.DBTYPE,tvshow) | String.IsEqual(ListItem.DBTYPE,movie)</visible>
 							<visible>String.IsEmpty(Window.Property(AdditionalInfo))</visible>							
@@ -2115,7 +2157,7 @@
                                 <onclick>SetProperty(BaseWindow,InfoDialog,Home)</onclick>
                                 <onclick>close</onclick>
                                 <!-- activate ALL EPISODES view -->
-                                <onclick>ActivateWindow(Videos,videodb://tvshows/titles/$INFO[ListItem.DBID]/-1/,return)</onclick>
+                                <onclick>ActivateWindow(Videos,videodb://tvshows/titles/$INFO[ListItem.DBID]/,return)</onclick>
                             </control>
 
 							<!-- Trailer-->
@@ -2131,7 +2173,11 @@
                                 <font>Reg30</font>
                                 <textcolor>$INFO[Skin.String(NetflixPrimaryTextColor)]</textcolor>
                                 <focusedcolor>$INFO[Skin.String(NetflixPrimaryTextColor)]</focusedcolor>
-								<label>$VAR[Trailer_fs]</label>
+								<label>20410</label>
+								<altlabel>244</altlabel>
+								<usealttexture>Player.HasVideo</usealttexture>
+								<usealttexture>Player.HasVideo</usealttexture>
+								<onclick condition="!String.IsEmpty(Window(home).Property(trailer_avail))">PlayMedia($INFO[Window(Home).Property(filename_formatted)]$INFO[ListItem.Title,,-trailer.mp4],1)</onclick>
 								<onclick condition="!Player.HasVideo + String.IsEqual(ListItem.DBTYPE,movie)">PlayMedia($INFO[ListItem.Trailer],1)</onclick>						
 								<onclick condition="!Player.HasVideo + !String.IsEqual(ListItem.DBTYPE,movie)">RunScript(script.skin.helper.service,action=playtraileryoutube,title=$INFO[ListItem.Title],local=true)</onclick>  							
 								<onclick condition="!Player.HasVideo + [String.IsEmpty(ListItem.Trailer) + String.IsEqual(ListItem.DBTYPE,movie)]">RunScript(script.skin.helper.service,action=playtraileryoutube,title=$INFO[ListItem.Title],local=true)</onclick>								
@@ -2961,8 +3007,4 @@
     </variable>	
 	*=totamtometerallaudience , *=tomatometerallcritics , 	*=tomatometeravgaudiance , 	*=tomatometeravgcritics -->
 	
-	<variable name="Trailer_fs">
-		<value condition="!Player.HasVideo">$LOCALIZE[20410]</value>
-		<value condition="Player.HasVideo">$LOCALIZE[244]</value>
-	</variable>
 </includes>

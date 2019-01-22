@@ -3332,7 +3332,7 @@
 		
 	<variable name="OSDLabel7">
 		<value condition="Player.HasVideo + String.IsEqual(Window(Home).Property(subtitlemenu), show)"></value>
-		<value condition="Player.HasVideo + !String.IsEqual(Window(Home).Property(subtitlemenu), show) + VideoPlayer.Content(livetv)">$INFO[VideoPlayer.ChannelNumber,,: ]$INFO[VideoPlayer.ChannelName]</value>
+		<value condition="Player.HasVideo + !String.IsEqual(Window(Home).Property(subtitlemenu), show) + VideoPlayer.Content(livetv) + [!String.IsEmpty(VideoPlayer.Episode) + !String.IsEmpty(VideoPlayer.EpisodeName)]">[B]$INFO[VideoPlayer.Title] - $INFO[VideoPlayer.EpisodeName][/B]</value>
 		<value condition="Player.HasVideo + !String.IsEqual(Window(Home).Property(subtitlemenu), show) + Player.IsInternetStream + !String.IsEmpty(Window(Home).Property(SkinHelper.Player.AddonName)) + String.IsEmpty(VideoPlayer.TvShowTitle)">$INFO[Window(Home).Property(SkinHelper.Player.AddonName)]</value>
 		<value condition="Player.HasVideo + !String.IsEqual(Window(Home).Property(subtitlemenu), show) + VideoPlayer.Content(episodes) + !String.IsEmpty(VideoPlayer.TvShowTitle)">$INFO[VideoPlayer.TVShowTitle]</value>
 		<value condition="Player.HasAudio + !String.IsEmpty(Window(Home).Property(SkinHelper.Player.AddonName))">$INFO[Window(Home).Property(SkinHelper.Player.AddonName)]</value>
@@ -3343,7 +3343,7 @@
 	<variable name="OSDLabel8">
 		<value condition="Player.HasVideo + !String.IsEqual(Window(Home).Property(subtitlemenu), show) + VideoPlayer.Content(Episodes)">$INFO[VideoPlayer.Season,$LOCALIZE[20373] , | ]$INFO[VideoPlayer.Episode,$LOCALIZE[20359] , | ][B]$INFO[VideoPlayer.Title][/B]</value>
 		<value condition="Player.HasVideo + !String.IsEqual(Window(Home).Property(subtitlemenu), show) + VideoPlayer.Content(Movies)">[B]$INFO[VideoPlayer.year][/B]$INFO[VideoPlayer.mpaa, | ,]$INFO[Window(home).Property(SkinHelper.Player.Runtime), | , min]</value>																												
-		<value condition="Player.HasVideo + !String.IsEqual(Window(Home).Property(subtitlemenu), show) + VideoPlayer.Content(livetv) + [!String.IsEmpty(VideoPlayer.Episode) + !String.IsEmpty(VideoPlayer.EpisodeName)]">[B]$INFO[VideoPlayer.Title] - $INFO[VideoPlayer.EpisodeName][/B]</value>
+		<value condition="Player.HasVideo + !String.IsEqual(Window(Home).Property(subtitlemenu), show) + VideoPlayer.Content(livetv)">$INFO[VideoPlayer.ChannelNumber,,: ]$INFO[VideoPlayer.ChannelName]</value>
 	</variable>
 	
 	<variable name="playtime_format">

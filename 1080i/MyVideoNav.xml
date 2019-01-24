@@ -29,6 +29,8 @@
         <include condition="!Skin.HasSetting(DisableSideBladeIndicator)">SideBladeMenuTabLeft</include>
         <!--Sub Menu Tab Top, check, should netflix need bottom , and triler layer on top  -->
         <include condition="!Skin.HasSetting(DisableSideBladeIndicator)">SideBladeMenuTabTop</include>
+		<!--Header-->
+        <include>Header</include>						 
         <!--Sub Menu-->
         <control type="group">
             <include condition="skin.hastheme(classic) | Skin.HasSetting(smallContextMenu)">SideBladeClassic</include>
@@ -151,9 +153,7 @@
 				</control>
              </control>
         </control>
-		<!--Header-->
-        <include>Header</include>
- 
+		
 		<!--NowPlaying-->
 		<include condition="!Skin.HasTheme(classic) + !Skin.HasSetting(LowPerformanceMode)">NowPlayingInfoBar</include>
 

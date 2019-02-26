@@ -623,7 +623,7 @@
 					<!-- label 1 -->
 					<control type="label">
 						<font>reg20</font>
-						<label>$INFO[Container().ListItem.Label,[B],[/B]]</label>
+						<label>$INFO[ListItem.Label,[B],[/B]]</label>
 						<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
 						<width>248</width>
 						<top>252</top>
@@ -636,7 +636,7 @@
 					<!-- label 2 -->
 					<control type="label">
 						<font>reg20</font>
-						<label>$INFO[Container().ListItem.Label2,(,)]</label>
+						<label>$INFO[ListItem.Label2,(,)]</label>
 						<textcolor>$INFO[Skin.String(ViewDetailsHighlightTextColor)]</textcolor>
 						<width>248</width>
 						<top>273</top>
@@ -696,7 +696,7 @@
 					<!-- label 1 -->
 					<control type="label">
 						<font>reg20</font>
-						<label>$INFO[Container().ListItem.Label,[B],[/B]]</label>
+						<label>$INFO[ListItem.Label,[B],[/B]]</label>
 						<textcolor>$INFO[Skin.String(ViewDetailsTextColor)]</textcolor>
 						<width>248</width>
 						<top>252</top>
@@ -713,7 +713,7 @@
 					<!-- label 2 -->
 					<control type="label">
 						<font>reg20</font>
-						<label>$INFO[Container().ListItem.Label2,(,)]</label>
+						<label>$INFO[ListItem.Label2,(,)]</label>
 						<textcolor>$INFO[Skin.String(ViewDetailsHighlightTextColor)]</textcolor>
 						<width>248</width>
 						<top>273</top>
@@ -957,7 +957,7 @@
 	
 	<variable name="ListItemDisk">
 		<value condition="String.Contains(ListItem.DiscNumber,2)">$INFO[ListItem.DiscNumber,[B]CD ,[/B] - ]</value>
-		<value>-</value>
+		<value></value>
 	</variable>
 
 	<variable name ="ListItemArtistAlbumDescription">

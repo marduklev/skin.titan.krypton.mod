@@ -3,8 +3,7 @@
 <window>
     <defaultcontrol always="true">9002</defaultcontrol>
     
-	
-    <controls>
+	<controls>
         <!--Dialog Overlay-->
         <include>DialogOverlayExtra</include>
 		<include condition="Skin.HasSetting(EnableTouchSupport)">Footer</include>
@@ -21,9 +20,8 @@
                 <width>1030</width>
                 <height>531</height>
                 <texture border="15">diffuse/bgpanel.png</texture>
-				<colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
-				
-            </control>
+				<colordiffuse>$INFO[Skin.String(DialogFrameColor)]</colordiffuse>	
+		    </control>
 			<control type="image">
                 <!--Panel-->
                 <posx>445</posx>
@@ -32,9 +30,8 @@
                 <height>531</height>
 				<texture border="15">diffuse/bgpanel.png</texture>
 				<bordersize>10</bordersize>
-				<colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
-				
-            </control>
+				<colordiffuse>$INFO[Skin.String(SideBladePanelColor)]</colordiffuse>	
+			</control>
 			
 			
             <control type="image">

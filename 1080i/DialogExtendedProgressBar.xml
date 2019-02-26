@@ -2,7 +2,6 @@
 <!--Titan-->
 <window>
     <defaultcontrol always="true">401</defaultcontrol>
-    
     <controls>
         <control type="group" id="99999">
             <animation type="WindowOpen" reversible="false">

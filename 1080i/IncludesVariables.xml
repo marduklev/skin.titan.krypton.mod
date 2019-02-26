@@ -1331,13 +1331,13 @@
         <value condition="Integer.IsGreater(Control.GetLabel(3011),700)">HD</value>
         <value condition="Integer.IsLess(Control.GetLabel(3011),700)">SD</value>
     </variable>
-    <!-- next up thumb episode/tvshow based on setting preference 
+    <!-- next up thumb episode/tvshow based on setting preference -->
     <variable name="NextUpThumb">
         <value condition="!String.IsEmpty(Control.GetLabel(3005)) + Skin.HasSetting(PreferTvShowThumbWidget)">$INFO[Control.GetLabel(3005)]</value>
         <value condition="!String.IsEmpty(Control.GetLabel(3008))">$INFO[Control.GetLabel(3008)]</value>
         <value condition="!String.IsEmpty(Control.GetLabel(3005))">$INFO[Control.GetLabel(3005)]</value>
     </variable>
-	-->
+	
 	<!-- UpNext Notification vars -->
 	<variable name="nextupbutton">
 		<value condition="Control.HasFocus(3012)">black</value>
@@ -1356,4 +1356,16 @@
 		<value condition="!Skin.HasSetting(UpNext_Use_Inked_Panel)">nextupicons/UpNext_corner.png</value> <!-- panel use just transparency, left border use color + transparency/diffuse -->
         <value condition="Skin.HasSetting(UpNext_Use_Inked_Panel)">nextupicons/UpNext_corner_iverted.png</value> <!-- <texture colordiffuse="red">nextupicons/UpNext_corner_iverted.png</texture>  panel use color + transparency/diffuse-->
 	</variable>			 
+	<variable name="DialogMusic_Header">
+		<value condition="Container.Content(Artists) | String.IsEqual(ListItem.DBType,artist)">$LOCALIZE[24017]</value>
+		<value condition="Container.Content(Albums) | String.IsEqual(ListItem.DBType,album)">$LOCALIZE[24016]</value>
+		<value condition="Container.Content(Songs) | String.IsEqual(ListItem.DBType,song)">$LOCALIZE[658]</value>
+		<!-- <value>$INFO[ListItem.Label]</value> -->
+	</variable>
+	<variable name="DialogMusic_Title">
+		<value condition="Container.Content(Artists) | String.IsEqual(ListItem.DBType,artist)">$INFO[ListItem.Artist]</value>
+		<value condition="Container.Content(Albums) | String.IsEqual(ListItem.DBType,album)">$INFO[ListItem.Album]</value>
+		<value condition="Container.Content(Songs) | String.IsEqual(ListItem.DBType,song)">$INFO[ListItem.Title]</value>
+		<value>$INFO[ListItem.Label]</value>
+	</variable>
 </includes>

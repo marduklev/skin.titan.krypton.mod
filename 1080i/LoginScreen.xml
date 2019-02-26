@@ -2,8 +2,6 @@
 <!--Titan-->
 <window>
     <defaultcontrol always="true">52</defaultcontrol>
-    
-	
     <controls>
         <control type="group">
             <!--Global Background-->

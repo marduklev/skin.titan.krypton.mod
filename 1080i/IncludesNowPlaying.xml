@@ -174,7 +174,6 @@
     <include name="NowPlayingInfoBar">
         <control type="group" id="88888">
             <!--Panel-->
-			<!-- <visible>String.IsEmpty(Window(home).Property(trailer_trailerwillplaying))</visible> -->
 			<visible>!Skin.HasSetting(DisableNowPlayingInfoBar)</visible>
             <visible>!Window.IsActive(notification) + !Window.IsActive(extendedprogressdialog) + !ControlGroup(400).HasFocus() + !Control.IsVisible(77551)</visible>
 			<!-- <visible>[[Player.HasVideo + !String.IsEmpty(VideoPlayer.Title)] | [Player.HasAudio + String.IsEmpty(Window(home).Property(TVMelodies.isPlaying)) + !String.IsEmpty(MusicPlayer.Title)] | Player.IsInternetStream]</visible> -->
@@ -190,7 +189,7 @@
 					<visible>![Control.IsVisible(526) | Control.IsVisible(527) | Control.IsVisible(523) | Control.IsVisible(525)]</visible>
 					<posx>-300</posx>
 					<posy>-5</posy>
-					<width>100%</width>
+					<width>150%</width>
 					<height>145</height>
 					<texture border="5">diffuse/panel.png</texture>
 					<colordiffuse>$INFO[Skin.String(GeneralPanelsColor)]</colordiffuse>
@@ -275,7 +274,7 @@
                 </control>
             </control>
             
-            <!-- VIDEO COVER -->
+            <!-- VIDEO COVER + Cur Video -->
             <control type="grouplist">
                 <visible>Player.HasVideo</visible>
 				<visible>![Control.IsVisible(527) | Control.IsVisible(523) | Control.IsVisible(525)]</visible>
@@ -287,7 +286,6 @@
 				<control type="group">
 					<width>250</width>
 					<control type="image">
-						<!-- <right>0</right> -->
 						<left>50</left>
 						<width>123</width>
 						<height>123</height>

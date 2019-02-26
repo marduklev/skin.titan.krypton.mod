@@ -4,7 +4,7 @@
     <include name="allViewIds">
         <views>10,50,51,52,501,502,503,504,505,53,54,55,506,56,57,58,59,507,508,509,510,511,512,513,514,515,516,517,518,519,520,521,522,523,524,525,526,527</views>
         <menucontrol>9000</menucontrol>
-        <onunload condition="Skin.HasSetting(DetailsAutoTrailer) + !String.IsEmpty(Window(Home).Property(TrailerPlaying)) + !String.IsEqual(Window(Home).Property(TrailerPlaying),fullscreen)">PlayerControl(Stop)</onunload>		
+        <onunload condition="Skin.HasSetting(DetailsAutoTrailer) + !String.IsEmpty(Window(Home).Property(TrailerPlaying))">PlayerControl(Stop)</onunload>		
     </include>
 
     <include name="playlistViewId">
@@ -145,8 +145,9 @@
         
         <!-- scrollbar vertical -->
         <control type="group" id="6000">
-            <visible>![Control.IsVisible(52) | Control.IsVisible(58) | Control.IsVisible(502) | Control.IsVisible(503) | Control.IsVisible(506) | Control.IsVisible(507) | Control.IsVisible(508) | Control.IsVisible(513) | Control.IsVisible(514) | Control.IsVisible(523) | Control.IsVisible(524) | Control.IsVisible(525)]</visible>
-            <control type="button" id="6001">
+			<animation effect="slide" start="0" end="-1830" time="0" condition="Control.IsVisible(527)">Conditional</animation>
+			<visible>![Control.IsVisible(52) | Control.IsVisible(58) | Control.IsVisible(502) | Control.IsVisible(503) | Control.IsVisible(506) | Control.IsVisible(507) | Control.IsVisible(508) | Control.IsVisible(513) | Control.IsVisible(514) | Control.IsVisible(523) | Control.IsVisible(524) | Control.IsVisible(525)]</visible>
+			<control type="button" id="6001">
                 <width>1</width>
                 <right>-1</right>
                 <bottom>0</bottom>
@@ -170,12 +171,15 @@
                 <right>0</right>
                 <bottom>0</bottom>
                 <height>100%</height>
-                <onleft>5000</onleft>
-                <onright>60</onright>
-                <onup>6002</onup>
+                <onleft condition="!Control.IsVisible(527)">5000</onleft>
+                <onright condition="!Control.IsVisible(527)">60</onright>
+				<onleft condition="Control.IsVisible(527)">60</onleft>
+				<onright condition="Control.IsVisible(527)">5000</onright>
+				<onup>6002</onup>
                 <ondown>6002</ondown>
                 <onback>5000</onback>
                 <orientation>vertical</orientation>
+				
                 <itemlayout height="40" width="40">
                     <control type="label">
                         <width>100%</width>
@@ -225,14 +229,14 @@
                 <visible>String.IsEqual(Container.SortMethod,$LOCALIZE[551]) | String.IsEqual(Container.SortMethod,$LOCALIZE[561]) | String.IsEqual(Container.SortMethod,$LOCALIZE[558]) | String.IsEqual(Container.SortMethod,$LOCALIZE[557]) | String.IsEqual(Container.SortMethod,$LOCALIZE[556])</visible>
                 <animation effect="fade" start="0" end="100" time="400" condition="[Control.HasFocus(6002) | Skin.HasSetting(EnableTouchSupport) | Container.Scrolling | Skin.HasSetting(alwaysShowScrollbars)]">Conditional</animation>
                 <animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(6002) | Skin.HasSetting(EnableTouchSupport) | Container.Scrolling | Skin.HasSetting(alwaysShowScrollbars)]">Conditional</animation>
-            </control>
+			</control>
         
         </control>
     
         <!-- scrollbar horizontal -->
         <control type="group" id="7000">
             <animation effect="slide" start="0" end="0,110" time="0" condition="Skin.HasTheme(classic) | Control.IsVisible(523) | Control.IsVisible(525)">Conditional</animation>
-			<animation type="Conditional" condition="Control.IsVisible(507) + Skin.HasSetting(View_507_nofooterbar)">
+            <animation type="Conditional" condition="Control.IsVisible(507) + Skin.HasSetting(View_507_nofooterbar)">
 					<effect type="slide" start="0,0" end="0,100" time="300" tween="cubic" easing="inout" delay="0" />
 				</animation>
 			<visible>[Control.IsVisible(52) | Control.IsVisible(58) | Control.IsVisible(502) | Control.IsVisible(503) | Control.IsVisible(506) | Control.IsVisible(507) | Control.IsVisible(508) | Control.IsVisible(513) | Control.IsVisible(514) | Control.IsVisible(523) | Control.IsVisible(524) | Control.IsVisible(525)]</visible>
@@ -241,7 +245,8 @@
                 <right>-1</right>
                 <bottom>0</bottom>
                 <height>1</height>
-                <onfocus contition="!Control.IsVisible(507)">SetFocus(60)</onfocus>
+                <!-- defdault <onfocus>SetFocus(60)</onfocus> -->
+				<onfocus contition="!Control.IsVisible(507)">SetFocus(60)</onfocus>
 				<onfocus contition="Control.IsVisible(507)">SetFocus(9000)</onfocus>
                 <visible>!Control.IsVisible(7002)</visible>
             </control>
@@ -278,6 +283,7 @@
                 <onleft>7002</onleft>
                 <onright>7002</onright>
                 <onup>5000</onup>
+				<!--  default <ondown>60</ondown> -->
                 <ondown condition="!Control.IsVisible(507)">60</ondown>
 				<ondown condition="Control.IsVisible(507)">9000</ondown>
                 <onback>5000</onback>
@@ -1187,7 +1193,7 @@
         </control>
 
     </control>
-    <control type="group">
+    <control type="group"> <!-- check, adjust me for music, -->
         <visible>
         [Control.IsVisible(512) + Skin.HasSetting(View512_DetailsShowFanart)] |
         [Control.IsVisible(516) + Skin.HasSetting(View516_DetailsShowFanart)] |
@@ -1242,7 +1248,7 @@
                 [Control.IsVisible(51) + Skin.HasSetting(View51_ShowCDart)] | 
                 [Control.IsVisible(52) + Skin.HasSetting(View52_ShowCDart)] | 
                 [Control.IsVisible(58) + Skin.HasSetting(View58_ShowCDart)] | 
-				[Control.IsVisible(59) + Skin.HasSetting(View59_ShowCDart)] | 												  
+				[Control.IsVisible(59) + Skin.HasSetting(View59_ShowCDart)] | 
                 [Control.IsVisible(502) + Skin.HasSetting(View502_ShowCDart)] | 
                 [Control.IsVisible(504) + Skin.HasSetting(View504_ShowCDart)] | 
                 [Control.IsVisible(508) + Skin.HasSetting(View508_ShowCDart)] | 
@@ -1270,14 +1276,14 @@
             <width>609</width>
             <height>344</height>
             <visible>Player.HasVideo + !VideoPlayer.Content(livetv) + String.IsEmpty(VideoPlayer.DBID)</visible> <!-- check, WIP condition ,need PVR verify -->
-			<visible>!skin.hastheme(classic)</visible>
+            <visible>!skin.hastheme(classic)</visible>
             <control type="image">
 				<aligny>bottom</aligny>
 				<texture border="15">diffuse/bgpanel.png</texture>
 				<colordiffuse>ff000000</colordiffuse>
 			</control>
             <control type="videowindow">
-				<visible>Player.HasVideo</visible>
+				<!-- <visible>Player.HasVideo</visible> -->
 			</control>     
         </control>
 

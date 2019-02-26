@@ -8,8 +8,7 @@
 		<top>0</top>
 	</coordinates>
 	
-	
-    <controls>
+	<controls>
 
 		<include>DialogOverlayExtra</include>
 		
@@ -25,7 +24,8 @@
                 <width>1030</width>
                 <height>730</height>
                 <texture border="15">diffuse/bgpanel.png</texture>
-				<colordiffuse>$INFO[Skin.String(HomeViewDetailsFocusColor)]</colordiffuse>
+				<!-- <colordiffuse>$INFO[Skin.String(HomeViewDetailsFocusColor)]</colordiffuse> -->
+				<colordiffuse>$INFO[Skin.String(DialogFrameColor)]</colordiffuse>
             </control>
 			<control type="image">
                 <!--Panel-->
@@ -64,16 +64,7 @@
                 <include>DialogHeader</include>
                 <align>center</align>
             </control>
-            <!--Icons
-            <control type="image">
-                <posx>1123</posx>
-                <posy>301</posy>
-                <width>317</width>
-                <height>478</height>
-                <aspectratio>keep</aspectratio>
-                <texture background="true">$INFO[ListItem.ActualIcon,dialogs/filebrowser/,]</texture>
-                <visible>String.IsEmpty(Container(450).ListItem.Icon)</visible>
-            </control>-->
+            <!--Icons -->
             <control type="image">
                 <posx>1123</posx>
                 <posy>301</posy>

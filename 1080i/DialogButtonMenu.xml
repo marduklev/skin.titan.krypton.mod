@@ -5,7 +5,6 @@
 	<onload>SetProperty(shutdownmenuactive,true,Home)</onload>
 	<onunload>ClearProperty(shutdownmenuactive,Home)</onunload>
     <onload>Dialog.Close(busydialog)</onload>
-    
     <controls>
 	<include>DialogOverlayExtra</include>
 
@@ -111,7 +110,6 @@
 			<ondown>300</ondown>
 			<onback>300</onback>
             <orientation>horizontal</orientation>
-            <!-- <focusposition>-</focusposition> -->
             <scrolltime tween="cubic" easing="inout">500</scrolltime>
 			<itemlayout width="170" height="64">
 				<control type="image">

@@ -1406,7 +1406,6 @@
 					<visible>String.IsEqual(Window(Home).Property(SkinHelper.ForcedView),513) | String.IsEmpty(Window(Home).Property(SkinHelper.ForcedView))</visible>
 					<itemlayout width="210" height="750" />
 					<focusedlayout width="210" height="750">
-						
 					</focusedlayout>
 				</control>
 			
@@ -1423,8 +1422,8 @@
                 <onleft>60</onleft>
                 <onright>60</onright>
                 <orientation>horizontal</orientation>
-                <animation effect="fade" start="0" end="100" time="400" condition="[Control.HasFocus(60) | Skin.HasSetting(EnableTouchSupport) | Container.Scrolling | Skin.HasSetting(alwaysShowScrollbars)] + !Control.IsVisible(6002)">Conditional</animation>
-                <animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(60) | Skin.HasSetting(EnableTouchSupport) | Container.Scrolling | Skin.HasSetting(alwaysShowScrollbars)] | Control.IsVisible(6002)">Conditional</animation>
+                <animation effect="fade" start="0" end="100" time="400" condition="[Control.HasFocus(60) | Skin.HasSetting(EnableTouchSupport) | Container.Scrolling | Skin.HasSetting(alwaysShowScrollbars)] + !Control.IsVisible(7002)">Conditional</animation>
+                <animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(60) | Skin.HasSetting(EnableTouchSupport) | Container.Scrolling | Skin.HasSetting(alwaysShowScrollbars)] | Control.IsVisible(7002)">Conditional</animation>
             </control>
             
 		</control>
@@ -1509,14 +1508,14 @@
 		<value>$INFO[ListItem(3).Icon]</value>
 	</variable>
 	<variable name="ShowcaseItem4Var">
-        <value condition="Skin.HasSetting(SkinHelper.EnableAnimatedPosters) + !Skin.HasSetting(AnimatedPostersDisableList) + !String.IsEmpty(Container.ListItem(4).Art(animatedposter))">$INFO[Container.ListItem(4).Art(animatedposter)]</value>
+        <value condition="Skin.HasSetting(SkinHelper.EnableAnimatedPosters)  + !Skin.HasSetting(AnimatedPostersDisableList) + !String.IsEmpty(Container.ListItem(4).Art(animatedposter))">$INFO[Container.ListItem(4).Art(animatedposter)]</value>
 		<value condition="ListItem(4).IsCollection + String.Contains(ListItem(4).Art(poster),emby)">$INFO[ListItem(4).Art(poster)]&amp;EnableImageEnhancers=false</value>
         <value condition="!String.IsEmpty(ListItem(4).Art(poster))">$INFO[ListItem(4).Art(poster)]</value>
 		<value condition="[Container.Content(genres) | String.IsEqual(ListItem.DBTYPE,genre)]">$INFO[ListItem(4).Label,special://skin/extras/moviegenres/,.jpg]</value>
 		<value>$INFO[ListItem(4).Icon]</value>
 	</variable>
 	<variable name="ShowcaseItem5Var">
-        <value condition="Skin.HasSetting(SkinHelper.EnableAnimatedPosters) + !Skin.HasSetting(AnimatedPostersDisableList) + !String.IsEmpty(Container.ListItem(5).Art(animatedposter))">$INFO[Container.ListItem(5).Art(animatedposter)]</value>
+        <value condition="Skin.HasSetting(SkinHelper.EnableAnimatedPosters)  + !Skin.HasSetting(AnimatedPostersDisableList) + !String.IsEmpty(Container.ListItem(5).Art(animatedposter))">$INFO[Container.ListItem(5).Art(animatedposter)]</value>
 		<value condition="ListItem(5).IsCollection + String.Contains(ListItem(5).Art(poster),emby)">$INFO[ListItem(5).Art(poster)]&amp;EnableImageEnhancers=false</value>
         <value condition="!String.IsEmpty(ListItem(5).Art(poster))">$INFO[ListItem(5).Art(poster)]</value>
 		<value condition="[Container.Content(genres) | String.IsEqual(ListItem.DBTYPE,genre)]">$INFO[ListItem(5).Label,special://skin/extras/moviegenres/,.jpg]</value>

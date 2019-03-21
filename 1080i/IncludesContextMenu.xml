@@ -597,13 +597,9 @@
 			<label>31511</label>
 			<onclick condition="Control.IsVisible(52)">Skin.ToggleSetting(View52_UseFixedLayout)</onclick>
 			<onclick condition="Control.IsVisible(525)">Skin.ToggleSetting(View525_UseFixedLayout)</onclick>
-			 
 			<selected>Control.IsVisible(52) + Skin.HasSetting(View52_UseFixedLayout)</selected>
-																			  
-					   
 			<visible>Control.IsVisible(52)</visible>
 			<onclick>ReloadSkin</onclick>
-																				   
 			<onclick>Container.SetViewMode(52)</onclick>
 		</control>
 
@@ -646,7 +642,7 @@
             <label>31719</label>
             <onclick>Skin.ToggleSetting(EnableInfoOverlay)</onclick>
             <selected>Skin.HasSetting(EnableInfoOverlay)</selected>
-            <visible>[Container.Content(movies) | Container.Content(episodes)  | Container.Content(sets)] + ![Control.IsVisible(523) | Control.IsVisible(525) | Control.IsVisible(526) | Control.IsVisible(527)]</visible>
+            <visible>[Container.Content(movies) | Container.Content(episodes)  | Container.Content(sets)]</visible>
         </control>
 		<control type="radiobutton" id="33450">
         <!--netflix poster same height-->
